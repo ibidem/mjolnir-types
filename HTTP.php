@@ -25,7 +25,12 @@ interface HTTP
 	/**
 	 * @return string uri relative to current application
 	 */
-	static function uri();
+	static function detect_uri();
+	
+	/**
+	 * @return string url base
+	 */
+	static function detect_url_base();
 	
 	/**
 	 * Used to set content type. If you're trying to use XHTML for example, the
