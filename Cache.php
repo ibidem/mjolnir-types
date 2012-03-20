@@ -14,7 +14,7 @@ interface Cache
 	/**
 	 * @param mixed
 	 */
-	function fetch($key);
+	function fetch($key, $default = null);
 	
 	/**
 	 * @param string key
