@@ -21,4 +21,10 @@ interface Controller
 	 */
 	function after_action();
 	
+	/**
+	 * @param \kohana4\types\Params
+	 * @return $this
+	 */
+	function params(\kohana4\types\Params $params);
+	
 } # interface
