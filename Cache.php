@@ -12,7 +12,9 @@
 interface Cache
 {
 	/**
-	 * @param mixed
+	 * @param string key
+	 * @param mixed default
+	 * @return mixed
 	 */
 	function fetch($key, $default = null);
 	
