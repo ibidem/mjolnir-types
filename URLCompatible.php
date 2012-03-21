@@ -12,6 +12,14 @@
 interface URLCompatible
 {
 	/**
+	 * Base for the url, if not defined should retrieve kohana4/base value.
+	 * 
+	 * @param string url base
+	 * @return $this
+	 */
+	function url_base($url_base = null); // helps abstract URL out of HTTP
+	
+	/**
 	 * By passing a null protocol the function should return a protocol-less URL
 	 * so that the protocol can be determined in context. 
 	 * 
