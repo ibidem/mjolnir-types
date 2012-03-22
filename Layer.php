@@ -13,6 +13,8 @@
  */
 interface Layer
 {
+	const DEFAULT_LAYER_NAME = 'layer';
+	
 	/**
 	 * @return string layer name of self 
 	 */
@@ -24,6 +26,12 @@ interface Layer
 	 * @return \kohana4\types\Layer 
 	 */
 	function register(\kohana4\types\Layer $layer);
+	
+	/**
+	 * @param \kohana4\types\Layer $parent
+	 * @return \kohana4\base\Layer
+	 */
+	function parent_layer(\kohana4\types\Layer $parent);
 
 	/**
 	 * Execute the layer.
@@ -65,6 +73,20 @@ interface Layer
 	function headerinfo();
 	
 	/**
+	 * Captures a broadcast Event.
+	 * 
+	 * @param \kohana4\types\Event
+	 */
+	function capture(\kohana4\types\Event $event);
+	
+	/**
+	 * Sends an Event to the parent of the current layer.
+	 * 
+	 * @param \kohana4\types\Event
+	 */
+	function dispatch(\kohana4\types\Event $event);
+	
+	/**
 	 * Register the top layer of the system
 	 * 
 	 * @param \kohana4\types\Layer top layer
@@ -90,5 +112,12 @@ interface Layer
 	 * Initializes execution, starting at the top. 
 	 */
 	static function run();
+	
+	/**
+	 * Send an Event to the top layer and then down
+	 * 
+	 * @param \kohana4\types\Event
+	 */
+	static function broadcast(\kohana4\types\Event $event);
 	
 } # interface

@@ -11,6 +11,11 @@
  */
 interface MVC
 {
+	// the name to be used in layers implementing the interface; the reason you
+	// wouldn't just use say "\kohana4\types\MVC" is beause any implementation
+	// could implement multiple MVC interfaces, not just the \kohana4\types one
+	const LAYER_NAME = 'mvc';
+	
 	/**
 	 * @param \kohana4\types\Controller 
 	 * @return $this

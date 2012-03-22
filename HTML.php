@@ -11,6 +11,9 @@
  */
 interface HTML
 {
+	// the name to be used in layers implementing the interface
+	const LAYER_NAME = 'html';
+	
 	// recomended doctype
 	const DOCTYPE = '<!DOCTYPE html>';
 	// recomended HTML5 doctype

@@ -12,6 +12,12 @@
 interface Controller
 {
 	/**
+	 * @param \kohana4\types\Layer
+	 * @return $this
+	 */
+	function layer(\kohana4\types\Layer $layer);
+	
+	/**
 	 * @return $this 
 	 */
 	function before_action();

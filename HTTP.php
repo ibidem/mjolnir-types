@@ -11,6 +11,11 @@
  */
 interface HTTP
 {
+	// the name to be used in layers implementing the interface; the reason you
+	// wouldn't just use say "\kohana4\types\HTTP" is beause any implementation
+	// could implement multiple HTTP interfaces, not just the \kohana4\types one
+	const LAYER_NAME = 'http';
+	
 	// status codes
 	const STATUS = 'HTTP/1.1 200 OK';
 	const STATUS_OK = 'HTTP/1.1 200 OK';
