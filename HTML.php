@@ -11,7 +11,9 @@
  */
 interface HTML
 {
-	// the name to be used in layers implementing the interface
+	// the name to be used in layers implementing the interface; the reason you
+	// wouldn't just use say "\kohana4\types\HTML" is beause any implementation
+	// could implement multiple HTML interfaces, not just the \kohana4\types one
 	const LAYER_NAME = 'html';
 	
 	// recomended doctype
