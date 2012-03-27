@@ -16,6 +16,10 @@ interface HTTP
 	// could implement multiple HTTP interfaces, not just the \kohana4\types one
 	const LAYER_NAME = 'http';
 	
+	// methods
+	const POST = 'POST';
+	const GET = 'GET';
+	
 	// status codes
 	const STATUS = 'HTTP/1.1 200 OK';
 	const STATUS_OK = 'HTTP/1.1 200 OK';
@@ -36,6 +40,11 @@ interface HTTP
 	 * @return string url base
 	 */
 	static function detect_url_base();
+	
+	/**
+	 * @return string
+	 */
+	static function request_method();
 	
 	/**
 	 * Used to set content type. If you're trying to use XHTML for example, the
