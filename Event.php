@@ -42,6 +42,9 @@ interface Event
 	// request for buffering switching
 	const buffering = '\kohana4\types\Event::output/buffering'; # => boolean
 	
+	// redirecting (http, etc)
+	const redirect = '\kohana4\types\Event::redirect'; # => url/string
+	
 	# ------------------------------------------------------------------------ #
 	
 	/**
