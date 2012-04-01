@@ -5,7 +5,7 @@
 	"keywords": ["interfaces"],
 	"homepage": "https://github.com/srcspider",
 	"type": "library",
-	"license": "BSD-3",
+	"license": "BSD-2",
 	"authors": [
 		{
 			"name": "srcspider",
