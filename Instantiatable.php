@@ -1,4 +1,4 @@
-<?php namespace kohana4\types;
+<?php namespace ibidem\types;
 
 /** 
  * Common Language Interface
@@ -8,11 +8,11 @@
  * the Instantiatable interface, any instances should be created via the 
  * instance method.
  * 
- * @package    Kohana4
+ * @package    ibidem
  * @category   Types
- * @author     Kohana Team
- * @copyright  (c) 2008-2012 Kohana Team
- * @license    http://kohanaframework.org/license
+ * @author     Ibidem Team
+ * @copyright  (c) 2008-2012 Ibidem Team
+ * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
 interface Instantiatable
 {
@@ -21,7 +21,7 @@ interface Instantiatable
 	 * Inplementations of patterns such as a factory, singleton, should make use
 	 * of this method as their object producer.
 	 * 
-	 * @return \kohana4\types\Instantiatable
+	 * @return \ibidem\types\Instantiatable
 	 */
 	static function instance();
 	

@@ -1,15 +1,15 @@
-<?php namespace kohana4\types;
+<?php namespace ibidem\types;
 
 /** 
  * Common Language Interface
  * 
  * Layers are modular components that can contain other layers.
  * 
- * @package    Kohana4
+ * @package    ibidem
  * @category   Types
- * @author     Kohana Team
- * @copyright  (c) 2008-2012 Kohana Team
- * @license    http://kohanaframework.org/license
+ * @author     Ibidem Team
+ * @copyright  (c) 2008-2012 Ibidem Team
+ * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
 interface Layer
 {
@@ -21,17 +21,17 @@ interface Layer
 	function get_layer_name();
 	
 	/**
-	 * @param \kohana4\types\Layer layer
-	 * @param \kohana4\types\Layer parent
-	 * @return \kohana4\types\Layer 
+	 * @param \ibidem\types\Layer layer
+	 * @param \ibidem\types\Layer parent
+	 * @return \ibidem\types\Layer 
 	 */
-	function register(\kohana4\types\Layer $layer);
+	function register(\ibidem\types\Layer $layer);
 	
 	/**
-	 * @param \kohana4\types\Layer $parent
-	 * @return \kohana4\base\Layer
+	 * @param \ibidem\types\Layer $parent
+	 * @return \ibidem\base\Layer
 	 */
-	function parent_layer(\kohana4\types\Layer $parent);
+	function parent_layer(\ibidem\types\Layer $parent);
 
 	/**
 	 * Execute the layer.
@@ -44,8 +44,8 @@ interface Layer
 	 * from each component.
 	 * 
 	 * @param string layer name
-	 * @return \kohana4\types\Layer
-	 * @throws \kohana4\types\Exception
+	 * @return \ibidem\types\Layer
+	 * @throws \ibidem\types\Exception
 	 */
 	function get_layer($layer_name);
 	
@@ -75,26 +75,26 @@ interface Layer
 	/**
 	 * Captures a broadcast Event.
 	 * 
-	 * @param \kohana4\types\Event
+	 * @param \ibidem\types\Event
 	 */
-	function capture(\kohana4\types\Event $event);
+	function capture(\ibidem\types\Event $event);
 	
 	/**
 	 * Sends an Event to the parent of the current layer.
 	 * 
-	 * @param \kohana4\types\Event
+	 * @param \ibidem\types\Event
 	 */
-	function dispatch(\kohana4\types\Event $event);
+	function dispatch(\ibidem\types\Event $event);
 	
 	/**
 	 * Register the top layer of the system
 	 * 
-	 * @param \kohana4\types\Layer top layer
+	 * @param \ibidem\types\Layer top layer
 	 */
-	static function top(\kohana4\types\Layer $top_layer);
+	static function top(\ibidem\types\Layer $top_layer);
 	
 	/**
-	 * @return \kohana4\types\Layer top layer
+	 * @return \ibidem\types\Layer top layer
 	 */
 	static function get_top();
 	
@@ -103,8 +103,8 @@ interface Layer
 	 * invokes get.
 	 * 
 	 * @param string layer name
-	 * @return \kohana4\types\Layer
-	 * @throws \kohana4\types\Exception
+	 * @return \ibidem\types\Layer
+	 * @throws \ibidem\types\Exception
 	 */
 	static function find($layer_name);
 	
@@ -116,8 +116,8 @@ interface Layer
 	/**
 	 * Send an Event to the top layer and then down
 	 * 
-	 * @param \kohana4\types\Event
+	 * @param \ibidem\types\Event
 	 */
-	static function broadcast(\kohana4\types\Event $event);
+	static function broadcast(\ibidem\types\Event $event);
 	
 } # interface

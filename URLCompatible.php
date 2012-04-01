@@ -1,18 +1,18 @@
-<?php namespace kohana4\types;
+<?php namespace ibidem\types;
 
 /** 
  * Common Language Interface
  * 
- * @package    Kohana4
+ * @package    ibidem
  * @category   Types
- * @author     Kohana Team
- * @copyright  (c) 2008-2012 Kohana Team
- * @license    http://kohanaframework.org/license
+ * @author     Ibidem Team
+ * @copyright  (c) 2008-2012 Ibidem Team
+ * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
 interface URLCompatible
 {
 	/**
-	 * Base for the url, if not defined should retrieve kohana4/base value.
+	 * Base for the url, if not defined should retrieve ibidem/base value.
 	 * 
 	 * @param string url base
 	 * @return $this

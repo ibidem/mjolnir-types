@@ -1,15 +1,15 @@
-<?php namespace kohana4\types;
+<?php namespace ibidem\types;
 
 /** 
  * Common Language Interface
  * 
  * [!!] Transactions must support nesting.
  * 
- * @package    Kohana4
+ * @package    ibidem
  * @category   Types
- * @author     Kohana Team
- * @copyright  (c) 2008-2012 Kohana Team
- * @license    http://kohanaframework.org/license
+ * @author     Ibidem Team
+ * @copyright  (c) 2008-2012 Ibidem Team
+ * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
 interface SQLDatabase
 {
@@ -19,7 +19,7 @@ interface SQLDatabase
 	 * @param string key
 	 * @param string statement
 	 * @param string language of statement
-	 * @return \kohana4\types\SQLStatement
+	 * @return \ibidem\types\SQLStatement
 	 */
 	function prepare($key, $statement = null, $lang = null);
 	

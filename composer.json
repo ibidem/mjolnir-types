@@ -1,9 +1,9 @@
 {
-	"name": "srcspider/kohana4/types",
+	"name": "ibidem/types",
 	"version": "1.0.0",
-	"description": "Kohana4 types module prototype",
+	"description": "ibidem types module prototype",
 	"keywords": ["interfaces"],
-	"homepage": "https://github.com/srcspider/kohana4-types-prototype",
+	"homepage": "https://github.com/srcspider",
 	"type": "library",
 	"license": "BSD-3",
 	"authors": [
@@ -17,7 +17,7 @@
 	},
 	"autoload": {
 		"psr-0": {
-			"kohana4\\types": "../.."
+			"ibidem\\types": "../.."
 		}
 	}
 }

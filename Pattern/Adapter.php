@@ -1,4 +1,4 @@
-<?php namespace kohana4\types;
+<?php namespace ibidem\types;
 
 /** 
  * Common Language Interface
@@ -15,11 +15,11 @@
  * easiest, but not recomended as it can easily cause naming conflict with class
  * methods and adapter's methods; if not imediatly, eventually.
  * 
- * @package    Kohana4
+ * @package    ibidem
  * @category   Types
- * @author     Kohana Team
- * @copyright  (c) 2008-2012 Kohana Team
- * @license    http://kohanaframework.org/license
+ * @author     Ibidem Team
+ * @copyright  (c) 2008-2012 Ibidem Team
+ * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
 interface Pattern_Adapter
 {

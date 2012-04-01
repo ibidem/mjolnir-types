@@ -1,13 +1,13 @@
-<?php namespace kohana4\types;
+<?php namespace ibidem\types;
 
 /** 
  * Common Language Interface
  * 
- * @package    Kohana4
+ * @package    ibidem
  * @category   Types
- * @author     Kohana Team
- * @copyright  (c) 2008-2012 Kohana Team
- * @license    http://kohanaframework.org/license
+ * @author     Ibidem Team
+ * @copyright  (c) 2008-2012 Ibidem Team
+ * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
 interface Params
 {
@@ -19,13 +19,13 @@ interface Params
 	/**
 	 * @param string key
 	 * @param mixed value
-	 * @return \kohana4\types\Params
+	 * @return \ibidem\types\Params
 	 */
 	function set($key, $value);
 	
 	/**
 	 * @param array associative array of key values
-	 * @return \kohana4\types\Params
+	 * @return \ibidem\types\Params
 	 */
 	function populate_params(array $params);
 	

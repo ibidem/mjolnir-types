@@ -1,13 +1,13 @@
-<?php namespace kohana4\types;
+<?php namespace ibidem\types;
 
 /** 
  * Common Language Interface
  * 
- * @package    Kohana4
+ * @package    ibidem
  * @category   Types
- * @author     Kohana Team
- * @copyright  (c) 2008-2012 Kohana Team
- * @license    http://kohanaframework.org/license
+ * @author     Ibidem Team
+ * @copyright  (c) 2008-2012 Ibidem Team
+ * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
 interface Event
 {
@@ -31,19 +31,19 @@ interface Event
 	const author = 'rel=author'; # => string
 	
 	// expire data for "some" content
-	const expires = '\kohana4\types\Event::expires'; # => int/date
+	const expires = '\ibidem\types\Event::expires'; # => int/date
 	
 	// etags of some resource
-	const etags = '\kohana4\types\Event::etags'; # => string/etag
+	const etags = '\ibidem\types\Event::etags'; # => string/etag
 	
 	// request for caching switching
-	const caching = '\kohana4\types\Event::caching'; # => boolean
+	const caching = '\ibidem\types\Event::caching'; # => boolean
 	
 	// request for buffering switching
-	const buffering = '\kohana4\types\Event::output/buffering'; # => boolean
+	const buffering = '\ibidem\types\Event::output/buffering'; # => boolean
 	
 	// redirecting (http, etc)
-	const redirect = '\kohana4\types\Event::redirect'; # => url/string
+	const redirect = '\ibidem\types\Event::redirect'; # => url/string
 	
 	# ------------------------------------------------------------------------ #
 	
@@ -76,7 +76,7 @@ interface Event
 	 * 
 	 * eg.
 	 * 
-	 *     GET:\kohana4\types\Writer
+	 *     GET:\ibidem\types\Writer
 	 *     rel=canonical
 	 *     rel=description
 	 *     rel=tags

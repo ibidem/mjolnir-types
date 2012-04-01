@@ -1,21 +1,21 @@
-<?php namespace kohana4\types;
+<?php namespace ibidem\types;
 
 /** 
  * Common Language Interface
  * 
- * @package    Kohana4
+ * @package    ibidem
  * @category   Types
- * @author     Kohana Team
- * @copyright  (c) 2008-2012 Kohana Team
- * @license    http://kohanaframework.org/license
+ * @author     Ibidem Team
+ * @copyright  (c) 2008-2012 Ibidem Team
+ * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
 interface Controller
 {
 	/**
-	 * @param \kohana4\types\Layer
+	 * @param \ibidem\types\Layer
 	 * @return $this
 	 */
-	function layer(\kohana4\types\Layer $layer);
+	function layer(\ibidem\types\Layer $layer);
 	
 	/**
 	 * @return $this 
@@ -28,9 +28,9 @@ interface Controller
 	function after_action();
 	
 	/**
-	 * @param \kohana4\types\Params
+	 * @param \ibidem\types\Params
 	 * @return $this
 	 */
-	function params(\kohana4\types\Params $params);
+	function params(\ibidem\types\Params $params);
 	
 } # interface

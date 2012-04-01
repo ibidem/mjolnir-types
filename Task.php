@@ -1,13 +1,13 @@
-<?php namespace kohana4\types;
+<?php namespace ibidem\types;
 
 /** 
  * Common Language Interface
  * 
- * @package    Kohana4
+ * @package    ibidem
  * @category   Types
- * @author     Kohana Team
- * @copyright  (c) 2008-2012 Kohana Team
- * @license    http://kohanaframework.org/license
+ * @author     Ibidem Team
+ * @copyright  (c) 2008-2012 Ibidem Team
+ * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
 interface Task
 {
@@ -16,7 +16,7 @@ interface Task
 	 * \app\Task_Class_Name_Example
 	 * 
 	 * @param string encoded task
-	 * @return \kohana4\types\Task
+	 * @return \ibidem\types\Task
 	 */
 	static function instance($encoded_task = null);
 	
@@ -30,7 +30,7 @@ interface Task
 	 * @param array config
 	 * @return $this
 	 */
-	function writer(\kohana4\types\Writer $writer);
+	function writer(\ibidem\types\Writer $writer);
 	
 	/**
 	 * Execute task.

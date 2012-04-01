@@ -1,36 +1,36 @@
-<?php namespace kohana4\types;
+<?php namespace ibidem\types;
 
 /** 
  * Common Language Interface
  * 
  * Model-View-Controller pattern.
  * 
- * @package    Kohana4
+ * @package    ibidem
  * @category   Types
- * @author     Kohana Team
- * @copyright  (c) 2008-2012 Kohana Team
- * @license    http://kohanaframework.org/license
+ * @author     Ibidem Team
+ * @copyright  (c) 2008-2012 Ibidem Team
+ * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
 interface Pattern_MVC
 {
 	// the name to be used in layers implementing the interface; the reason you
-	// wouldn't just use say "\kohana4\types\MVC" is beause any implementation
-	// could implement multiple MVC interfaces, not just the \kohana4\types one
+	// wouldn't just use say "\ibidem\types\MVC" is beause any implementation
+	// could implement multiple MVC interfaces, not just the \ibidem\types one
 	const LAYER_NAME = 'mvc';
 	
 	/**
-	 * @param \kohana4\types\Controller 
+	 * @param \ibidem\types\Controller 
 	 * @return $this
 	 */
-	function controller(\kohana4\types\Controller $controller);
+	function controller(\ibidem\types\Controller $controller);
 	
 	/**
 	 * Action paramters.
 	 * 
-	 * @param \kohana4\types\Controller 
+	 * @param \ibidem\types\Controller 
 	 * @return $this
 	 */
-	function params(\kohana4\types\Params $params);
+	function params(\ibidem\types\Params $params);
 	
 	/**
 	 * @param array relay configuration

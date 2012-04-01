@@ -1,19 +1,19 @@
-<?php namespace kohana4\types;
+<?php namespace ibidem\types;
 
 /** 
  * Common Language Interface
  * 
- * @package    Kohana4
+ * @package    ibidem
  * @category   Types
- * @author     Kohana Team
- * @copyright  (c) 2008-2012 Kohana Team
- * @license    http://kohanaframework.org/license
+ * @author     Ibidem Team
+ * @copyright  (c) 2008-2012 Ibidem Team
+ * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
 interface HTTP
 {
 	// the name to be used in layers implementing the interface; the reason you
-	// wouldn't just use say "\kohana4\types\HTTP" is beause any implementation
-	// could implement multiple HTTP interfaces, not just the \kohana4\types one
+	// wouldn't just use say "\ibidem\types\HTTP" is beause any implementation
+	// could implement multiple HTTP interfaces, not just the \ibidem\types one
 	const LAYER_NAME = 'http';
 	
 	// methods

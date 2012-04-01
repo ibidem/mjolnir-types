@@ -1,19 +1,19 @@
-<?php namespace kohana4\types;
+<?php namespace ibidem\types;
 
 /** 
  * Common Language Interface
  * 
- * @package    Kohana4
+ * @package    ibidem
  * @category   Types
- * @author     Kohana Team
- * @copyright  (c) 2008-2012 Kohana Team
- * @license    http://kohanaframework.org/license
+ * @author     Ibidem Team
+ * @copyright  (c) 2008-2012 Ibidem Team
+ * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
 interface HTML
 {
 	// the name to be used in layers implementing the interface; the reason you
-	// wouldn't just use say "\kohana4\types\HTML" is beause any implementation
-	// could implement multiple HTML interfaces, not just the \kohana4\types one
+	// wouldn't just use say "\ibidem\types\HTML" is beause any implementation
+	// could implement multiple HTML interfaces, not just the \ibidem\types one
 	const LAYER_NAME = 'html';
 	
 	// recomended doctype
@@ -24,7 +24,7 @@ interface HTML
 	const HTML4_DOCTYPE = ' <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">';
 	
 	/**
-	 * Sets the doctype. See: \kohana4\types\HTML for constants.
+	 * Sets the doctype. See: \ibidem\types\HTML for constants.
 	 * 
 	 * @param string doctype
 	 * @return $this
