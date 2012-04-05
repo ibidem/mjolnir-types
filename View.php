@@ -18,10 +18,10 @@ interface View
 	
 	/**
 	 * @param string valid PHP variable name
-	 * @param mixed variable to bind
+	 * @param array array to bind
 	 * @return $this
 	 */
-	function bind($name, & $variable);
+	function bind($name, array & $variable);
 	
 	/**
 	 * @param string valid PHP variable name
