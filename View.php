@@ -28,7 +28,7 @@ interface View
 	 * @param mixed value to set
 	 * @return $this
 	 */
-	function constant($name, $value);
+	function variable($name, $value);
 
 	// __toString needs to be protected and final
 	
