@@ -45,6 +45,9 @@ interface Event
 	// redirecting (http, etc)
 	const redirect = '\ibidem\types\Event::redirect'; # => url/string
 	
+	// content-type headers
+	const content_type = 'content-type'; # => string
+	
 	# ------------------------------------------------------------------------ #
 	
 	/**
