@@ -6,13 +6,13 @@
  * @package    ibidem
  * @category   Types
  * @author     Ibidem Team
- * @copyright  (c) 2008-2012 Ibidem Team
+ * @copyright  (c) 2012 Ibidem Team
  * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
 interface Writer
 {
 	/**
-	 * @return $this
+	 * @return \ibidem\types\Writer $this
 	 */
 	function eol();
 	
@@ -23,25 +23,25 @@ interface Writer
 	
 	/**
 	 * @param string text
-	 * @return $this
+	 * @return \ibidem\types\Writer $this
 	 */
 	function write($text, $indent = 0, $nowrap_hint = null);
 	
 	/**
 	 * @param $args
-	 * @return $this
+	 * @return \ibidem\types\Writer $this
 	 */
 	function writef($args);
 	
 	/**
 	 * @param string title
-	 * @return $this
+	 * @return \ibidem\types\Writer $this
 	 */
 	function header($title);
 	
 	/**
 	 * @param string title
-	 * @return $this
+	 * @return \ibidem\types\Writer $this
 	 */
 	function subheader($title);
 	
@@ -50,7 +50,7 @@ interface Writer
 	 * @param string definition
 	 * @param int indent hint
 	 * @param string no wrap hint string
-	 * @return $this
+	 * @return \ibidem\types\Writer $this
 	 */
 	public function listwrite($dt, $dd, $indent_hint = null, $nowrap_hint = null);
 		
@@ -67,19 +67,19 @@ interface Writer
 	 * 
 	 * @param string text
 	 * @param string highlight key
-	 * @return $this
+	 * @return \ibidem\types\Writer $this
 	 */
 	function highlight($text, $highlight = null);
 
 	/**
 	 * @param string text
-	 * @return $this
+	 * @return \ibidem\types\Writer $this
 	 */
 	function status($status, $text);
 	
 	/**
 	 * @param string text
-	 * @return $this
+	 * @return \ibidem\types\Writer $this
 	 */
 	function error($text);
 	

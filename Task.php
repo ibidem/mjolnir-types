@@ -6,7 +6,7 @@
  * @package    ibidem
  * @category   Types
  * @author     Ibidem Team
- * @copyright  (c) 2008-2012 Ibidem Team
+ * @copyright  (c) 2012 Ibidem Team
  * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
 interface Task
@@ -22,13 +22,13 @@ interface Task
 	
 	/**
 	 * @param array config
-	 * @return $this
+	 * @return \ibidem\types\Task $this
 	 */
 	function config(array $config);
 	
 	/**
 	 * @param array config
-	 * @return $this
+	 * @return \ibidem\types\Task $this
 	 */
 	function writer(\ibidem\types\Writer $writer);
 	

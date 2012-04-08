@@ -6,13 +6,13 @@
  * @package    ibidem
  * @category   Types
  * @author     Ibidem Team
- * @copyright  (c) 2008-2012 Ibidem Team
+ * @copyright  (c) 2012 Ibidem Team
  * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
 interface Exception
 {
-	const NotFound = 'NotFound';
-	const NotApplicable = 'NotApplicable';
+	const NotFound = '\ibidem\types\Exception::NotFound';
+	const NotApplicable = '\ibidem\types\Exception::NotApplicable';
 	
 	/**
 	 * @return string message
@@ -26,7 +26,7 @@ interface Exception
 	
 	/**
 	 * @param string exception type
-	 * @return $this
+	 * @return \ibidem\types\Exception $this
 	 */
 	function type($type);
 	
@@ -37,19 +37,19 @@ interface Exception
 	
 	/**
 	 * @param string message
-	 * @return $this 
+	 * @return \ibidem\types\Exception $this
 	 */
 	function set_message($message);
 	
 	/**
 	 * @param string title
-	 * @return $this 
+	 * @return \ibidem\types\Exception $this
 	 */
 	function set_title($title = null);
 	
 	/**
 	 * @param \Exception PHP exception 
-	 * @return $this
+	 * @return \ibidem\types\Exception $this
 	 */
 	function based_on(\Exception $source);
 	

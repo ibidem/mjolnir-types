@@ -8,7 +8,7 @@
  * @package    ibidem
  * @category   Types
  * @author     Ibidem Team
- * @copyright  (c) 2008-2012 Ibidem Team
+ * @copyright  (c) 2012 Ibidem Team
  * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
 interface Pattern_MVC
@@ -20,7 +20,7 @@ interface Pattern_MVC
 	
 	/**
 	 * @param \ibidem\types\Controller 
-	 * @return $this
+	 * @return \ibidem\types\Pattern_MVC $this
 	 */
 	function controller(\ibidem\types\Controller $controller);
 	
@@ -28,13 +28,13 @@ interface Pattern_MVC
 	 * Action paramters.
 	 * 
 	 * @param \ibidem\types\Controller 
-	 * @return $this
+	 * @return \ibidem\types\Pattern_MVC $this
 	 */
 	function params(\ibidem\types\Params $params);
 	
 	/**
 	 * @param array relay configuration
-	 * @return $this
+	 * @return \ibidem\types\Pattern_MVC $this
 	 */
 	function relay_config(array $relay);
 	

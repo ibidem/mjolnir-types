@@ -6,20 +6,20 @@
  * @package    ibidem
  * @category   Types
  * @author     Ibidem Team
- * @copyright  (c) 2008-2012 Ibidem Team
+ * @copyright  (c) 2012 Ibidem Team
  * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
 interface FileBased
 {
 	/**
 	 * @param string file 
-	 * @return $this
+	 * @return \ibidem\types\FileBased $this
 	 */
 	function file($file);
 	
 	/**
 	 * @param string explicit file path
-	 * @return $this
+	 * @return \ibidem\types\FileBased $this
 	 */
 	function file_path($file);
 	

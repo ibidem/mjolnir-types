@@ -13,14 +13,14 @@
  * @package    ibidem
  * @category   Types
  * @author     Ibidem Team
- * @copyright  (c) 2008-2012 Ibidem Team
+ * @copyright  (c) 2012 Ibidem Team
  * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
 interface Pattern_Composite
 {
 	/**
 	 * @param mixed object of the compisit'ed interface
-	 * @return $this
+	 * @return static
 	 */
 	function plugin($object);
 	

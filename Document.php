@@ -6,7 +6,7 @@
  * @package    ibidem
  * @category   Types
  * @author     Ibidem Team
- * @copyright  (c) 2008-2012 Ibidem Team
+ * @copyright  (c) 2012 Ibidem Team
  * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
 interface Document
@@ -15,7 +15,7 @@ interface Document
 	 * Set the document's body.
 	 * 
 	 * @param string document body
-	 * @return $this
+	 * @return \ibidem\types\Document $this
 	 */
 	function body($body);
 	

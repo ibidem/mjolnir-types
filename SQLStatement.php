@@ -6,7 +6,7 @@
  * @package    ibidem
  * @category   Types
  * @author     Ibidem Team
- * @copyright  (c) 2008-2012 Ibidem Team
+ * @copyright  (c) 2012 Ibidem Team
  * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
 interface SQLStatement
@@ -14,14 +14,14 @@ interface SQLStatement
 	/**
 	 * @param string parameter
 	 * @param string variable
-	 * @return $this
+	 * @return \ibidem\types\SQLStatement $this
 	 */
 	function bind($parameter, & $variable);
 	
 	/**
 	 * @param string parameter
 	 * @param int variable
-	 * @return $this
+	 * @return \ibidem\types\SQLStatement $this
 	 */
 	function bindInt($parameter, & $variable);
 	
@@ -30,14 +30,14 @@ interface SQLStatement
 	 * 
 	 * @param string parameter
 	 * @param string variable
-	 * @return $this
+	 * @return \ibidem\types\SQLStatement $this
 	 */
 	function bindArg($parameter, & $variable);
 	
 	/**
 	 * Execute the statement.
 	 * 
-	 * @return $this
+	 * @return \ibidem\types\SQLStatement $this
 	 */
 	function execute();
 	

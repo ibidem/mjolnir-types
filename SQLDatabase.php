@@ -8,7 +8,7 @@
  * @package    ibidem
  * @category   Types
  * @author     Ibidem Team
- * @copyright  (c) 2008-2012 Ibidem Team
+ * @copyright  (c) 2012 Ibidem Team
  * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
 interface SQLDatabase
@@ -26,21 +26,21 @@ interface SQLDatabase
 	/**
 	 * Begin transaction.
 	 * 
-	 * @return $this
+	 * @return \ibidem\types\SQLDatabase $this
 	 */
 	function begin();
 	
 	/**
 	 * Commit transaction.
 	 * 
-	 * @return $this
+	 * @return \ibidem\types\SQLDatabase $this
 	 */
 	function commit();
 	
 	/**
 	 * Rollback transaction.
 	 * 
-	 * @return $this
+	 * @return \ibidem\types\SQLDatabase $this
 	 */
 	function rollback();
 	

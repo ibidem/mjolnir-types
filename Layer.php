@@ -8,7 +8,7 @@
  * @package    ibidem
  * @category   Types
  * @author     Ibidem Team
- * @copyright  (c) 2008-2012 Ibidem Team
+ * @copyright  (c) 2012 Ibidem Team
  * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
 interface Layer
@@ -23,13 +23,13 @@ interface Layer
 	/**
 	 * @param \ibidem\types\Layer layer
 	 * @param \ibidem\types\Layer parent
-	 * @return \ibidem\types\Layer 
+	 * @return \ibidem\types\Layer $this 
 	 */
 	function register(\ibidem\types\Layer $layer);
 	
 	/**
 	 * @param \ibidem\types\Layer $parent
-	 * @return \ibidem\base\Layer
+	 * @return \ibidem\base\Layer $this
 	 */
 	function parent_layer(\ibidem\types\Layer $parent);
 
@@ -44,7 +44,7 @@ interface Layer
 	 * from each component.
 	 * 
 	 * @param string layer name
-	 * @return \ibidem\types\Layer
+	 * @return \ibidem\types\Layer $this
 	 * @throws \ibidem\types\Exception
 	 */
 	function get_layer($layer_name);

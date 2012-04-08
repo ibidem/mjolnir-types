@@ -6,7 +6,7 @@
  * @package    ibidem
  * @category   Types
  * @author     Ibidem Team
- * @copyright  (c) 2008-2012 Ibidem Team
+ * @copyright  (c) 2012 Ibidem Team
  * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
 interface Cache
@@ -20,7 +20,7 @@ interface Cache
 	
 	/**
 	 * @param string key
-	 * @return $this
+	 * @return \ibidem\types\Cache $this
 	 */
 	function delete($key);
 	
@@ -28,7 +28,7 @@ interface Cache
 	 * @param string key
 	 * @param mixed value
 	 * @param integer time
-	 * @return $this
+	 * @return \ibidem\types\Cache $this
 	 */
 	function store($key, $value, $time);
 	

@@ -6,7 +6,7 @@
  * @package    ibidem
  * @category   Types
  * @author     Ibidem Team
- * @copyright  (c) 2008-2012 Ibidem Team
+ * @copyright  (c) 2012 Ibidem Team
  * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
 interface Meta
@@ -16,7 +16,7 @@ interface Meta
 	 * 
 	 * @param string key
 	 * @param mixed value
-	 * @return $this
+	 * @return \ibidem\types\Meta $this
 	 */
 	function meta($key, $value);
 	

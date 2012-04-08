@@ -6,7 +6,7 @@
  * @package    ibidem
  * @category   Types
  * @author     Ibidem Team
- * @copyright  (c) 2008-2012 Ibidem Team
+ * @copyright  (c) 2012 Ibidem Team
  * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
 interface Params
@@ -19,13 +19,13 @@ interface Params
 	/**
 	 * @param string key
 	 * @param mixed value
-	 * @return \ibidem\types\Params
+	 * @return \ibidem\types\Params $this
 	 */
 	function set($key, $value);
 	
 	/**
 	 * @param array associative array of key values
-	 * @return \ibidem\types\Params
+	 * @return \ibidem\types\Params $this
 	 */
 	function populate_params(array $params);
 	

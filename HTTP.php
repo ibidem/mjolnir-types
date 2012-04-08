@@ -6,7 +6,7 @@
  * @package    ibidem
  * @category   Types
  * @author     Ibidem Team
- * @copyright  (c) 2008-2012 Ibidem Team
+ * @copyright  (c) 2012 Ibidem Team
  * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
 interface HTTP
@@ -51,7 +51,7 @@ interface HTTP
 	 * content type (or at least the correct one) is not text/html :)
 	 * 
 	 * @param string content-type
-	 * @return $this
+	 * @return \ibidem\types\HTTP $this
 	 */
 	function content_type($content_type);
 	
@@ -62,7 +62,7 @@ interface HTTP
 	
 	/**
 	 * @param string status 
-	 * @return $this
+	 * @return \ibidem\types\HTTP $this
 	 */
 	function status($status);
 	

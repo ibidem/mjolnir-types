@@ -6,7 +6,7 @@
  * @package    ibidem
  * @category   Types
  * @author     Ibidem Team
- * @copyright  (c) 2008-2012 Ibidem Team
+ * @copyright  (c) 2012 Ibidem Team
  * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
 interface HTML
@@ -27,7 +27,7 @@ interface HTML
 	 * Sets the doctype. See: \ibidem\types\HTML for constants.
 	 * 
 	 * @param string doctype
-	 * @return $this
+	 * @return \ibidem\types\HTML $this
 	 */
 	function doctype($doctype);
 	
@@ -35,7 +35,7 @@ interface HTML
 	 * Appcache manifest location.
 	 * 
 	 * @param string url
-	 * @return $this
+	 * @return \ibidem\types\HTML $this
 	 */
 	function appcache($url = null);
 	
@@ -43,85 +43,85 @@ interface HTML
 	 * Sitemap, be it index or simple sitemap.
 	 * 
 	 * @param string url
-	 * @return $this
+	 * @return \ibidem\types\HTML $this
 	 */
 	function sitemap($url = null);
 	
 	/**
 	 * @param array domains
-	 * @return $this
+	 * @return \ibidem\types\HTML $this
 	 */
 	function add_dns_prefetch_domains(array $domains);
 	
 	/**
 	 * @param string favicon uri
-	 * @return $this
+	 * @return \ibidem\types\HTML $this
 	 */
 	function favicon($url = null);
 	
 	/**
 	 * @param string title 
-	 * @return $this
+	 * @return \ibidem\types\HTML $this
 	 */
 	function title($title);
 	
 	/**
 	 * @param string
-	 * @return $this 
+	 * @return \ibidem\types\HTML $this 
 	 */
 	function add_stylesheet($href, $type = "text/css");
 	
 	/**
 	 * @param string
-	 * @return $this 
+	 * @return \ibidem\types\HTML $this
 	 */
 	function add_script($src);
 	
 	/**
 	 * @param string description 
-	 * @return $this
+	 * @return \ibidem\types\HTML $this
 	 */
 	function description($desc = null);
 	
 	/**
 	 * @param array new keywards
-	 * @return $this
+	 * @return \ibidem\types\HTML
 	 */
 	function add_keywords(array $keywords);
 	
 	/**
 	 * @param string canonical url 
-	 * @return $this
+	 * @return \ibidem\types\HTML $this
 	 */
 	function canonical($url = null);
 	
 	/**
 	 * @param boolean enabled?
-	 * @return $this
+	 * @return \ibidem\types\HTML $this
 	 */
 	function crawlers($enabled = true);
 	
 	/**
 	 * @param string url
-	 * @return $this
+	 * @return \ibidem\types\HTML $this
 	 */
 	function rssfeed($url = null);
 	
 	/**
 	 * @param string url
-	 * @return $this
+	 * @return \ibidem\types\HTML $this
 	 */
 	function atomfeed($url = null);
 	
 	/**
 	 * @param string url
-	 * @return $this
+	 * @return \ibidem\types\HTML $this
 	 */
 	function pingback($url = null);
 	
 	/**
 	 * @param boolean enabled?
-	 * @return $this 
+	 * @return \ibidem\types\HTML $this
 	 */
 	function humanstxt($enabled = true);
 	
@@ -129,7 +129,7 @@ interface HTML
 	 * Metadata for application running as desktop.
 	 * 
 	 * @param string name
-	 * @return $this
+	 * @return \ibidem\types\HTML $this
 	 */
 	function application_name($name = null);
 	
@@ -137,7 +137,7 @@ interface HTML
 	 * Metadata for application running as desktop.
 	 * 
 	 * @param string tooltip
-	 * @return $this
+	 * @return \ibidem\types\HTML $this
 	 */
 	function application_tooltip($tooltip = null);
 	
@@ -145,7 +145,7 @@ interface HTML
 	 * Metadata for application running as desktop.
 	 * 
 	 * @param string starturl
-	 * @return $this
+	 * @return \ibidem\types\HTML $this
 	 */
 	function application_starturl($starturl = null);
 	

@@ -6,7 +6,7 @@
  * @package    ibidem
  * @category   Types
  * @author     Ibidem Team
- * @copyright  (c) 2008-2012 Ibidem Team
+ * @copyright  (c) 2012 Ibidem Team
  * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
 interface Event
@@ -48,13 +48,19 @@ interface Event
 	// content-type headers
 	const content_type = 'content-type'; # => string
 	
+	// style file
+	const css_style = '\ibidem\types\Event::css_style'; # => string
+	
+	// style file
+	const js_script = '\ibidem\types\Event::js_script'; # => string
+	
 	# ------------------------------------------------------------------------ #
 	
 	/**
 	 * Event signature. Typically you should just pass __CLASS__
 	 * 
 	 * @param string
-	 * @return $this
+	 * @return \ibidem\types\Event $this
 	 */
 	function signature($signature);
 	
@@ -65,7 +71,7 @@ interface Event
 	
 	/**
 	 * @param mixed contents
-	 * @return $this
+	 * @return \ibidem\types\Event $this
 	 */
 	function contents($contents);
 	
@@ -127,7 +133,7 @@ interface Event
 	 * more flexible however; when applicable.
 	 * 
 	 * @param string subject of the Event
-	 * @return $this
+	 * @return \ibidem\types\Event $this
 	 */
 	function subject($subject);
 	

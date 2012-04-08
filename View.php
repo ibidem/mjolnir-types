@@ -6,7 +6,7 @@
  * @package    ibidem
  * @category   Types
  * @author     Ibidem Team
- * @copyright  (c) 2008-2012 Ibidem Team
+ * @copyright  (c) 2012 Ibidem Team
  * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
 interface View
@@ -19,14 +19,14 @@ interface View
 	/**
 	 * @param string valid PHP variable name
 	 * @param array array to bind
-	 * @return $this
+	 * @return \ibidem\types\View $this
 	 */
 	function bind($name, array & $variable);
 	
 	/**
 	 * @param string valid PHP variable name
 	 * @param mixed value to set
-	 * @return $this
+	 * @return \ibidem\types\View $this
 	 */
 	function variable($name, $value);
 

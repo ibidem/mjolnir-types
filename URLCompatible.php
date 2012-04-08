@@ -6,7 +6,7 @@
  * @package    ibidem
  * @category   Types
  * @author     Ibidem Team
- * @copyright  (c) 2008-2012 Ibidem Team
+ * @copyright  (c) 2012 Ibidem Team
  * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
 interface URLCompatible
@@ -15,7 +15,7 @@ interface URLCompatible
 	 * Base for the url, if not defined should retrieve ibidem/base value.
 	 * 
 	 * @param string url base
-	 * @return $this
+	 * @return \ibidem\types\URLCompatible $this
 	 */
 	function url_base($url_base = null); // helps abstract URL out of HTTP
 	
