@@ -26,10 +26,10 @@ interface Cache
 	
 	/**
 	 * @param string key
-	 * @param mixed value
+	 * @param mixed data
 	 * @param integer time
 	 * @return \ibidem\types\Cache $this
 	 */
-	function store($key, $value, $time);
+	function store($key, $data, $lifetime = null);
 	
 } # interface
