@@ -27,9 +27,9 @@ interface Cache
 	/**
 	 * @param string key
 	 * @param mixed data
-	 * @param integer time
+	 * @param integer lifetime (seconds)
 	 * @return \ibidem\types\Cache $this
 	 */
-	function store($key, $data, $lifetime = null);
+	function store($key, $data, $lifetime_seconds = null);
 	
 } # interface
