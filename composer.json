@@ -1,7 +1,7 @@
 {
 	"name": "ibidem/types",
 	"version": "1.0.0",
-	"description": "ibidem types module prototype",
+	"description": "ibidem types module",
 	"keywords": ["interfaces"],
 	"homepage": "https://github.com/srcspider",
 	"type": "library",
