@@ -50,6 +50,11 @@ interface Layer
 	function get_layer($layer_name);
 	
 	/**
+	 * @return array 
+	 */
+	function get_relay();
+	
+	/**
 	 * Fills body and approprite calls for current layer, and pass the exception 
 	 * up to be processed by the layer above, if the layer has a parent.
 	 * 
