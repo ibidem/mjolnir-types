@@ -12,11 +12,6 @@
 interface View
 {
 	/**
-	 * @return string redered view
-	 */
-	function render();
-	
-	/**
 	 * @param string valid PHP variable name
 	 * @param array array to bind
 	 * @return \ibidem\types\View $this
