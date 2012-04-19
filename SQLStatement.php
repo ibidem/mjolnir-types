@@ -13,6 +13,27 @@ interface SQLStatement
 {
 	/**
 	 * @param string parameter
+	 * @param string constant
+	 * @return \ibidem\types\SQLStatement $this 
+	 */
+	function set($parameter, $constant);
+	
+	/**
+	 * @param string parameter
+	 * @param string constant
+	 * @return \ibidem\types\SQLStatement $this 
+	 */
+	function setInt($parameter, $constant);
+	
+	/**
+	 * @param string parameter
+	 * @param string constant
+	 * @return \ibidem\base\SQLStatement $this 
+	 */
+	function setBool($parameter, $constant);
+	
+	/**
+	 * @param string parameter
 	 * @param string variable
 	 * @return \ibidem\types\SQLStatement $this
 	 */

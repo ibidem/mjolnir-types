@@ -24,6 +24,12 @@ interface SQLDatabase
 	function prepare($key, $statement = null, $lang = null);
 	
 	/**
+	 * @param string 
+	 * @return mixed
+	 */
+	function last_inserted_id($name = null);
+	
+	/**
 	 * Begin transaction.
 	 * 
 	 * @return \ibidem\types\SQLDatabase $this
