@@ -29,4 +29,9 @@ interface Params
 	 */
 	function populate_params(array $params);
 	
+	/**
+	 * @return array
+	 */
+	function to_array();
+	
 } # interface
