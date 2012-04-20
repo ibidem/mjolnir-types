@@ -13,6 +13,7 @@ interface Exception
 {
 	const NotFound = '\ibidem\types\Exception::NotFound';
 	const NotApplicable = '\ibidem\types\Exception::NotApplicable';
+	const NotAllowed = '\ibidem\types\Exception::NotAllowed';
 	
 	/**
 	 * @return string message
