@@ -22,6 +22,11 @@ interface Migration
 	function up();
 	
 	/**
+	 * Assemble objects. 
+	 */
+	function build();
+	
+	/**
 	 * Revert migration.
 	 */
 	function down();
