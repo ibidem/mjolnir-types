@@ -36,11 +36,10 @@ interface Pager
 	function bookmark_anchor($anchor);
 	
 	/**
-	 * @param string plural version
-	 * @param string singular version; assumed plural if not specified
-	 * @return \ibidem\types\Pager $this
+	 * @param array lang
+	 * @return \ibidem\types\Pager $this 
 	 */
-	function entry_name($plural, $singular = null);
+	function lang(array $lang);
 	
 	/**
 	 * @param string order
