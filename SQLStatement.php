@@ -23,14 +23,36 @@ interface SQLStatement
 	 * @param string constant
 	 * @return \ibidem\types\SQLStatement $this 
 	 */
-	function setInt($parameter, $constant);
+	function set_int($parameter, $constant);
 	
 	/**
 	 * @param string parameter
 	 * @param string constant
 	 * @return \ibidem\base\SQLStatement $this 
 	 */
-	function setBool($parameter, $constant);
+	function set_bool($parameter, $constant);
+	
+	/**
+	 * @param array keys
+	 * @param array values
+	 * @return \ibidem\types\SQLStatement $this 
+	 */
+	function mass_set(array $keys, array $values);
+	
+	/**
+	 * @param array keys
+	 * @param array values
+	 * @param array key map (eg. 'true_key' => true, 'false_key' => false ... )
+	 * @return \ibidem\types\SQLStatement $this 
+	 */
+	function mass_bool(array $keys, array $values, array $map);
+	
+	/**
+	 * @param array keys
+	 * @param array values
+	 * @return \ibidem\types\SQLStatement $this 
+	 */
+	public function mass_int(array $keys, array $values);
 	
 	/**
 	 * @param string parameter
@@ -44,7 +66,7 @@ interface SQLStatement
 	 * @param int variable
 	 * @return \ibidem\types\SQLStatement $this
 	 */
-	function bindInt($parameter, & $variable);
+	function bind_int($parameter, & $variable);
 	
 	/**
 	 * Stored procedure argument.
@@ -53,7 +75,7 @@ interface SQLStatement
 	 * @param string variable
 	 * @return \ibidem\types\SQLStatement $this
 	 */
-	function bindArg($parameter, & $variable);
+	function bind_arg($parameter, & $variable);
 	
 	/**
 	 * Execute the statement.
