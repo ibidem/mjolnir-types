@@ -16,13 +16,13 @@ interface Cache
 	 * @param mixed default
 	 * @return mixed
 	 */
-	function fetch($key, $default = null);
+	function fetch($tag, $key, $default = null);
 	
 	/**
 	 * @param string key
 	 * @return \ibidem\types\Cache $this
 	 */
-	function delete($key);
+	function delete($tag, $key = null);
 	
 	/**
 	 * @param string key
@@ -30,6 +30,6 @@ interface Cache
 	 * @param integer lifetime (seconds)
 	 * @return \ibidem\types\Cache $this
 	 */
-	function store($key, $data, $lifetime_seconds = null);
+	function store($tag, $key, $data, $lifetime_seconds = null);
 	
 } # interface
