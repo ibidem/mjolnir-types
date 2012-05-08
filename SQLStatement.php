@@ -33,6 +33,13 @@ interface SQLStatement
 	function set_bool($parameter, $constant);
 	
 	/**
+	 * @param string parameter
+	 * @param string constant
+	 * @return \ibidem\base\SQLStatement $this 
+	 */
+	function set_date($parameter, $constant);
+	
+	/**
 	 * @param array keys
 	 * @param array values
 	 * @return \ibidem\types\SQLStatement $this 
