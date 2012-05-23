@@ -20,12 +20,12 @@ interface Controller
 	/**
 	 * @return \ibidem\types\Controller $this
 	 */
-	function before_action();
+	function before();
 	
 	/**
 	 * @return \ibidem\types\Controller $this
 	 */
-	function after_action();
+	function after();
 	
 	/**
 	 * @param \ibidem\types\Params
