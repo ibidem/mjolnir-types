@@ -46,7 +46,7 @@ interface Lang
 	 * [!!] Keys and terms are seperate entities.
 	 * 
 	 * @param string term
-	 * @param array addins
+	 * @param array additional parameters
 	 * @param string source language
 	 * @return string
 	 */
@@ -60,10 +60,10 @@ interface Lang
 	 * [!!] Keys and terms are seperate entities.
 	 * 
 	 * @param string key
-	 * @param string source language
+	 * @param array additional parameters
 	 * @return string
 	 */
-	static function msg($key, array $addins = null, $lang = 'en-us');
+	static function msg($key, array $addins = null);
 	
 	/**
 	 * @param string target lang
