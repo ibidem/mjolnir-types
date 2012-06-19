@@ -61,7 +61,7 @@ interface Layer
 	 * @param \Exception
 	 * @param boolean layer is origin of exception?
 	 */
-	function exception(\Exception $exception, $origin = false);
+	function exception(\Exception $exception, $no_throw = false, $origin = false);
 	
 	/**
 	 * Layer contents; if any. Or null, for no contents.
