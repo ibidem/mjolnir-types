@@ -54,6 +54,9 @@ interface Event
 	// style file
 	const js_script = '\ibidem\types\Event::js_script'; # => string
 	
+	// extra markup
+	const head_tag = '\ibidem\types\EVent::head_tag'; # => string
+	
 	# ------------------------------------------------------------------------ #
 	
 	/**
