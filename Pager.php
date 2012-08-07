@@ -9,7 +9,7 @@
  * @copyright  (c) 2012 Ibidem Team
  * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
-interface Pager
+interface Pager # stable
 {
 	const ascending  = 'asc';
 	const descending = 'dsc';

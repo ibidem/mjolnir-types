@@ -9,7 +9,7 @@
  * @copyright  (c) 2012 Ibidem Team
  * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
-interface Enum_Requirement
+interface Enum_Requirement # stable
 {
 	// ideal settings available
 	const available = '\ibidem\types\Enum_Requirement::available';

@@ -14,7 +14,7 @@
  * @copyright  (c) 2012 Ibidem Team
  * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
-interface Instantiatable
+interface Instantiatable # stable
 {
 	/**
 	 * The instance of a class may be an old isntance, new instance, etc. 

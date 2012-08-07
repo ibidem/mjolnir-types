@@ -9,7 +9,7 @@
  * @copyright  (c) 2012 Ibidem Team
  * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
-interface Standardized
+interface Standardized # stable
 {
 	/**
 	 * When you specify a standard the object will configure itself to match 
