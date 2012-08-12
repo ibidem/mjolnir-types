@@ -59,7 +59,7 @@ interface SQLStatement
 	 * @param array values
 	 * @return \ibidem\types\SQLStatement $this 
 	 */
-	public function mass_int(array $keys, array $values);
+	function mass_int(array $keys, array $values);
 	
 	/**
 	 * @param string parameter
