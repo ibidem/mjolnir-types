@@ -27,25 +27,10 @@ interface HTTP
 	const STATUS_InternalServerError = 'HTTP/1.1 500 Internal Server Error';
 	const STATUS_Forbidden = 'HTTP/1.1 403 Forbidden';
 	// content-type
-	const CONENT_TYPE = 'text/html';
-	const CONENT_TYPE_HTML = 'text/html';
-	const CONENT_TYPE_XHTML = 'application/xhtml+xml';
-	
-	/**
-	 * @return string uri relative to current application
-	 */
-	static function detect_uri();
-	
-	/**
-	 * @return string url base
-	 */
-	static function detect_url_base();
-	
-	/**
-	 * @return string
-	 */
-	static function request_method();
-	
+	const CONTENT_TYPE = 'text/html';
+	const CONTENT_TYPE_HTML = 'text/html';
+	const CONTENT_TYPE_XHTML = 'application/xhtml+xml';
+		
 	/**
 	 * Used to set content type. If you're trying to use XHTML for example, the
 	 * content type (or at least the correct one) is not text/html :)

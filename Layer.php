@@ -78,20 +78,6 @@ interface Layer
 	function headerinfo();
 	
 	/**
-	 * Captures a broadcast Event.
-	 * 
-	 * @param \ibidem\types\Event
-	 */
-	function capture(\ibidem\types\Event $event);
-	
-	/**
-	 * Sends an Event to the parent of the current layer.
-	 * 
-	 * @param \ibidem\types\Event
-	 */
-	function dispatch(\ibidem\types\Event $event);
-	
-	/**
 	 * Register the top layer of the system
 	 * 
 	 * @param \ibidem\types\Layer top layer
@@ -117,12 +103,5 @@ interface Layer
 	 * Initializes execution, starting at the top. 
 	 */
 	static function run();
-	
-	/**
-	 * Send an Event to the top layer and then down
-	 * 
-	 * @param \ibidem\types\Event
-	 */
-	static function broadcast(\ibidem\types\Event $event);
 	
 } # interface
