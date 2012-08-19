@@ -52,7 +52,7 @@ interface Writer
 	 * @param string no wrap hint string
 	 * @return \ibidem\types\Writer $this
 	 */
-	public function listwrite($dt, $dd, $indent_hint = null, $nowrap_hint = null);
+	function listwrite($dt, $dd, $indent_hint = null, $nowrap_hint = null);
 		
 	/**
 	 * [!!] Must NEVER be used to convey functionality! 
