@@ -76,6 +76,20 @@ interface SQLStatement
 	function bind_int($parameter, & $variable);
 	
 	/**
+	 * @param string paramter
+	 * @param string variable
+	 * @return \ibidem\database\SQLStatement $this
+	 */
+	function bind_date($parameter, & $variable);
+	
+		/**
+	 * @param string paramter
+	 * @param string variable
+	 * @return \ibidem\database\SQLStatement $this
+	 */
+	function bind_bool($parameter, & $variable);
+	
+	/**
 	 * Stored procedure argument.
 	 * 
 	 * @param string parameter
