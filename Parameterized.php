@@ -1,9 +1,9 @@
-<?php namespace ibidem\types;
+<?php namespace mjolnir\types;
 
 /** 
  * Common Language Interface
  * 
- * @package    ibidem
+ * @package    mjolnir
  * @category   Types
  * @author     Ibidem Team
  * @copyright  (c) 2012 Ibidem Team
@@ -12,7 +12,7 @@
 interface Parameterized
 {
 	/**
-	 * @return \ibidem\types\Params
+	 * @return \mjolnir\types\Params
 	 */
 	function get_params();
 	

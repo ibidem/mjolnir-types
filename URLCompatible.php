@@ -1,9 +1,9 @@
-<?php namespace ibidem\types;
+<?php namespace mjolnir\types;
 
 /** 
  * Common Language Interface
  * 
- * @package    ibidem
+ * @package    mjolnir
  * @category   Types
  * @author     Ibidem Team
  * @copyright  (c) 2012 Ibidem Team
@@ -15,7 +15,7 @@ interface URLCompatible
 	 * Base for the url, if not defined should retrieve ibidem/base value.
 	 * 
 	 * @param string url base
-	 * @return \ibidem\types\URLCompatible $this
+	 * @return \mjolnir\types\URLCompatible $this
 	 */
 	function url_base($url_base = null); // helps abstract URL out of HTTP
 	

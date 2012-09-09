@@ -1,4 +1,4 @@
-<?php namespace ibidem\types;
+<?php namespace mjolnir\types;
 
 /** 
  * Common Language Interface
@@ -15,7 +15,7 @@
  * easiest, but not recomended as it can easily cause naming conflict with class
  * methods and adapter's methods; if not imediatly, eventually.
  * 
- * @package    ibidem
+ * @package    mjolnir
  * @category   Types
  * @author     Ibidem Team
  * @copyright  (c) 2012 Ibidem Team

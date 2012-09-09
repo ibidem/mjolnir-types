@@ -1,9 +1,9 @@
-<?php namespace ibidem\types;
+<?php namespace mjolnir\types;
 
 /** 
  * Common Language Interface
  * 
- * @package    ibidem
+ * @package    mjolnir
  * @category   Types
  * @author     Ibidem Team
  * @copyright  (c) 2012 Ibidem Team
@@ -19,13 +19,13 @@ interface Params # stable
 	/**
 	 * @param string key
 	 * @param mixed value
-	 * @return \ibidem\types\Params $this
+	 * @return \mjolnir\types\Params $this
 	 */
 	function set($key, $value);
 	
 	/**
 	 * @param array associative array of key values
-	 * @return \ibidem\types\Params $this
+	 * @return \mjolnir\types\Params $this
 	 */
 	function populate_params(array $params);
 	

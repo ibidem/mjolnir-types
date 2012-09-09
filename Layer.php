@@ -1,11 +1,11 @@
-<?php namespace ibidem\types;
+<?php namespace mjolnir\types;
 
 /** 
  * Common Language Interface
  * 
  * Layers are modular components that can contain other layers.
  * 
- * @package    ibidem
+ * @package    mjolnir
  * @category   Types
  * @author     Ibidem Team
  * @copyright  (c) 2012 Ibidem Team
@@ -21,17 +21,17 @@ interface Layer
 	function get_layer_name();
 	
 	/**
-	 * @param \ibidem\types\Layer layer
-	 * @param \ibidem\types\Layer parent
-	 * @return \ibidem\types\Layer $this 
+	 * @param \mjolnir\types\Layer layer
+	 * @param \mjolnir\types\Layer parent
+	 * @return \mjolnir\types\Layer $this 
 	 */
-	function register(\ibidem\types\Layer $layer);
+	function register(\mjolnir\types\Layer $layer);
 	
 	/**
-	 * @param \ibidem\types\Layer $parent
-	 * @return \ibidem\base\Layer $this
+	 * @param \mjolnir\types\Layer $parent
+	 * @return \mjolnir\base\Layer $this
 	 */
-	function parent_layer(\ibidem\types\Layer $parent);
+	function parent_layer(\mjolnir\types\Layer $parent);
 
 	/**
 	 * Execute the layer.
@@ -44,8 +44,8 @@ interface Layer
 	 * from each component.
 	 * 
 	 * @param string layer name
-	 * @return \ibidem\types\Layer $this
-	 * @throws \ibidem\types\Exception
+	 * @return \mjolnir\types\Layer $this
+	 * @throws \mjolnir\types\Exception
 	 */
 	function get_layer($layer_name);
 	
@@ -80,12 +80,12 @@ interface Layer
 	/**
 	 * Register the top layer of the system
 	 * 
-	 * @param \ibidem\types\Layer top layer
+	 * @param \mjolnir\types\Layer top layer
 	 */
-	static function top(\ibidem\types\Layer $top_layer);
+	static function top(\mjolnir\types\Layer $top_layer);
 	
 	/**
-	 * @return \ibidem\types\Layer top layer
+	 * @return \mjolnir\types\Layer top layer
 	 */
 	static function get_top();
 	
@@ -94,8 +94,8 @@ interface Layer
 	 * invokes get.
 	 * 
 	 * @param string layer name
-	 * @return \ibidem\types\Layer
-	 * @throws \ibidem\types\Exception
+	 * @return \mjolnir\types\Layer
+	 * @throws \mjolnir\types\Exception
 	 */
 	static function find($layer_name);
 	

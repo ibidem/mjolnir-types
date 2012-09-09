@@ -1,7 +1,7 @@
-<?php namespace ibidem\types;
+<?php namespace mjolnir\types;
 
 /** 
- * @package    ibidem
+ * @package    mjolnir
  * @category   Types
  * @author     Ibidem Team
  * @copyright  (c) 2012 Ibidem Team

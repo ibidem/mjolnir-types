@@ -1,9 +1,9 @@
-<?php namespace ibidem\types;
+<?php namespace mjolnir\types;
 
 /** 
  * Common Language Interface
  * 
- * @package    ibidem
+ * @package    mjolnir
  * @category   Types
  * @author     Ibidem Team
  * @copyright  (c) 2012 Ibidem Team
@@ -13,7 +13,7 @@ interface RelayCompatible
 {
 	/**
 	 * @param array relay configuration
-	 * @return \ibidem\types\RelayCompatible $this
+	 * @return \mjolnir\types\RelayCompatible $this
 	 */
 	function relay_config(array $relay);
 	

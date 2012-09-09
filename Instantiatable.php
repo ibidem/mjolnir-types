@@ -1,4 +1,4 @@
-<?php namespace ibidem\types;
+<?php namespace mjolnir\types;
 
 /** 
  * Common Language Interface
@@ -8,7 +8,7 @@
  * the Instantiatable interface, any instances should be created via the 
  * instance method.
  * 
- * @package    ibidem
+ * @package    mjolnir
  * @category   Types
  * @author     Ibidem Team
  * @copyright  (c) 2012 Ibidem Team
@@ -21,7 +21,7 @@ interface Instantiatable # stable
 	 * Inplementations of patterns such as a factory, singleton, should make use
 	 * of this method as their object producer.
 	 * 
-	 * @return \ibidem\types\Instantiatable
+	 * @return \mjolnir\types\Instantiatable
 	 */
 	static function instance();
 	

@@ -1,9 +1,9 @@
-<?php namespace ibidem\types;
+<?php namespace mjolnir\types;
 
 /** 
  * Common Language Interface
  * 
- * @package    ibidem
+ * @package    mjolnir
  * @category   Types
  * @author     Ibidem Team
  * @copyright  (c) 2012 Ibidem Team
@@ -12,8 +12,8 @@
 interface HTTP
 {
 	// the name to be used in layers implementing the interface; the reason you
-	// wouldn't just use say "\ibidem\types\HTTP" is beause any implementation
-	// could implement multiple HTTP interfaces, not just the \ibidem\types one
+	// wouldn't just use say "\mjolnir\types\HTTP" is beause any implementation
+	// could implement multiple HTTP interfaces, not just the \mjolnir\types one
 	const LAYER_NAME = 'http';
 	
 	// methods
@@ -36,7 +36,7 @@ interface HTTP
 	 * content type (or at least the correct one) is not text/html :)
 	 * 
 	 * @param string content-type
-	 * @return \ibidem\types\HTTP $this
+	 * @return \mjolnir\types\HTTP $this
 	 */
 	function content_type($content_type);
 	
@@ -47,7 +47,7 @@ interface HTTP
 	
 	/**
 	 * @param string status 
-	 * @return \ibidem\types\HTTP $this
+	 * @return \mjolnir\types\HTTP $this
 	 */
 	function status($status);
 	

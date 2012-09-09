@@ -1,9 +1,9 @@
-<?php namespace ibidem\types;
+<?php namespace mjolnir\types;
 
 /** 
  * Common Language Interface
  * 
- * @package    ibidem
+ * @package    mjolnir
  * @category   Types
  * @author     Ibidem Team
  * @copyright  (c) 2012 Ibidem Team
@@ -12,12 +12,12 @@
 interface Enum_Requirement # stable
 {
 	// ideal settings available
-	const available = '\ibidem\types\Enum_Requirement::available';
+	const available = '\mjolnir\types\Enum_Requirement::available';
 	// ideal settings not available but backup available; ie. will work
-	const failed = '\ibidem\types\Enum_Requirement::failed';
+	const failed = '\mjolnir\types\Enum_Requirement::failed';
 	// minimum requirements not met; behaviour is undefined
-	const error = '\ibidem\types\Enum_Requirement::error';
+	const error = '\mjolnir\types\Enum_Requirement::error';
 	// test fails with exception; equivalent to error in severity
-	const untestable = '\ibidem\types\Enum_Requirement::untestable';
+	const untestable = '\mjolnir\types\Enum_Requirement::untestable';
 	
 } # interface

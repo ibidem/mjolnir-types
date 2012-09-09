@@ -1,9 +1,9 @@
-<?php namespace ibidem\types;
+<?php namespace mjolnir\types;
 
 /** 
  * Common Language Interface
  * 
- * @package    ibidem
+ * @package    mjolnir
  * @category   Types
  * @author     Ibidem Team
  * @copyright  (c) 2012 Ibidem Team
@@ -16,13 +16,13 @@ interface Pager # stable
 	
 	/**
 	 * @param integer page
-	 * @return \ibidem\types\Pager $this 
+	 * @return \mjolnir\types\Pager $this 
 	 */
 	function currentpage($page);
 	
 	/**
 	 * @param integer page
-	 * @return \ibidem\types\Pager $this 
+	 * @return \mjolnir\types\Pager $this 
 	 */
 	function bookmark($page);
 	
@@ -31,43 +31,43 @@ interface Pager # stable
 	 * a '#'.$anchor in the url; other systems might behave differently.
 	 * 
 	 * @param string anchor
-	 * @return \ibidem\types\Pager $this
+	 * @return \mjolnir\types\Pager $this
 	 */
 	function bookmark_anchor($anchor);
 	
 	/**
 	 * @param array lang
-	 * @return \ibidem\types\Pager $this 
+	 * @return \mjolnir\types\Pager $this 
 	 */
 	function lang(array $lang);
 	
 	/**
 	 * @param string order
-	 * @return \ibidem\types\Pager $this
+	 * @return \mjolnir\types\Pager $this
 	 */
 	function order($order);
 	
 	/**
 	 * @param integer total items
-	 * @return \ibidem\types\Pager $this
+	 * @return \mjolnir\types\Pager $this
 	 */
 	function totalitems($totalitems);
 	
 	/**
 	 * @param string base_url
-	 * @return \ibidem\types\Pager $this
+	 * @return \mjolnir\types\Pager $this
 	 */
 	function url_base($url_base);
 
 	/**
 	 * @param integer pagediff
-	 * @return \ibidem\types\Pager $this 
+	 * @return \mjolnir\types\Pager $this 
 	 */
 	function pagediff($pagediff);
 	
 	/**
 	 * @param integer pagelimit
-	 * @return \ibidem\types\Pager $this
+	 * @return \mjolnir\types\Pager $this
 	 */
 	function pagelimit($pagelimit);
 	

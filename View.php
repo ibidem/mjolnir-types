@@ -1,9 +1,9 @@
-<?php namespace ibidem\types;
+<?php namespace mjolnir\types;
 
 /** 
  * Common Language Interface
  * 
- * @package    ibidem
+ * @package    mjolnir
  * @category   Types
  * @author     Ibidem Team
  * @copyright  (c) 2012 Ibidem Team
@@ -14,14 +14,14 @@ interface View
 	/**
 	 * @param string valid PHP variable name
 	 * @param array array to bind
-	 * @return \ibidem\types\View $this
+	 * @return \mjolnir\types\View $this
 	 */
 	function bind($name, array & $variable);
 	
 	/**
 	 * @param string valid PHP variable name
 	 * @param mixed value to set
-	 * @return \ibidem\types\View $this
+	 * @return \mjolnir\types\View $this
 	 */
 	function variable($name, $value);
 

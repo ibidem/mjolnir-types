@@ -1,9 +1,9 @@
-<?php namespace ibidem\types;
+<?php namespace mjolnir\types;
 
 /** 
  * Common Language Interface
  * 
- * @package    ibidem
+ * @package    mjolnir
  * @category   Types
  * @author     Ibidem Team
  * @copyright  (c) 2012 Ibidem Team
@@ -16,21 +16,21 @@ interface Task
 	 * \app\Task_Class_Name_Example
 	 * 
 	 * @param string encoded task
-	 * @return \ibidem\types\Task
+	 * @return \mjolnir\types\Task
 	 */
 	static function instance($encoded_task = null);
 	
 	/**
 	 * @param array config
-	 * @return \ibidem\types\Task $this
+	 * @return \mjolnir\types\Task $this
 	 */
 	function config(array $config);
 	
 	/**
 	 * @param array config
-	 * @return \ibidem\types\Task $this
+	 * @return \mjolnir\types\Task $this
 	 */
-	function writer(\ibidem\types\Writer $writer);
+	function writer(\mjolnir\types\Writer $writer);
 	
 	/**
 	 * Execute task.

@@ -1,9 +1,9 @@
-<?php namespace ibidem\types;
+<?php namespace mjolnir\types;
 
 /** 
  * Common Language Interface
  * 
- * @package    ibidem
+ * @package    mjolnir
  * @category   Types
  * @author     Ibidem Team
  * @copyright  (c) 2012 Ibidem Team
@@ -24,35 +24,35 @@ interface Form
 	
 	/**
 	 * @param string template
-	 * @return \ibidem\types\Form $this
+	 * @return \mjolnir\types\Form $this
 	 */
 	function field_template($template);
 	
 	/**
 	 * @param array field errors
-	 * @return \ibidem\types\Form $this
+	 * @return \mjolnir\types\Form $this
 	 */
 	function errors(array & $errors = null);
 	
 	/**
 	 * @param string $method
-	 * @return \ibidem\types\Form $this
+	 * @return \mjolnir\types\Form $this
 	 */
 	function method($method);
 	
 	/**
 	 * @param string action
-	 * @return \ibidem\types\Form $this
+	 * @return \mjolnir\types\Form $this
 	 */
 	function action($action);
 	
 	/**
-	 * @return \ibidem\types\Form $this
+	 * @return \mjolnir\types\Form $this
 	 */
 	function insecure();
 	
 	/**
-	 * @return \ibidem\types\Form $this
+	 * @return \mjolnir\types\Form $this
 	 */
 	function secure();
 	

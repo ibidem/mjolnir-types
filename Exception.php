@@ -1,9 +1,9 @@
-<?php namespace ibidem\types;
+<?php namespace mjolnir\types;
 
 /** 
  * Common Language Interface
  * 
- * @package    ibidem
+ * @package    mjolnir
  * @category   Types
  * @author     Ibidem Team
  * @copyright  (c) 2012 Ibidem Team
@@ -11,9 +11,9 @@
  */
 interface Exception
 {
-	const NotFound = '\ibidem\types\Exception::NotFound';
-	const NotApplicable = '\ibidem\types\Exception::NotApplicable';
-	const NotAllowed = '\ibidem\types\Exception::NotAllowed';
+	const NotFound = '\mjolnir\types\Exception::NotFound';
+	const NotApplicable = '\mjolnir\types\Exception::NotApplicable';
+	const NotAllowed = '\mjolnir\types\Exception::NotAllowed';
 	
 	/**
 	 * @return string message
@@ -27,7 +27,7 @@ interface Exception
 	
 	/**
 	 * @param string exception type
-	 * @return \ibidem\types\Exception $this
+	 * @return \mjolnir\types\Exception $this
 	 */
 	function type($type);
 	
@@ -38,19 +38,19 @@ interface Exception
 	
 	/**
 	 * @param string message
-	 * @return \ibidem\types\Exception $this
+	 * @return \mjolnir\types\Exception $this
 	 */
 	function set_message($message);
 	
 	/**
 	 * @param string title
-	 * @return \ibidem\types\Exception $this
+	 * @return \mjolnir\types\Exception $this
 	 */
 	function set_title($title = null);
 	
 	/**
 	 * @param \Exception PHP exception 
-	 * @return \ibidem\types\Exception $this
+	 * @return \mjolnir\types\Exception $this
 	 */
 	function based_on(\Exception $source);
 	

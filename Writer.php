@@ -1,9 +1,9 @@
-<?php namespace ibidem\types;
+<?php namespace mjolnir\types;
 
 /** 
  * Common Language Interface
  * 
- * @package    ibidem
+ * @package    mjolnir
  * @category   Types
  * @author     Ibidem Team
  * @copyright  (c) 2012 Ibidem Team
@@ -12,7 +12,7 @@
 interface Writer
 {
 	/**
-	 * @return \ibidem\types\Writer $this
+	 * @return \mjolnir\types\Writer $this
 	 */
 	function eol();
 	
@@ -23,25 +23,25 @@ interface Writer
 	
 	/**
 	 * @param string text
-	 * @return \ibidem\types\Writer $this
+	 * @return \mjolnir\types\Writer $this
 	 */
 	function write($text, $indent = 0, $nowrap_hint = null);
 	
 	/**
 	 * @param $args
-	 * @return \ibidem\types\Writer $this
+	 * @return \mjolnir\types\Writer $this
 	 */
 	function writef($args);
 	
 	/**
 	 * @param string title
-	 * @return \ibidem\types\Writer $this
+	 * @return \mjolnir\types\Writer $this
 	 */
 	function header($title);
 	
 	/**
 	 * @param string title
-	 * @return \ibidem\types\Writer $this
+	 * @return \mjolnir\types\Writer $this
 	 */
 	function subheader($title);
 	
@@ -50,7 +50,7 @@ interface Writer
 	 * @param string definition
 	 * @param int indent hint
 	 * @param string no wrap hint string
-	 * @return \ibidem\types\Writer $this
+	 * @return \mjolnir\types\Writer $this
 	 */
 	function listwrite($dt, $dd, $indent_hint = null, $nowrap_hint = null);
 		
@@ -67,19 +67,19 @@ interface Writer
 	 * 
 	 * @param string text
 	 * @param string highlight key
-	 * @return \ibidem\types\Writer $this
+	 * @return \mjolnir\types\Writer $this
 	 */
 	function highlight($text, $highlight = null);
 
 	/**
 	 * @param string text
-	 * @return \ibidem\types\Writer $this
+	 * @return \mjolnir\types\Writer $this
 	 */
 	function status($status, $text);
 	
 	/**
 	 * @param string text
-	 * @return \ibidem\types\Writer $this
+	 * @return \mjolnir\types\Writer $this
 	 */
 	function error($text);
 	

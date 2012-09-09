@@ -1,9 +1,9 @@
-<?php namespace ibidem\types;
+<?php namespace mjolnir\types;
 
 /** 
  * Common Language Interface
  * 
- * @package    ibidem
+ * @package    mjolnir
  * @category   Types
  * @author     Ibidem Team
  * @copyright  (c) 2012 Ibidem Team
@@ -31,30 +31,30 @@ interface Event
 	const author = 'rel=author'; # => string
 	
 	// expire data for "some" content
-	const expires = '\ibidem\types\Event::expires'; # => int/date
+	const expires = '\mjolnir\types\Event::expires'; # => int/date
 	
 	// etags of some resource
-	const etags = '\ibidem\types\Event::etags'; # => string/etag
+	const etags = '\mjolnir\types\Event::etags'; # => string/etag
 	
 	// request for caching switching
-	const caching = '\ibidem\types\Event::caching'; # => boolean
+	const caching = '\mjolnir\types\Event::caching'; # => boolean
 	
 	// request for buffering switching
-	const buffering = '\ibidem\types\Event::output/buffering'; # => boolean
+	const buffering = '\mjolnir\types\Event::output/buffering'; # => boolean
 	
 	// redirecting (http, etc)
-	const redirect = '\ibidem\types\Event::redirect'; # => url/string
+	const redirect = '\mjolnir\types\Event::redirect'; # => url/string
 	
 	// content-type headers
 	const content_type = 'content-type'; # => string
 	
 	// style file
-	const css_style = '\ibidem\types\Event::css_style'; # => string
+	const css_style = '\mjolnir\types\Event::css_style'; # => string
 	
 	// style file
-	const js_script = '\ibidem\types\Event::js_script'; # => string
+	const js_script = '\mjolnir\types\Event::js_script'; # => string
 	
 	// extra markup
-	const head_tag = '\ibidem\types\Event::head_tag'; # => string
+	const head_tag = '\mjolnir\types\Event::head_tag'; # => string
 	
 } # interface

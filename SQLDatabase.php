@@ -1,11 +1,11 @@
-<?php namespace ibidem\types;
+<?php namespace mjolnir\types;
 
 /** 
  * Common Language Interface
  * 
  * [!!] Transactions must support nesting.
  * 
- * @package    ibidem
+ * @package    mjolnir
  * @category   Types
  * @author     Ibidem Team
  * @copyright  (c) 2012 Ibidem Team
@@ -19,7 +19,7 @@ interface SQLDatabase # stable
 	 * @param string key
 	 * @param string statement
 	 * @param string language of statement
-	 * @return \ibidem\types\SQLStatement
+	 * @return \mjolnir\types\SQLStatement
 	 */
 	function prepare($key, $statement = null, $lang = null);
 	
@@ -32,21 +32,21 @@ interface SQLDatabase # stable
 	/**
 	 * Begin transaction.
 	 * 
-	 * @return \ibidem\types\SQLDatabase $this
+	 * @return \mjolnir\types\SQLDatabase $this
 	 */
 	function begin();
 	
 	/**
 	 * Commit transaction.
 	 * 
-	 * @return \ibidem\types\SQLDatabase $this
+	 * @return \mjolnir\types\SQLDatabase $this
 	 */
 	function commit();
 	
 	/**
 	 * Rollback transaction.
 	 * 
-	 * @return \ibidem\types\SQLDatabase $this
+	 * @return \mjolnir\types\SQLDatabase $this
 	 */
 	function rollback();
 	

@@ -1,9 +1,9 @@
-<?php namespace ibidem\types;
+<?php namespace mjolnir\types;
 
 /** 
  * Common Language Interface
  * 
- * @package    ibidem
+ * @package    mjolnir
  * @category   Types
  * @author     Ibidem Team
  * @copyright  (c) 2012 Ibidem Team
@@ -19,7 +19,7 @@ interface Storage
 	 * then interpreted as the currently set group.
 	 * 
 	 * @param string group
-	 * @return \ibidem\types\Storage $this
+	 * @return \mjolnir\types\Storage $this
 	 */
 	function group($group);
 	
@@ -37,14 +37,14 @@ interface Storage
 	 * 
 	 * @param array key value pairs
 	 * @param string group, null for currently set
-	 * @return \ibidem\types\Storage $this
+	 * @return \mjolnir\types\Storage $this
 	 */
 	function delete(array $where, $group = null);
 	
 	/**
 	 * @param array key value pairs
 	 * @param string group, null for currently set
-	 * @return \ibidem\types\Storage $this
+	 * @return \mjolnir\types\Storage $this
 	 */
 	function store(array $key_value_pairs, $group = null);
 	

@@ -1,9 +1,9 @@
-<?php namespace ibidem\types;
+<?php namespace mjolnir\types;
 
 /** 
  * Common Language Interface
  * 
- * @package    ibidem
+ * @package    mjolnir
  * @category   Types
  * @author     Ibidem Team
  * @copyright  (c) 2012 Ibidem Team
@@ -12,25 +12,25 @@
 interface Controller
 {
 	/**
-	 * @param \ibidem\types\Layer
-	 * @return \ibidem\types\Controller $this
+	 * @param \mjolnir\types\Layer
+	 * @return \mjolnir\types\Controller $this
 	 */
-	function layer(\ibidem\types\Layer $layer);
+	function layer(\mjolnir\types\Layer $layer);
 	
 	/**
-	 * @return \ibidem\types\Controller $this
+	 * @return \mjolnir\types\Controller $this
 	 */
 	function before();
 	
 	/**
-	 * @return \ibidem\types\Controller $this
+	 * @return \mjolnir\types\Controller $this
 	 */
 	function after();
 	
 	/**
-	 * @param \ibidem\types\Params
-	 * @return \ibidem\types\Controller $this
+	 * @param \mjolnir\types\Params
+	 * @return \mjolnir\types\Controller $this
 	 */
-	function params(\ibidem\types\Params $params);
+	function params(\mjolnir\types\Params $params);
 	
 } # interface

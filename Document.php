@@ -1,9 +1,9 @@
-<?php namespace ibidem\types;
+<?php namespace mjolnir\types;
 
 /** 
  * Common Language Interface
  * 
- * @package    ibidem
+ * @package    mjolnir
  * @category   Types
  * @author     Ibidem Team
  * @copyright  (c) 2012 Ibidem Team
@@ -15,7 +15,7 @@ interface Document
 	 * Set the document's body.
 	 * 
 	 * @param string document body
-	 * @return \ibidem\types\Document $this
+	 * @return \mjolnir\types\Document $this
 	 */
 	function body($body);
 	

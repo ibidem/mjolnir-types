@@ -1,9 +1,9 @@
-<?php namespace ibidem\types;
+<?php namespace mjolnir\types;
 
 /** 
  * Common Language Interface
  * 
- * @package    ibidem
+ * @package    mjolnir
  * @category   Types
  * @author     Ibidem Team
  * @copyright  (c) 2012 Ibidem Team
@@ -13,13 +13,13 @@ interface FileBased # stable
 {
 	/**
 	 * @param string file 
-	 * @return \ibidem\types\FileBased $this
+	 * @return \mjolnir\types\FileBased $this
 	 */
 	function file($file);
 	
 	/**
 	 * @param string explicit file path
-	 * @return \ibidem\types\FileBased $this
+	 * @return \mjolnir\types\FileBased $this
 	 */
 	function file_path($file);
 	

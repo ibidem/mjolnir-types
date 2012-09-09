@@ -1,9 +1,9 @@
-<?php namespace ibidem\types;
+<?php namespace mjolnir\types;
 
 /** 
  * Common Language Interface
  * 
- * @package    ibidem
+ * @package    mjolnir
  * @category   Types
  * @author     Ibidem Team
  * @copyright  (c) 2012 Ibidem Team
@@ -16,7 +16,7 @@ interface Meta
 	 * 
 	 * @param string key
 	 * @param mixed value
-	 * @return \ibidem\types\Meta $this
+	 * @return \mjolnir\types\Meta $this
 	 */
 	function meta($key, $value);
 	
