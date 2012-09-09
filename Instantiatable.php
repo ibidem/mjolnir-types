@@ -21,7 +21,7 @@ interface Instantiatable # stable
 	 * Inplementations of patterns such as a factory, singleton, should make use
 	 * of this method as their object producer.
 	 * 
-	 * @return \mjolnir\types\Instantiatable
+	 * @return mixed
 	 */
 	static function instance();
 	
