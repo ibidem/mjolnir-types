@@ -47,7 +47,7 @@ interface URLCompatible
 	 * @param string protocol
 	 * @return string
 	 */
-	function url(array $params = array(), $protocol = null);
+	function url(array $params = null, $protocol = null);
 	
 	/**
 	 * @param array list of paramters
