@@ -14,12 +14,12 @@ interface TaggedStash # stable
 	/**
 	 * Stores data in $key, tagged with tags.
 	 */
-	static function store($key, $data, array $tags = [], $expires = null);
+	function store($key, $data, array $tags = [], $expires = null);
 
 	/**
 	 * Deletes all caches tagged with $tags
 	 */
-	static function purge(array $tags);
+	function purge(array $tags);
 
 	/**
 	 * When timers is not provided the timers are retrieved automatically from 
@@ -29,6 +29,6 @@ interface TaggedStash # stable
 	 * 
 	 * @return array tags for given parameters
 	 */
-	static function tags($model, array $timers = null);
+	function tags($model, array $timers = null);
 
 } # interface
