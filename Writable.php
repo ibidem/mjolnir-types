@@ -1,21 +1,19 @@
 <?php namespace mjolnir\types;
 
-/** 
+/**
  * Common Language Interface
- * 
- * (Used in access and security operations.)
- * 
+ *
  * @package    mjolnir
  * @category   Types
  * @author     Ibidem Team
  * @copyright  (c) 2012 Ibidem Team
  * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
-interface Contextual
+interface Writable # stable
 {
 	/**
-	 * @return array context information 
+	 * @return static $this
 	 */
-	function get_context();
-	
+	function writer_is(\mjolnir\types\Writer $writer);
+
 } # interface

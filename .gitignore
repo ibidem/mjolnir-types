@@ -6,6 +6,7 @@
 plugins/*
 composer.phar
 composer.lock
+.deprecated/*
 
 ##
 ## Collection of junk files

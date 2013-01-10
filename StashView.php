@@ -1,8 +1,8 @@
 <?php namespace mjolnir\types;
 
-/** 
+/**
  * Common Language Interface
- * 
+ *
  * @package    mjolnir
  * @category   Types
  * @author     Ibidem Team
@@ -12,7 +12,7 @@
 interface ViewStash # stable
 {
 	/**
-	 * Based on stashed key a cached version of the content is returned, 
+	 * Based on stashed key a cached version of the content is returned,
 	 * otherwise the part is buffered in and cached in $key when the save method
 	 * is called.
 	 *
@@ -20,11 +20,11 @@ interface ViewStash # stable
 	 *
 	 * @return bool true if key exists, false otherwise
 	 */
-	static function load($key, array $tags = []);
+	static function load($cachekey, array $tags = null);
 
 	/**
 	 * When null retrieves the key provided by stashed. The keys are provided as
-	 * a stack and the keys are consumed on subsequent calls to permit nested 
+	 * a stack and the keys are consumed on subsequent calls to permit nested
 	 * stashed calls.
 	 */
 	static function save();
