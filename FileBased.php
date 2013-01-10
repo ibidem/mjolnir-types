@@ -21,11 +21,11 @@ interface Filebased # stable
 	 * @param string explicit file path
 	 * @return static $this
 	 */
-	function file_path($file);
+	function file_path($filepath);
 
 	/**
 	 * @return string file path
 	 */
-	function file();
+	function filepath();
 
 } # interface
