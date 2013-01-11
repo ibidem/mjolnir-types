@@ -9,11 +9,16 @@
  * @copyright  (c) 2012 Ibidem Team
  * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
-interface Matcher
+interface PDFWriter
 {
 	/**
-	 * @return boolean defined object matches?
+	 * @return string pdf
 	 */
-	function check();
+	function from_html($html);
+	
+	/**
+	 * Stream pdf to client.
+	 */
+	function stream($html, $filename);
 
 } # interfacea
