@@ -7,31 +7,21 @@
  * @copyright  (c) 2012 Ibidem Team
  * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
-interface Meta
+interface Filebased
 {
 	/**
-	 * @return mixed
+	 * @return static $this
 	 */
-	function get($name, $default = null);
+	function file_is($file, $ext = null);
 
 	/**
 	 * @return static $this
 	 */
-	function set($name, $value);
+	function file_path($filepath);
 
 	/**
-	 * @return static $this
+	 * @return string absolute file path
 	 */
-	function add($name, $value);
-
-	/**
-	 * @return static $this
-	 */
-	function metadata_is(array $metadata);
-
-	/**
-	 * @return array
-	 */
-	function metadata();
+	function filepath();
 
 } # interface

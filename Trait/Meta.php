@@ -40,4 +40,21 @@ trait Trait_Meta
 		return $this;
 	}
 
+	/**
+	 * @return static $this
+	 */
+	function metadata_is(array $metadata)
+	{
+		$this->metadata = $metadata;
+		return $this;
+	}
+
+	/**
+	 * @return array
+	 */
+	function metadata()
+	{
+		return $this->metadata;
+	}
+
 } # trait

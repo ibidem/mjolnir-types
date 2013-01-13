@@ -7,8 +7,11 @@
  * @copyright  (c) 2012 Ibidem Team
  * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
-trait Trait_ViewStash
+interface Matcher
 {
-	// placeholder for extending functionality
+	/**
+	 * @return boolean
+	 */
+	function check();
 
-} # trait
+} # interfacea

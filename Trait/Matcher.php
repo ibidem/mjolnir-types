@@ -7,7 +7,7 @@
  * @copyright  (c) 2012 Ibidem Team
  * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
-trait Trait_ViewStash
+trait Trait_Matcher
 {
 	// placeholder for extending functionality
 

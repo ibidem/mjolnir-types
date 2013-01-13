@@ -1,14 +1,24 @@
 <?php namespace mjolnir\types;
 
 /**
+ * Common Language Interface
+ *
  * @package    mjolnir
  * @category   Types
  * @author     Ibidem Team
  * @copyright  (c) 2012 Ibidem Team
  * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
-trait Trait_ViewStash
+interface PDFWriter
 {
-	// placeholder for extending functionality
+	/**
+	 * @return string pdf
+	 */
+	function fromhtml($html);
 
-} # trait
+	/**
+	 * Stream pdf to client.
+	 */
+	function stream($html, $filename);
+
+} # interfacea
