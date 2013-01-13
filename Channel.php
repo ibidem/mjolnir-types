@@ -7,11 +7,16 @@
  * @copyright  (c) 2012 Ibidem Team
  * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
-interface Executable
+interface Channel extends Meta, Renderable
 {
 	/**
-	 * Execute the object.
+	 * @return string
 	 */
-	function run();
+	function status();
+
+	/**
+	 * @return static $this
+	 */
+	function status_is($status);
 
 } # interface

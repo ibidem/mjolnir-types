@@ -7,11 +7,9 @@
  * @copyright  (c) 2012 Ibidem Team
  * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
-interface Executable
+trait Trait_Cache
 {
-	/**
-	 * Execute the object.
-	 */
-	function run();
+	use \app\Trait_Stash;
+	use \app\Trait_TaggedStash;
 
-} # interface
+} # trait

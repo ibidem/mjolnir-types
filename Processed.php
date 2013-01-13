@@ -7,16 +7,26 @@
  * @copyright  (c) 2012 Ibidem Team
  * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
-interface Writable
+interface Processed
 {
 	/**
 	 * @return static $this
 	 */
-	function writer_is(\mjolnir\types\Writer $writer);
+	function add_preprocessor($name, callable $processor);
 
 	/**
-	 * @return \mjolnir\types\Writer
+	 * @return static $this
 	 */
-	function writer();
+	function add_postprocessor($name, callable $processor);
+
+	/**
+	 * @return static $this
+	 */
+	function preprocess();
+
+	/**
+	 * @return static $this
+	 */
+	function postprocess();
 
 } # interface

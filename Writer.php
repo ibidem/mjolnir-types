@@ -1,30 +1,64 @@
 <?php namespace mjolnir\types;
 
 /**
- * Common Language Interface
- *
  * @package    mjolnir
  * @category   Types
  * @author     Ibidem Team
  * @copyright  (c) 2012 Ibidem Team
  * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
-interface Writer # stable
+interface Writer extends Meta
 {
 	/**
-	 * @return \mjolnir\types\Writer $this
+	 * @return static $this
 	 */
 	function eol();
 
 	/**
-	 * @return string EOL as string
+	 * @return string
 	 */
 	function eolstring();
 
 	/**
-	 * @param string format
-	 * @return \mjolnir\types\Writer $this
+	 * @return static $this
 	 */
 	function writef($format);
+
+	/**
+	 * @return static $this
+	 */
+	function stderr_writef($format);
+
+	/**
+	 * Write using given format.
+	 *
+	 * @return static $this
+	 */
+	function printf($format);
+
+	/**
+	 * @return static $this
+	 */
+	function addformat($format, callable $formatter);
+
+	/**
+	 * @return static $this
+	 */
+	function stdout_is($resource);
+
+	/**
+	 * @return resource
+	 */
+	function stdout();
+
+	/**
+	 * @return static $this
+	 */
+	function stderr_is($resource);
+
+	/**
+	 * @return resource
+	 */
+	function stderr();
 
 } # interface

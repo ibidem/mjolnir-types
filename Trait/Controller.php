@@ -7,11 +7,9 @@
  * @copyright  (c) 2012 Ibidem Team
  * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
-interface Executable
+trait Trait_Controller
 {
-	/**
-	 * Execute the object.
-	 */
-	function run();
+	use Trait_Channeled;
+	use Trait_Processed;
 
-} # interface
+} # trait

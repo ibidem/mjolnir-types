@@ -7,11 +7,10 @@
  * @copyright  (c) 2012 Ibidem Team
  * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
-interface Executable
+trait Trait_Task
 {
-	/**
-	 * Execute the object.
-	 */
-	function run();
+	use \app\Trait_Executable;
+	use \app\Trait_Meta;
+	use \app\Trait_Writable;
 
-} # interface
+} # trait

@@ -1,31 +1,22 @@
 <?php namespace mjolnir\types;
 
 /**
- * Common Language Interface
- *
  * @package    mjolnir
  * @category   Types
  * @author     Ibidem Team
  * @copyright  (c) 2012 Ibidem Team
  * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
-interface Filebased # stable
+interface Channeled
 {
 	/**
-	 * @param string file
 	 * @return static $this
 	 */
-	function file_is($file);
+	function channel_is(\mjolnir\types\Channel $pipeline);
 
 	/**
-	 * @param string explicit file path
-	 * @return static $this
+	 * @return \mjolnir\types\Channel
 	 */
-	function file_path($filepath);
-
-	/**
-	 * @return string file path
-	 */
-	function filepath();
+	function channel();
 
 } # interface

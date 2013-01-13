@@ -7,11 +7,11 @@
  * @copyright  (c) 2012 Ibidem Team
  * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
-interface Executable
+interface Resetable
 {
 	/**
-	 * Execute the object.
+	 * Reset object to neutral state.
 	 */
-	function run();
+	function reset();
 
 } # interface

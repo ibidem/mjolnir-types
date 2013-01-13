@@ -1,29 +1,27 @@
 <?php namespace mjolnir\types;
 
 /**
- * Common Language Interface
- *
  * @package    mjolnir
  * @category   Types
  * @author     Ibidem Team
  * @copyright  (c) 2012 Ibidem Team
  * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
-interface Document # stable
+interface Meta
 {
 	/**
-	 * Set the document's body.
-	 *
-	 * @param string document body
-	 * @return static $this
+	 * @return mixed
 	 */
-	function body_is($body);
+	function get($name, $default = null);
 
 	/**
-	 * Retrieve the body.
-	 *
-	 * @return string body of document
+	 * @return static $this
 	 */
-	function body();
+	function set($name, $value);
+
+	/**
+	 * @return static $this
+	 */
+	function add($name, $value);
 
 } # interface

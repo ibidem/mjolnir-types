@@ -7,11 +7,8 @@
  * @copyright  (c) 2012 Ibidem Team
  * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
-interface Executable
+trait Trait_Executable
 {
-	/**
-	 * Execute the object.
-	 */
-	function run();
+	// placeholder for extending functionality
 
-} # interface
+} # trait

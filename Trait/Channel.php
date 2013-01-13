@@ -7,11 +7,10 @@
  * @copyright  (c) 2012 Ibidem Team
  * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
-interface Executable
+trait Trait_Channel
 {
-	/**
-	 * Execute the object.
-	 */
-	function run();
+	use \app\Trait_Meta;
+	use \app\Trait_Renderable;
+	use \app\Trait_Processed;
 
-} # interface
+} # trait

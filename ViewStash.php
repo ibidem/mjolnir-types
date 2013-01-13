@@ -1,15 +1,13 @@
 <?php namespace mjolnir\types;
 
 /**
- * Common Language Interface
- *
  * @package    mjolnir
  * @category   Types
  * @author     Ibidem Team
  * @copyright  (c) 2012 Ibidem Team
  * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
-interface ViewStash # stable
+interface ViewStash
 {
 	/**
 	 * Based on stashed key a cached version of the content is returned,

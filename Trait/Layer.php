@@ -1,20 +1,23 @@
 <?php namespace mjolnir\types;
 
 /**
- * Common Language Interface
- *
  * @package    mjolnir
  * @category   Types
  * @author     Ibidem Team
  * @copyright  (c) 2012 Ibidem Team
  * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
-interface Relayaware
+trait Trait_Layer
 {
-	/**
-	 * @param array relay configuration
-	 * @return static $this
-	 */
-	function relay_is(array $relay);
+	use Trait_Channeled;
+	use Trait_Resetable;
 
-} # interface
+	/**
+	 * ...
+	 */
+	function recover()
+	{
+		// empty
+	}
+
+} # trait

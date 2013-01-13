@@ -7,11 +7,8 @@
  * @copyright  (c) 2012 Ibidem Team
  * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
-interface Executable
+interface Controller extends Processed, Channeled
 {
-	/**
-	 * Execute the object.
-	 */
-	function run();
+	// this interface is a composite
 
 } # interface
