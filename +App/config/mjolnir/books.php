@@ -12,7 +12,7 @@
 								// be overwritten on a per file basis
 								'namespace' => 'mjolnir\types',
 
-								'title' => 'Common Language Interface',
+								'title' => 'Types',
 
 								'introduction' => array
 									(
