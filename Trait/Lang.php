@@ -12,7 +12,7 @@ trait Trait_Lang
 	/**
 	 * @var string
 	 */
-	protected $targetlang = 'en-us';
+	protected static $targetlang = 'en-us';
 
 	/**
 	 * Translate a given term. The translation may not necesarily be from one
@@ -125,8 +125,7 @@ trait Trait_Lang
 	 */
 	static function targetlang_is($language)
 	{
-		$this->targetlang = $language;
-		return $this;
+		static::$targetlang = $language;
 	}
 
 	/**
@@ -134,7 +133,7 @@ trait Trait_Lang
 	 */
 	static function targetlang()
 	{
-		return $this->targetlang;
+		return static::$targetlang;
 	}
 
 } # trait

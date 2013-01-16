@@ -7,7 +7,7 @@
  * @copyright  (c) 2012 Ibidem Team
  * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
-interface Channel extends Meta, Renderable
+interface Channel extends Processed, Meta
 {
 	/**
 	 * @return string

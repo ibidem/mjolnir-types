@@ -7,7 +7,7 @@
  * @copyright  (c) 2012 Ibidem Team
  * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
-interface Layer extends Channeled, Resetable
+interface Layer extends Channeled, Resetable, Recoverable
 {
 	// this interface is a composite
 

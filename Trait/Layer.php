@@ -11,13 +11,6 @@ trait Trait_Layer
 {
 	use Trait_Channeled;
 	use Trait_Resetable;
-
-	/**
-	 * ...
-	 */
-	function recover()
-	{
-		// empty
-	}
+	use Trait_Recoverable;
 
 } # trait

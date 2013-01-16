@@ -7,7 +7,7 @@
  * @copyright  (c) 2012 Ibidem Team
  * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
-interface ThemeDriver extends Channeled, Executable
+interface ThemeDriver extends Channeled, Renderable, Resetable, Recoverable
 {
 	// this interface is a composite
 

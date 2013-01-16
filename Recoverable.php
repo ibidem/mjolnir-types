@@ -7,9 +7,12 @@
  * @copyright  (c) 2012 Ibidem Team
  * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
-trait Trait_Channel
+interface Recoverable
 {
-	use \app\Trait_Processed;
-	use \app\Trait_Meta;
+	/**
+	 * Recover from an error or undefined state. Typically involves switching
+	 * the current renderable object to an error display state.
+	 */
+	function recover();
 
-} # trait
+} # interface

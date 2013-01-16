@@ -53,13 +53,13 @@ trait Trait_Application
 	 *
 	 * @return static $this
 	 */
-	function channel_is(\mjolnir\types\Channel $pipeline)
+	function channel_is(\mjolnir\types\Channel $channel)
 	{
-		$this->trait_channel_is($pipeline);
+		$this->trait_channel_is($channel);
 
 		foreach ($this->layers as $layer)
 		{
-			$layer->channel_is($pipeline);
+			$layer->channel_is($channel);
 		}
 
 		return $this;

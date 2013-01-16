@@ -7,9 +7,8 @@
  * @copyright  (c) 2012 Ibidem Team
  * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
-trait Trait_Channel
+interface ThemeLoader extends Channeled, Executable
 {
-	use \app\Trait_Processed;
-	use \app\Trait_Meta;
+	// this interface is a composite
 
-} # trait
+} # interface
