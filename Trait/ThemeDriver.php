@@ -23,6 +23,18 @@ trait Trait_ThemeDriver
 		$this->channel()->set('body', null);
 	}
 	
+	protected function combine($basepath, array $files, $ext)
+	{
+		$combined = '';
+		$basepath = \rtrim($basepath, '\\/').'/';
+		foreach ($files as $file)
+		{
+			$combined .= \app\Filesystem::gets($basepath.$file.$ext);
+		}
+		
+		return $combined;
+	}
+	
 	/**
 	 * @return array
 	 */
@@ -76,7 +88,14 @@ trait Trait_ThemeDriver
 			$this->channel()->set('themeconfig', $themeconfig);
 		}
 		
-		$collectionconfig = include "$collectionpath/{$themeconfig["$collection.configname"]}".EXT;
+		if (\file_exists("$collectionpath/{$themeconfig["$collection.configname"]}".EXT))
+		{
+			$collectionconfig = include "$collectionpath/{$themeconfig["$collection.configname"]}".EXT;
+		}
+		else # fallback to minimal default
+		{
+			$collectionconfig = [ 'root' => '' ];
+		}
 		
 		return $collectionconfig;
 	}
