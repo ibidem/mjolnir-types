@@ -1,8 +1,6 @@
 <?php namespace mjolnir\types;
 
 /** 
- * Common Language Interface
- * 
  * [!!] Transactions must support nesting.
  * 
  * @package    mjolnir
@@ -11,7 +9,7 @@
  * @copyright  (c) 2012 Ibidem Team
  * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
-interface SQLDatabase # stable
+interface SQLDatabase
 {
 	const KEYSPLIT = ':';
 	
@@ -32,21 +30,21 @@ interface SQLDatabase # stable
 	/**
 	 * Begin transaction.
 	 * 
-	 * @return \mjolnir\types\SQLDatabase $this
+	 * @return static $this
 	 */
 	function begin();
 	
 	/**
 	 * Commit transaction.
 	 * 
-	 * @return \mjolnir\types\SQLDatabase $this
+	 * @return static $this
 	 */
 	function commit();
 	
 	/**
 	 * Rollback transaction.
 	 * 
-	 * @return \mjolnir\types\SQLDatabase $this
+	 * @return static $this
 	 */
 	function rollback();
 	

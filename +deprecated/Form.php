@@ -1,8 +1,6 @@
 <?php namespace mjolnir\types;
 
-/** 
- * Common Language Interface
- * 
+/**
  * @package    mjolnir
  * @category   Types
  * @author     Ibidem Team
@@ -14,25 +12,25 @@ interface Form
 	/**
 	 * @return string 
 	 */
-	function form_id();
+	function formid();
 	
 	/**
 	 * @param string key 
 	 * @return array|null errors
 	 */
-	function errors_for($key);
+	function errorfor($key);
 	
 	/**
 	 * @param string template
 	 * @return \mjolnir\types\Form $this
 	 */
-	function field_template($template);
+	function fieldtemplate($template);
 	
 	/**
 	 * @param array field errors
 	 * @return \mjolnir\types\Form $this
 	 */
-	function errors(array & $errors = null);
+	function errors_using(array & $errors = null);
 	
 	/**
 	 * @param string $method
@@ -45,16 +43,6 @@ interface Form
 	 * @return \mjolnir\types\Form $this
 	 */
 	function action($action);
-	
-	/**
-	 * @return \mjolnir\types\Form $this
-	 */
-	function insecure();
-	
-	/**
-	 * @return \mjolnir\types\Form $this
-	 */
-	function secure();
 	
 	/**
 	 * @param string legend
