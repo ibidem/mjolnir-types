@@ -9,36 +9,146 @@
  */
 interface SQLStatement extends Executable
 {
+	// ------------------------------------------------------------------------
+	// Basic assignment
+
 	/**
 	 * @return static $this
 	 */
-	function set($parameter, $constant, $type = 'string');
-	
+	function str($param, $value);
+
 	/**
 	 * @return static $this
 	 */
-	function bind($parameter, & $variable, $type = 'string');
+	function num($param, $value);
+
+	/**
+	 * @return static $this
+	 */
+	function bool($param, $value, array $map = null);
+
+	/**
+	 * @return static $this
+	 */
+	function date($param, $value);
+
+	// ------------------------------------------------------------------------
+	// Basic Binding
+
+	/**
+	 * @return static $this
+	 */
+	function bindstr($param, & $variable);
+
+	/**
+	 * @return static $this
+	 */
+	function bindnum($param, & $variable);
+
+	/**
+	 * @return static $this
+	 */
+	function bindbool($param, & $variable);
+
+	/**
+	 * @return static $this
+	 */
+	function binddate($param, & $variable);
+
+	// ------------------------------------------------------------------------
+	// Multi-assignment
+
+	/**
+	 * @return static $this
+	 */
+	function strs(array $params, array $filter = null);
+
+	/**
+	 * @return static $this
+	 */
+	function nums(array $params, array $filter = null);
+
+	/**
+	 * @return static $this
+	 */
+	function bools(array $params, array $filter = null, array $map = null);
+
+	/**
+	 * @return static $this
+	 */
+	function dates(array $params, array $filter = null);
+
+	// ------------------------------------------------------------------------
+	// Multi binding
+
+	/**
+	 * @return static $this
+	 */
+	function bindstrs(array & $params, array $filter = null);
+
+	/**
+	 * @return static $this
+	 */
+	function bindnums(array & $params, array $filter = null);
+
+	/**
+	 * @return static $this
+	 */
+	function bindbools(array & $params, array $filter = null);
+
+	/**
+	 * @return static $this
+	 */
+	function binddates(array & $params, array $filter = null);
+
+	// ------------------------------------------------------------------------
+	// Stored procedure arguments
+
+	/**
+	 * @return static $this
+	 */
+	function arg($param, & $variable);
+
+	/**
+	 * @return static $this
+	 */
+	function args(array & $params, array $filter = null);
+
+	// ------------------------------------------------------------------------
+	// Retrieval
 
 	/**
 	 * Featch as object, given a class and a set of parameters to be passed
 	 * to the constructor of said class.
-	 * 
+	 *
 	 * @return mixed
 	 */
 	function fetch_object($class = 'stdClass', array $args = null);
 
 	/**
-	 * Fetch row as associative array.
-	 * 
-	 * @return array
+	 * Fetch first row as associative array.
+	 *
+	 * @return array or null
 	 */
 	function fetch_entry(array $formatinfo = null);
 
 	/**
 	 * Retrieves all rows. Rows are retrieved as arrays.
-	 * 
+	 *
 	 * @return array
 	 */
 	function fetch_all(array $formatinfo = null);
+
+	// ------------------------------------------------------------------------
+	// etc
+
+	/**
+	 * Automatically calculates and sets :offset and :limit based on a page
+	 * input. If page or limit are null, the limit will be set to the maximum
+	 * integer value.
+	 *
+	 * @return static $this
+	 */
+	function page($page, $limit = null, $offset = 0);
 
 } # interface
