@@ -1,7 +1,7 @@
 {
 	"name": "mjolnir/types",
-	"version": "0.0",
-	"description": "Common language Type information (complete with Traits).",
+	"version": "1.0",
+	"description": "Type information (complete with Traits).",
 	"keywords": [ ],
 	"homepage": "https://github.com/ibidem",
 	"type": "library",
