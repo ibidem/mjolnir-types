@@ -7,7 +7,7 @@
  * @copyright  (c) 2012 Ibidem Team
  * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
-interface SQLStatement extends Executable
+interface SQLStatement extends Executable, Paged
 {
 	// ------------------------------------------------------------------------
 	// Basic assignment
@@ -138,17 +138,5 @@ interface SQLStatement extends Executable
 	 * @return array
 	 */
 	function fetch_all(array $formatinfo = null);
-
-	// ------------------------------------------------------------------------
-	// etc
-
-	/**
-	 * Automatically calculates and sets :offset and :limit based on a page
-	 * input. If page or limit are null, the limit will be set to the maximum
-	 * integer value.
-	 *
-	 * @return static $this
-	 */
-	function page($page, $limit = null, $offset = 0);
 
 } # interface

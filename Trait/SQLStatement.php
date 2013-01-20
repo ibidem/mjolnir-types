@@ -10,6 +10,7 @@
 trait Trait_SQLStatement
 {
 	use \app\Trait_Executable;
+	use \app\Trait_Paged;
 
 	// ------------------------------------------------------------------------
 	// Multi-assignment
@@ -257,9 +258,9 @@ trait Trait_SQLStatement
 	/**
 	 * @return boolean
 	 */
-	protected function booleanize($value)
+	protected function booleanize($value, array $map = null)
 	{
-		$map = \app\CFS::config('mjolnir/boolean-map');
+		$map !== null or $map = \app\CFS::config('mjolnir/boolean-map');
 
 		if (isset($map[$value]))
 		{
