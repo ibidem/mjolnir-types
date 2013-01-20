@@ -43,7 +43,7 @@ trait Trait_Meta
 	/**
 	 * @return static $this
 	 */
-	function metadata_is(array $metadata)
+	function metadata_is(array $metadata = null)
 	{
 		$this->metadata = $metadata;
 		return $this;

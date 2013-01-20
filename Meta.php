@@ -27,7 +27,7 @@ interface Meta
 	/**
 	 * @return static $this
 	 */
-	function metadata_is(array $metadata);
+	function metadata_is(array $metadata = null);
 
 	/**
 	 * @return array
