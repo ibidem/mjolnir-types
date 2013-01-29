@@ -1,15 +1,13 @@
 <?php namespace mjolnir\types;
 
 /**
- * Common Language Interface
- *
  * @package    mjolnir
  * @category   Types
  * @author     Ibidem Team
- * @copyright  (c) 2012 Ibidem Team
+ * @copyright  (c) 2012, 2013 Ibidem Team
  * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
-interface Standardized # stable
+interface Standardized
 {
 	/**
 	 * When you specify a standard the object will configure itself to match
@@ -17,15 +15,13 @@ interface Standardized # stable
 	 * configuration files.
 	 *
 	 * Standards can also be used to create templates. Simply create your own
-	 * standard then call the implicit methods. When deriving from another
-	 * standard the naming should be standard.derived.
-	 *
-	 *    Form example: twitter.table-controls, twitter.general, etc
-	 * Where twitter would configure it for displaying in the Twitter Bootstrap
-	 * format, and table-controls and general would be derived standards.
+	 * standard then call the implicit methods.
+	 * 
+	 * A standard might reset the object (assuming the object is Resetable) or
+	 * simply apply as-is.
 	 *
 	 * @return static $this
 	 */
-	function standard($standard);
+	function apply($standard);
 
 } # interface

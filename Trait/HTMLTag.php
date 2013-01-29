@@ -56,6 +56,24 @@ trait Trait_HTMLTag
 		$this->tagbody = $renderable;
 		return $this;
 	}
+	
+	/**
+	 * If tag body is currently a non array value it will be converted to an 
+	 * array maintaining the previous body (along with the new one).
+	 * 
+	 * @return static $this
+	 */
+	function appendtagbody($tagbody)
+	{
+		if (isset($this->tagbody) && ! \is_array($this->tagbody))
+		{
+			$this->tagbody = [ $this->tagbody ];
+		}
+		
+		$this->tagbody[] = $tagbody;
+		
+		return $this;
+	}
 
 	/**
 	 * @return mixed string or renderable

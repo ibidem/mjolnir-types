@@ -32,6 +32,9 @@ trait Trait_Meta
 	}
 
 	/**
+	 * If the key is currently a non-array value it will be converted to an 
+	 * array  maintaning the previous value (along with the new one).
+	 * 
 	 * @return static $this
 	 */
 	function add($name, $value)

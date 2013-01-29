@@ -22,5 +22,20 @@ interface Instantiatable
 	 * @return mixed
 	 */
 	static function instance();
+	
+	#
+	# If a class required a more specialized constructor it is recomended to 
+	# implement it in a "i" static factory. Where "i" stands for "instance" and
+	# calls instantiatable. The instance method should still return a sensible 
+	# default object.
+	#
+	# eg.
+	#
+	#	// dynamically handle headers; see HH class
+	#	HTMLTag::i($h1, $context->webtitle());
+	#
+	#	// simple form
+	#	HTMLForm::i('twitter', $control->action('add'))
+	#
 
 } # interface

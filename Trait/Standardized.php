@@ -4,11 +4,11 @@
  * @package    mjolnir
  * @category   Types
  * @author     Ibidem Team
- * @copyright  (c) 2012 Ibidem Team
+ * @copyright  (c) 2013 Ibidem Team
  * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
-interface TaskRunner extends Executable, Writable
+trait Trait_Standardized
 {
-	// this interface is a composite
+	
 
-} # interface
+} # trait

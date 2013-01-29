@@ -96,10 +96,17 @@ trait Trait_Renderable
 				"Casting to string not allowed! $debuginfo"
 			);
 
-		// emmit catchable fatal error; note that this will need to be converted
-		// to an exception by a error handler set via \set_error_handler before
-		// it can be catchable by an external try / catch
-		return null;
+		if (\app\CFS::config('mjolnir/base')['development'])
+		{
+			// emmit catchable fatal error; note that this will need to be converted
+			// to an exception by a error handler set via \set_error_handler before
+			// it can be catchable by an external try / catch
+			return null;
+		}
+		else # production
+		{
+			return $this->render();
+		}
 	}
 
 } # trait
