@@ -36,7 +36,13 @@ trait Trait_Meta
 	 */
 	function add($name, $value)
 	{
+		if (isset($this->metadata[$name]) && ! \is_array($this->metadata[$name]))
+		{
+			$this->metadata[$name] = [ $this->metadata[$name] ];
+		}
+		
 		$this->metadata[$name][] = $value;
+		
 		return $this;
 	}
 
