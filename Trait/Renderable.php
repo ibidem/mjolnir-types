@@ -72,13 +72,21 @@ trait Trait_Renderable
 	/**
 	 * @deprecated always use the render method!
 	 */
-	final function __toString()
+	function __toString()
 	{
 		// Renderables may contain logic, by allowing __toString not only does
 		// Exception handling become unnecesarily complicated because of how
 		// this special method can't throw exceptions, it also ruins the entire
 		// stack by throwing the exception in a completely undefined manner,
-		// ie. whenever it decides to convert to a string. Not worth it!
+		// ie. whenever it decides to convert to a string. Not worth the few
+		// characters it saves.
+		
+		// Exception: very small classes that beneifit greatly from autocasting, 
+		// can't completely break the page if they bork, and have easy to manage
+		// predictable logic may overwrite this to allow auto-rendering on the
+		// basis that the likelyhood of them breaking is close to zero and when
+		// they are used in way which might break a page the programmer will 
+		// avoid __toString and use render for the particular case.
 
 		// diagnose
 		$trace = \debug_backtrace();

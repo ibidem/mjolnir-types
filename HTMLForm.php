@@ -7,9 +7,187 @@
  * @copyright  (c) 2012 Ibidem Team
  * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
-interface HTMLForm extends HTMLTag
+interface HTMLForm extends HTMLTag, Standardized
 {
+	// ------------------------------------------------------------------------
+	// Primary Field Management
 	
+	/**
+	 * [!!] fieldtype intentionally doesn't default to null
+	 * 
+	 * @return \mjolnir\types\HTMLFormField
+	 */
+	function field($label, $fieldname, $fieldtype);
+	
+	/**
+	 * @return \mjolnir\types\HTMLFormField
+	 */
+	function textarea($label, $fieldname = null);
+	
+	/**
+	 * Any additonal parameters are interpreted as HTMLFormFields that are part 
+	 * of the composite.
+	 * 
+	 * If an array is passed as second parameter the fields will be interpreted 
+	 * as text HTMLFormFields.
+	 * 
+	 * Therefore the following:
+	 * 
+	 *		$form->composite('Name', ['given_name', 'family_name']);
+	 * 
+	 * Is equivalent to this:
+	 * 
+	 *		$form->composite
+	 *			(
+	 *				'Name', 
+	 *				$form->text(null, 'given_name'),
+	 *				$form->text(null, 'family_name')
+	 *			);
+	 *
+	 * You may also specify a type by making entries associative:
+	 *	
+	 *		[ 'address' => 'text', 'zipcode' => 'number' ]
+	 * 
+	 * @return \mjolnir\types\HTMLFormField_Composite
+	 */
+	function composite($label);
+	
+	/**
+	 * @return \mjolnir\types\HTMLFormField_Select
+	 */
+	function select($label, $fieldname = null);
+	
+	// ------------------------------------------------------------------------
+	// Specialized Fields & Shorthands
+	
+		/**
+	 * @return \mjolnir\types\HTMLFormField
+	 */
+	function hidden($fieldname = null);
+	
+	/**
+	 * @return \mjolnir\types\HTMLFormField
+	 */
+	function submit($label, $fieldname = null);
+	
+	/**
+	 * @return \mjolnir\types\HTMLFormField
+	 */
+	function button($label, $fieldname = null);
+	
+	/**
+	 * @return \mjolnir\types\HTMLFormField
+	 */
+	function reset($label, $fieldname = null);
+	
+	/**
+	 * @return \mjolnir\types\HTMLFormField
+	 */
+	function text($label, $fieldname = null);
+	
+	/**
+	 * @return \mjolnir\types\HTMLFormField
+	 */
+	function password($label, $fieldname = null);
+	
+	/**
+	 * @return \mjolnir\types\HTMLFormField
+	 */
+	function radio($label, $fieldname = null);
+	
+	/**
+	 * @return \mjolnir\types\HTMLFormField_Checkbox
+	 */
+	function checkbox($label, $fieldname = null);
+	
+	/**
+	 * @return \mjolnir\types\HTMLFormField
+	 */
+	function file($label, $fieldname = null);
+	
+	/**
+	 * @return \mjolnir\types\HTMLFormField
+	 */
+	function search($label, $fieldname = null);
+	
+	/**
+	 * @return \mjolnir\types\HTMLFormField
+	 */
+	function number($label, $fieldname = null);
+	
+	/**
+	 * ie. 1234-123-33 and similar non-numeric IDs
+	 * 
+	 * @return \mjolnir\types\HTMLFormField
+	 */
+	function identifier($label, $fieldname = null);
+	
+	/**
+	 * @return \mjolnir\types\HTMLFormField
+	 */
+	function currency($label, $fieldname = null);
+	
+	/**
+	 * @return \mjolnir\types\HTMLFormField
+	 */
+	function phonenumber($label, $fieldname = null);
+	
+	/**
+	 * @return \mjolnir\types\HTMLFormField
+	 */
+	function url($label, $fieldname = null);
+	
+	/**
+	 * @return \mjolnir\types\HTMLFormField
+	 */
+	function email($label, $fieldname = null);
+	
+	/**
+	 * @return \mjolnir\types\HTMLFormField
+	 */
+	function month($label, $fieldname = null);
+	
+	/**
+	 * @return \mjolnir\types\HTMLFormField
+	 */
+	function week($label, $fieldname = null);
+	
+	/**
+	 * @return \mjolnir\types\HTMLFormField
+	 */
+	function color($label, $fieldname = null);
+	
+	/**
+	 * @return \mjolnir\types\HTMLFormField
+	 */
+	function range($label, $fieldname = null);
+	
+	/**
+	 * @return \mjolnir\types\HTMLFormField
+	 */
+	function image($label, $fieldname = null);
+	
+	/**
+	 * @return \mjolnir\types\HTMLFormField
+	 */
+	function date($label, $fieldname = null);
+	
+	/**
+	 * @return \mjolnir\types\HTMLFormField
+	 */
+	function time($label, $fieldname = null);
+	
+	/**
+	 * @return \mjolnir\types\HTMLFormField
+	 */
+	function datetime($label, $fieldname = null);
+	
+	/**
+	 * Same as datetime only there is no timezone.
+	 * 
+	 * @return \mjolnir\types\HTMLFormField
+	 */
+	function localdatetime($label, $fieldname = null);
 	
 	// ------------------------------------------------------------------------
 	// Errors & Values
@@ -21,6 +199,13 @@ interface HTMLForm extends HTMLTag
 	 * @return static $this
 	 */
 	function autocomplete(array & $hints = null);
+	
+	/**
+	 * Retrieve autocomplete value for given field or null.
+	 * 
+	 * @return mixed or null
+	 */
+	function autovalue($fieldname);
 	
 	/**
 	 * Binds errors for the from.
@@ -71,6 +256,11 @@ interface HTMLForm extends HTMLTag
 	/**
 	 * @return static $this
 	 */
-	function is_basicuploader();
+	function basicuploader();
+	
+	/**
+	 * @return static $this
+	 */
+	function nonuploader();
 	
 } # interface
