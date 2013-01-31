@@ -39,11 +39,6 @@ interface HTMLFormField extends HTMLTag, Standardized
 	function hintrenderer_is(callable $renderer);
 	
 	/**
-	 * @return callable
-	 */
-	function hintrenderer();
-	
-	/**
 	 * Set the renderer used when rendering help text. Callable should accept
 	 * an array of errors.
 	 * 
@@ -51,10 +46,11 @@ interface HTMLFormField extends HTMLTag, Standardized
 	 */
 	function errorrenderer_is(callable $renderer);
 	
-	/**
-	 * @return callable
-	 */
-	function errorrenderer();
+	#
+	# Getters for hint renderer and error renderer intentionally ommited since
+	# they do not apply in the general context of a HTMLFormField, eg. composite
+	# fields would have a somewhat ambigous implementation of the fields.
+	#
 	
 	// ------------------------------------------------------------------------
 	// Utility
@@ -63,6 +59,7 @@ interface HTMLFormField extends HTMLTag, Standardized
 	 * Template to use when generating field. The following placeholders can
 	 * be used when creating the template
 	 * 
+	 *  :id     - field ID
 	 *	:label  - the label of the field
 	 *  :field  - the field
 	 *  :hints  - insertion point for help renderer
@@ -70,12 +67,12 @@ interface HTMLFormField extends HTMLTag, Standardized
 	 * 
 	 * @return static $this
 	 */
-	function template_is($template);
+	function fieldtemplate_is($template);
 	
 	/**
 	 * @return string
 	 */
-	function template();
+	function fieldtemplate();
 	
 	/**
 	 * Adds a help message to be used by the help renderer.
@@ -88,6 +85,28 @@ interface HTMLFormField extends HTMLTag, Standardized
 	 * @return array
 	 */
 	function hints();
+	
+	/**
+	 * @return static $this
+	 */
+	function adderror($message);
+	
+	/**
+	 * @return static $this
+	 */
+	function adderrors(array $errors = null);
+	
+	/**
+	 * @return static $this
+	 */
+	function errors();
+	
+	/**
+	 * The string version of the field only (no templates, hints, errors, etc).
+	 * 
+	 * @return string
+	 */
+	function fieldrender();
 	
 	// ------------------------------------------------------------------------
 	// etc
@@ -108,12 +127,14 @@ interface HTMLFormField extends HTMLTag, Standardized
 	 * @return static $this
 	 */
 	function noerrors();
+	# eg. misc query forms
 	
 	/**
 	 * Show errors for this field.
 	 * 
 	 * @return static $this
 	 */
-	function showerrors();
+	function showerrors(); 
+	# eg. fields in a composite default to noerrors
 	
 } # interface

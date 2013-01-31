@@ -9,22 +9,11 @@
  */
 trait Trait_HTMLFormField_Select
 {
-	# HTMLFormField_Composite is derived from HTMLFormField therefore we do not
+	#
+	# HTMLFormField_Select is derived from HTMLFormField therefore we do not
 	# inherit the trait of HTMLFormField since this class is suppose to extend
 	# a HTMLFormField class therefore having it already
-	
-	protected $options = null;
-	
-	/**
-	 * Inserts options via associtive array of key => value pairs.
-	 * 
-	 * @return static $this
-	 */
-	function options_array(array $array)
-	{
-		$this->options = $array;
-		return $this;
-	}
+	#
 	
 	/**
 	 * Inserts values by interpreting tablular array as is typically the result
@@ -33,11 +22,39 @@ trait Trait_HTMLFormField_Select
 	 * 
 	 * Typically defaults for idkey and title key are "id" and "title."
 	 * 
+	 * If groupkey is provided the method will insert optgroups instead of 
+	 * normal options, unless the value for the group is null.
+	 * 
 	 * @return static $this
 	 */
-	function options_table(array $table, $valuekey = null, $labelkey = null)
+	function options_table(array $table, $valuekey = null, $labelkey = null, $groupkey = null)
 	{
-		$this->options = \app\Arr::associative_from($table, $valuekey, $labelkey);
+		$optgroups = [];
+		$options = [];
+		
+		if ($groupkey === null)
+		{
+			$options = \app\Arr::associative_from($table, $valuekey, $labelkey);
+		}
+		else # got group key
+		{	
+			foreach ($table as $row)
+			{
+				if ($row[$groupkey] !== null)
+				{
+					isset($optgroups[$row[$groupkey]]) or $optgroups[$row[$groupkey]] = [];
+					$optgroups[$row[$groupkey]][$row[$valuekey]] = $row[$labelkey];
+				}
+				else # null group
+				{
+					$options[$row[$valuekey]] = $row[$labelkey];
+				}
+			}
+		}
+		
+		$this->options_array($options);
+		$this->optgroups_array($optgroups);
+		
 		return $this;
 	}
 	
@@ -46,7 +63,15 @@ trait Trait_HTMLFormField_Select
 	 */
 	function value_is($value)
 	{
-		$this->values = $value === null ? null : [ $value ];
+		if (\is_array($value))
+		{
+			$this->value_array($value);
+		}
+		else # single value
+		{
+			$this->value_array([ $value ]);
+		}
+		
 		return $this;
 	}
 	
@@ -55,16 +80,17 @@ trait Trait_HTMLFormField_Select
 	 */
 	function value_array(array $values = null)
 	{
-		$this->values = $values;
+		// normalize values
+		if ($values)
+		{
+			$this->values = null;
+			foreach ($values as $value)
+			{
+				$this->values[] = $value;
+			}
+		}
+		
 		return $this;
-	}
-	
-	/**
-	 * @return array or null
-	 */
-	function options()
-	{
-		return $this->options;
 	}
 	
 } # trait

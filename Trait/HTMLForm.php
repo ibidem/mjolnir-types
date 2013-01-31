@@ -9,19 +9,52 @@
  */
 trait Trait_HTMLForm
 {
+	#
 	# HTMLForm is derived from HTMLTag therefore we do not inherit the trait of 
 	# HTMLTag since this class is suppose to extend a HTMLTag class therefore 
 	# having it already
+	#
 	
 	use \app\Trait_Standardized;
 	
 	/**
 	 * @var array
 	 */
-	protected static $errors = null;
+	protected $errors = null;
+	
+	/**
+	 * @var array
+	 */
+	protected $fieldtemplates = null;
+	
+	/**
+	 * @var array
+	 */
+	protected $hintrenderers = null;
+	
+	/**
+	 * @var array
+	 */
+	protected $errorrenderers = null;
 	
 	// ------------------------------------------------------------------------
 	// Specialized Fields & Shorthands
+	
+	#
+	# [!!] pseudofieldtype (3rd parameter of field method) is NOT fieldtype, 
+	# it's the idenfier for what the field is. For example in the case of a
+	# button fieldtype for a button is submit, but it's pseudofieldtype is
+	# button because we are refering to the button tag and want the button
+	# entry in the configuration, not the input / submit version.
+	#
+	
+	/**
+	 * @return \mjolnir\types\HTMLFormField_Select
+	 */
+	function select($label, $fieldname = null)
+	{
+		return $this->field($label, $fieldname, 'select');
+	}
 	
 	/**
 	 * @return \mjolnir\types\HTMLFormField
@@ -34,25 +67,29 @@ trait Trait_HTMLForm
 	/**
 	 * @return \mjolnir\types\HTMLFormField
 	 */
-	function submit($label, $fieldname = null)
+	function submit($label, $fieldname = null, $tagvalue = null)
 	{
-		return $this->field($label, $fieldname, 'submit');
+		return $this->field($label, $fieldname, 'submit')
+			->value_is($tagvalue);
 	}
 	
 	/**
 	 * @return \mjolnir\types\HTMLFormField
 	 */
-	function button($label, $fieldname = null)
+	function button($label, $fieldname = null, $tagbody = null)
 	{
-		return $this->field($label, $fieldname, 'button');
+		return $this->field($label, $fieldname, 'button')
+			->tagname_is('button')
+			->tagbody_is($tagbody);
 	}
 	
 	/**
 	 * @return \mjolnir\types\HTMLFormField
 	 */
-	function reset($label, $fieldname = null)
+	function reset($label, $fieldname = null, $tagvalue = null)
 	{
-		return $this->field($label, $fieldname, 'reset');
+		return $this->field($label, $fieldname, 'reset')
+			->value_is($tagvalue);
 	}
 	
 	/**
@@ -263,9 +300,9 @@ trait Trait_HTMLForm
 	 * 
 	 * @return array or null
 	 */
-	function errors($field = null)
+	function errors($fieldname = null)
 	{
-		if ($field == null)
+		if ($fieldname == null)
 		{
 			return $this->errors;
 		}
@@ -273,9 +310,9 @@ trait Trait_HTMLForm
 		{
 			if ($this->errors !== null)
 			{
-				if (isset($this->errors[$field]))
+				if (isset($this->errors[$fieldname]))
 				{
-					return $this->errors[$field];
+					return $this->errors[$fieldname];
 				}
 				else # not set
 				{
@@ -283,6 +320,132 @@ trait Trait_HTMLForm
 				}
 			}
 		}
+	}
+	
+	// ------------------------------------------------------------------------
+	// Formatting
+	
+	/**
+	 * If fieldtype is null the template will replace the general 
+	 * purpose template that applies to all fields in the absence of a 
+	 * specialized template, otherwise a specialized template will be added.
+	 * 
+	 * You can only have one template per field, most specific template applies.
+	 * 
+	 * @return static $this
+	 */
+	function addfieldtemplate($template, $fieldtype = null)
+	{
+		$fieldtype != null or $fieldtype = 'field';
+		$this->fieldtemplates[$fieldtype] = $template;
+		
+		return $this;
+	}
+	
+	/**
+	 * When fieldtype is null the general purpose template will be retrieved.
+	 * 
+	 * @return string
+	 */
+	function fieldtemplate($fieldtype = null)
+	{
+		$fieldtype !== null or $fieldtype = 'field';
+		if ($this->fieldtemplates !== null)
+		{
+			if (isset($this->fieldtemplates[$fieldtype]))
+			{
+				return $this->fieldtemplates[$fieldtype];
+			}
+			else if (isset($this->fieldtemplates['field']))
+			{
+				return $this->fieldtemplates['field'];
+			}
+		}
+		
+		// hard default: display field only
+		return ':field';
+	}
+	
+	/**
+	 * If fieldtype is null the template will replace the general 
+	 * purpose template that applies to all fields in the absence of a 
+	 * specialized template, otherwise a specialized template will be added.
+	 * 
+	 * @return static $this
+	 */
+	function addhintrenderer(callable $hintrenderer, $fieldtype = null)
+	{
+		$fieldtype != null or $fieldtype = 'field';
+		$this->hintrenderers[$fieldtype] = $hintrenderer;
+		
+		return $this;
+	}
+	
+	/**
+	 * When fieldtype is null the general purpose error renderer will 
+	 * be retrieved.
+	 * 
+	 * @return callable
+	 */
+	function hintrenderer($fieldtype = null)
+	{
+		$fieldtype !== null or $fieldtype = 'field';
+		if ($this->hintrenderers !== null)
+		{
+			if (isset($this->hintrenderers[$fieldtype]))
+			{
+				return $this->hintrenderers[$fieldtype];
+			}
+			else if (isset($this->hintrenderers['field']))
+			{
+				return $this->hintrenderers['field'];
+			}
+		}
+		
+		// hard default: do not display errors
+		return function (array & $errors = null) { return ''; };
+	}
+	
+	/**
+	 * If fieldtype is null the template will replace the general 
+	 * purpose template that applies to all fields in the absence of a 
+	 * specialized template, otherwise a specialized template will be added.
+	 * 
+	 * Signature: function (array & $errors = null)
+	 * 
+	 * @return static $this
+	 */
+	function adderrorrenderer(callable $errorrenderer, $fieldtype = null)
+	{
+		$fieldtype != null or $fieldtype = 'field';
+		$this->errorrenderers[$fieldtype] = $errorrenderer;
+		
+		return $this;
+	}
+	
+	/**
+	 * When fieldtype is null the general purpose error renderer will 
+	 * be retrieved.
+	 * 
+	 * @return callable
+	 */
+	function errorrenderer($fieldtype = null)
+	{
+		$fieldtype !== null or $fieldtype = 'field';
+		if ($this->errorrenderers !== null)
+		{
+			if (isset($this->errorrenderers[$fieldtype]))
+			{
+				return $this->errorrenderers[$fieldtype];
+			}
+			else if (isset($this->errorrenderers['field']))
+			{
+				return $this->errorrenderers['field'];
+			}
+		}
+		
+		// hard default: do not display errors
+		return function (array & $errors = null) { return ''; };
 	}
 	
 	// ------------------------------------------------------------------------

@@ -9,12 +9,14 @@
  */
 trait Trait_HTMLFormField
 {
+	#
 	# HTMLFormField is derived from HTMLTag therefore we do not inherit the 
 	# trait of HTMLTag since this class is suppose to extend a HTMLTag class
 	# therefore having it already
+	#
 	
 	use \app\Trait_Standardized;
-
+	
 	/**
 	 * @var \mjolnir\types\HTMLForm
 	 */
@@ -41,6 +43,11 @@ trait Trait_HTMLFormField
 	protected $fieldlabel = null;
 	
 	/**
+	 * @var string
+	 */
+	protected $fieldtemplate = null;
+	
+	/**
 	 * Varifier for the field's autocompletetion calculations. Calculations must
 	 * be performed once, duplicate execution of the calculations may lead to
 	 * undefined behavior.
@@ -48,6 +55,16 @@ trait Trait_HTMLFormField
 	 * @var boolean 
 	 */
 	protected $autocompleted = false;
+	
+	/**
+	 * @var array
+	 */
+	protected $hints = null;
+	
+	/**
+	 * @var array
+	 */
+	protected $errors = null;
 	
 	/**
 	 * Set value using default value representation. May call act as a proxy for
@@ -94,14 +111,6 @@ trait Trait_HTMLFormField
 	}
 	
 	/**
-	 * @return callable
-	 */
-	function hintrenderer()
-	{
-		return $this->hintrenderer;
-	}
-	
-	/**
 	 * Set the renderer used when rendering help text. Callable should accept
 	 * an array of errors.
 	 * 
@@ -111,14 +120,6 @@ trait Trait_HTMLFormField
 	{
 		$this->errorrenderer = $renderer;
 		return $this;
-	}
-	
-	/**
-	 * @return callable
-	 */
-	function errorrenderer()
-	{
-		return $this->errorrenderer;
 	}
 	
 	// ------------------------------------------------------------------------
@@ -135,18 +136,18 @@ trait Trait_HTMLFormField
 	 * 
 	 * @return static $this
 	 */
-	function template_is($template)
+	function fieldtemplate_is($fieldtemplate)
 	{
-		$this->template = $template;
+		$this->fieldtemplate = $fieldtemplate;
 		return $this;
 	}
 	
 	/**
 	 * @return string
 	 */
-	function template()
+	function fieldtemplate()
 	{
-		return $this->template;
+		return $this->fieldtemplate;
 	}
 	
 	/**
@@ -157,6 +158,7 @@ trait Trait_HTMLFormField
 	function hint($hint)
 	{
 		$this->hints[] = $hint;
+		return $this;
 	}
 	
 	/**
@@ -165,6 +167,51 @@ trait Trait_HTMLFormField
 	function hints()
 	{
 		return $this->hints;
+	}
+	
+	/**
+	 * @return static $this
+	 */
+	function adderror($message)
+	{
+		$this->errors[] = $message;
+		return $this;
+	}
+	
+	/**
+	 * @return static $this
+	 */
+	function adderrors(array $errors = null)
+	{
+		if ($this->errors === null)
+		{
+			$this->errors = $errors;
+		}
+		else if ($errors !== null)
+		{
+			foreach ($errors as $message)
+			{
+				$this->errors[] = $message;
+			}
+		}
+		
+		return $this;
+	}
+	
+	/**
+	 * @return static $this
+	 */
+	function errors()
+	{
+		return $this->errors;
+	}
+	
+	/**
+	 * @return string
+	 */
+	function fieldrender()
+	{
+		return parent::render(); # HTMLTag::render
 	}
 	
 	// ------------------------------------------------------------------------
@@ -183,17 +230,6 @@ trait Trait_HTMLFormField
 	
 	// ------------------------------------------------------------------------
 	// interface: Rendered
-	
-	/**
-	 * [!!] call autocompletefield in overwrited render before any other logic
-	 * 
-	 * @return string
-	 */
-	function render()
-	{
-		$this->autocompletefield();
-		return parent::render();
-	}
 	
 	/**
 	 * This class is an exception to the no __toString rule of Renderable. Using
@@ -253,6 +289,7 @@ trait Trait_HTMLFormField
 	function noerrors()
 	{
 		$this->showerrors = false;
+		return $this;
 	}
 	
 	/**
@@ -263,28 +300,7 @@ trait Trait_HTMLFormField
 	function showerrors()
 	{
 		$this->showerrors = true;
-	}
-	
-	// ------------------------------------------------------------------------
-	// Helpers
-	
-	/**
-	 * This helper will run once. Classes that overwrite render should call this
-	 * method before performing calculations.
-	 */
-	protected function autocompletefield()
-	{
-		if ( ! $this->autocompleted)
-		{
-			$fieldname = $this->get('name', null);
-
-			if ($fieldname !== null && ($autovalue = $this->form->autovalue($fieldname)) !== null)
-			{
-				$this->value_is($autovalue);
-			}
-			
-			$this->autocompleted = true;
-		}
+		return $this;
 	}
 	
 } # trait

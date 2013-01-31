@@ -12,7 +12,7 @@ interface HTMLTag extends Meta, Renderable
 	/**
 	 * @return static
 	 */
-	static function i($tagname, $tagbody);
+	static function i($tagname, $tagbody = null);
 	
 	/**
 	 * @return string

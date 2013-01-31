@@ -13,14 +13,17 @@ interface HTMLForm extends HTMLTag, Standardized
 	// Primary Field Management
 	
 	/**
-	 * [!!] fieldtype intentionally doesn't default to null
+	 * [!!] pseudofieldtype intentionally doesn't default to null
+	 * 
+	 * [!!] pseudofieldtype is NOT fieldtype, if it is the identifier for what
+	 * it is suppose to be
 	 * 
 	 * @return \mjolnir\types\HTMLFormField
 	 */
-	function field($label, $fieldname, $fieldtype);
+	function field($label, $fieldname, $pseudofieldtype);
 	
 	/**
-	 * @return \mjolnir\types\HTMLFormField
+	 * @return \mjolnir\types\HTMLFormField_Textarea
 	 */
 	function textarea($label, $fieldname = null);
 	
@@ -61,24 +64,24 @@ interface HTMLForm extends HTMLTag, Standardized
 	// Specialized Fields & Shorthands
 	
 		/**
-	 * @return \mjolnir\types\HTMLFormField
+	 * @return \mjolnir\types\HTMLFormField_Hidden
 	 */
 	function hidden($fieldname = null);
 	
 	/**
 	 * @return \mjolnir\types\HTMLFormField
 	 */
-	function submit($label, $fieldname = null);
+	function submit($label, $fieldname = null, $tagvalue = null);
 	
 	/**
 	 * @return \mjolnir\types\HTMLFormField
 	 */
-	function button($label, $fieldname = null);
+	function button($label, $fieldname = null, $tagbody = null);
 	
 	/**
 	 * @return \mjolnir\types\HTMLFormField
 	 */
-	function reset($label, $fieldname = null);
+	function reset($label, $fieldname = null, $tagvalue = null);
 	
 	/**
 	 * @return \mjolnir\types\HTMLFormField
@@ -91,7 +94,7 @@ interface HTMLForm extends HTMLTag, Standardized
 	function password($label, $fieldname = null);
 	
 	/**
-	 * @return \mjolnir\types\HTMLFormField
+	 * @return \mjolnir\types\HTMLFormField_Radio
 	 */
 	function radio($label, $fieldname = null);
 	
@@ -228,6 +231,59 @@ interface HTMLForm extends HTMLTag, Standardized
 	 * @return array or null
 	 */
 	function errors($field = null);
+	
+	// ------------------------------------------------------------------------
+	// Formatting
+	
+	/**
+	 * If fieldtype is null the template will replace the general 
+	 * purpose template that applies to all fields in the absence of a 
+	 * specialized template, otherwise a specialized template will be added.
+	 * 
+	 * @return static $this
+	 */
+	function addfieldtemplate($template, $fieldtype = null);
+	
+	/**
+	 * When fieldtype is null the general purpose template will be retrieved.
+	 * 
+	 * @return string
+	 */
+	function fieldtemplate($fieldtype = null);
+	
+	/**
+	 * If fieldtype is null the template will replace the general 
+	 * purpose template that applies to all fields in the absence of a 
+	 * specialized template, otherwise a specialized template will be added.
+	 * 
+	 * @return static $this
+	 */
+	function addhintrenderer(callable $hintrenderer, $fieldtype = null);
+	
+	/**
+	 * When fieldtype is null the general purpose hint renderer will 
+	 * be retrieved.
+	 * 
+	 * @return callable
+	 */
+	function hintrenderer($fieldtype = null);
+	
+	/**
+	 * If fieldtype is null the template will replace the general 
+	 * purpose template that applies to all fields in the absence of a 
+	 * specialized template, otherwise a specialized template will be added.
+	 * 
+	 * @return static $this
+	 */
+	function adderrorrenderer(callable $errorrenderer, $fieldtype = null);
+	
+	/**
+	 * When fieldtype is null the general purpose error renderer will 
+	 * be retrieved.
+	 * 
+	 * @return callable
+	 */
+	function errorrenderer($fieldtype = null);
 	
 	// ------------------------------------------------------------------------
 	// Utility

@@ -7,8 +7,8 @@
  * @copyright  (c) 2013 Ibidem Team
  * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
-trait Trait_Standardized
+trait Trait_HTMLFormField_Textarea
 {
-	// placeholder for extending functionality
-
+	// hook for commons
+	
 } # trait
