@@ -74,7 +74,7 @@ trait Trait_Application
 			(
 				'CriticalError',
 				$exception->getMessage(),
-				true
+				'CriticalError'
 			);
 
 		throw $exception;
