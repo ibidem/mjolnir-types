@@ -12,7 +12,7 @@ trait Trait_Application
 	use \app\Trait_Renderable;
 	use \app\Trait_Channeled
 		{
-			channel_is as private trait_channel_is;
+			channel_is as protected Channeled__channel_is;
 		}
 
 	/**
@@ -55,7 +55,7 @@ trait Trait_Application
 	 */
 	function channel_is(\mjolnir\types\Channel $channel)
 	{
-		$this->trait_channel_is($channel);
+		$this->Channeled__channel_is($channel);
 
 		foreach ($this->layers as $layer)
 		{

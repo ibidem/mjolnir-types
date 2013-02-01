@@ -41,6 +41,6 @@ interface Renderable
 	 * 
 	 * @return static $this
 	 */
-	function injectmetarenderers(array $metarenderers);
+	function injectmetarenderers(array $metarenderers = null);
 
 } # interface
