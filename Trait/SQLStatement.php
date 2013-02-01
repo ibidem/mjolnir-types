@@ -113,11 +113,11 @@ trait Trait_SQLStatement
 	/**
 	 * @return static $this
 	 */
-	function bindstrs(array & $params, array $filter = null)
+	function bindstrs(array &$params, array $filter = null)
 	{
 		if ($filter === null)
 		{
-			foreach ($params as $key => & $value)
+			foreach ($params as $key => &$value)
 			{
 				$this->bindstr(':'.$key, $value);
 			}
@@ -136,11 +136,11 @@ trait Trait_SQLStatement
 	/**
 	 * @return static $this
 	 */
-	function bindnums(array & $params, array $filter = null)
+	function bindnums(array &$params, array $filter = null)
 	{
 		if ($filter === null)
 		{
-			foreach ($params as $key => & $value)
+			foreach ($params as $key => &$value)
 			{
 				$this->bindnum(':'.$key, $value);
 			}
@@ -159,11 +159,11 @@ trait Trait_SQLStatement
 	/**
 	 * @return static $this
 	 */
-	function bindbools(array & $params, array $filter = null)
+	function bindbools(array &$params, array $filter = null)
 	{
 		if ($filter === null)
 		{
-			foreach ($params as $key => & $value)
+			foreach ($params as $key => &$value)
 			{
 				$this->bindbool(':'.$key, $value);
 			}
@@ -182,11 +182,11 @@ trait Trait_SQLStatement
 	/**
 	 * @return static $this
 	 */
-	function binddates(array & $params, array $filter = null, array $map = null)
+	function binddates(array &$params, array $filter = null, array $map = null)
 	{
 		if ($filter === null)
 		{
-			foreach ($params as $key => & $value)
+			foreach ($params as $key => &$value)
 			{
 				$this->binddate(':'.$key, $value);
 			}
@@ -208,11 +208,11 @@ trait Trait_SQLStatement
 	/**
 	 * @return static $this
 	 */
-	function args(array & $params, array $filter = null)
+	function args(array &$params, array $filter = null)
 	{
 		if ($filter === null)
 		{
-			foreach ($params as $key => & $value)
+			foreach ($params as $key => &$value)
 			{
 				$this->bindarg(':'.$key, $value);
 			}

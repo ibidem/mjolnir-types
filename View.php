@@ -23,7 +23,7 @@ interface View extends Filebased, Renderable
 	 *
 	 * @return static $this
 	 */
-	function bind($name, & $non_object);
+	function bind($name, &$non_object);
 
 	/**
 	 * @return static $this

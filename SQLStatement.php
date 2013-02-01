@@ -38,22 +38,22 @@ interface SQLStatement extends Executable, Paged
 	/**
 	 * @return static $this
 	 */
-	function bindstr($param, & $variable);
+	function bindstr($param, &$variable);
 
 	/**
 	 * @return static $this
 	 */
-	function bindnum($param, & $variable);
+	function bindnum($param, &$variable);
 
 	/**
 	 * @return static $this
 	 */
-	function bindbool($param, & $variable);
+	function bindbool($param, &$variable);
 
 	/**
 	 * @return static $this
 	 */
-	function binddate($param, & $variable);
+	function binddate($param, &$variable);
 
 	// ------------------------------------------------------------------------
 	// Multi-assignment
@@ -84,22 +84,22 @@ interface SQLStatement extends Executable, Paged
 	/**
 	 * @return static $this
 	 */
-	function bindstrs(array & $params, array $filter = null);
+	function bindstrs(array &$params, array $filter = null);
 
 	/**
 	 * @return static $this
 	 */
-	function bindnums(array & $params, array $filter = null);
+	function bindnums(array &$params, array $filter = null);
 
 	/**
 	 * @return static $this
 	 */
-	function bindbools(array & $params, array $filter = null);
+	function bindbools(array &$params, array $filter = null);
 
 	/**
 	 * @return static $this
 	 */
-	function binddates(array & $params, array $filter = null);
+	function binddates(array &$params, array $filter = null);
 
 	// ------------------------------------------------------------------------
 	// Stored procedure arguments
@@ -107,12 +107,12 @@ interface SQLStatement extends Executable, Paged
 	/**
 	 * @return static $this
 	 */
-	function arg($param, & $variable);
+	function arg($param, &$variable);
 
 	/**
 	 * @return static $this
 	 */
-	function args(array & $params, array $filter = null);
+	function args(array &$params, array $filter = null);
 
 	// ------------------------------------------------------------------------
 	// Retrieval

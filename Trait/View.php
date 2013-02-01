@@ -31,9 +31,9 @@ trait Trait_View
 	 *
 	 * @return static $this
 	 */
-	function bind($name, & $non_object)
+	function bind($name, &$non_object)
 	{
-		$this->view_variables[$name] =& $non_object;
+		$this->view_variables[$name] = &$non_object;
 		return $this;
 	}
 
@@ -90,7 +90,7 @@ trait Trait_View
 	 */
 	function inherit(\mjolnir\types\View $view)
 	{
-		$this->view_variables =& $view->view_variables;
+		$this->view_variables = &$view->view_variables;
 		return $this;
 	}
 
