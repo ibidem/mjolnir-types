@@ -45,7 +45,8 @@ trait Trait_HTMLForm
 	# it's the idenfier for what the field is. For example in the case of a
 	# button fieldtype for a button is submit, but it's pseudofieldtype is
 	# button because we are refering to the button tag and want the button
-	# entry in the configuration, not the input / submit version.
+	# entry in the configuration, not the input / submit version. Another 
+	# example would be phonenumber, the actual fieldtype is tel.
 	#
 	
 	/**
@@ -288,9 +289,9 @@ trait Trait_HTMLForm
 	 * 
 	 * @return static $this
 	 */
-	function errors_are(array & $errors = null)
+	function errors_are(array &$errors = null)
 	{
-		$this->errors =& $errors;
+		$this->errors = &$errors;
 		return $this;
 	}
 	
@@ -385,6 +386,8 @@ trait Trait_HTMLForm
 	 * When fieldtype is null the general purpose error renderer will 
 	 * be retrieved.
 	 * 
+	 * Signature: function (array &$hints = null)
+	 * 
 	 * @return callable
 	 */
 	function hintrenderer($fieldtype = null)
@@ -403,7 +406,7 @@ trait Trait_HTMLForm
 		}
 		
 		// hard default: do not display errors
-		return function (array & $errors = null) { return ''; };
+		return function (array &$hints = null) { return ''; };
 	}
 	
 	/**
@@ -411,7 +414,7 @@ trait Trait_HTMLForm
 	 * purpose template that applies to all fields in the absence of a 
 	 * specialized template, otherwise a specialized template will be added.
 	 * 
-	 * Signature: function (array & $errors = null)
+	 * Signature: function (array &$errors = null)
 	 * 
 	 * @return static $this
 	 */
@@ -445,7 +448,7 @@ trait Trait_HTMLForm
 		}
 		
 		// hard default: do not display errors
-		return function (array & $errors = null) { return ''; };
+		return function (array &$errors = null) { return ''; };
 	}
 	
 	// ------------------------------------------------------------------------
