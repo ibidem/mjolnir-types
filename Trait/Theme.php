@@ -4,7 +4,7 @@
  * @package    mjolnir
  * @category   Types
  * @author     Ibidem Team
- * @copyright  (c) 2012 Ibidem Team
+ * @copyright  (c) 2013 Ibidem Team
  * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
 trait Trait_Theme
@@ -20,7 +20,7 @@ trait Trait_Theme
 		$this->set('themename', $themename);
 		return $this;
 	}
-	
+
 	/**
 	 * @return $this
 	 */
@@ -29,7 +29,7 @@ trait Trait_Theme
 		$this->set('themepath', $themepath);
 		return $this;
 	}
-	
+
 	/**
 	 * @return $this
 	 */
@@ -37,8 +37,16 @@ trait Trait_Theme
 	{
 		$corethemes = static::corethemes();
 		$this->set('themepath', $corethemes[$theme]);
-		
+
 		return $this;
 	}
-	
+
+	/**
+	 * @return string or null
+	 */
+	function themepath()
+	{
+		return $this->get('themepath', null);
+	}
+
 } # trait
