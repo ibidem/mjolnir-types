@@ -9,6 +9,7 @@
  */
 trait Trait_ThemeLoader
 {
+	use \app\Trait_Meta;
 	use \app\Trait_Channeled;
 	use \app\Trait_Executable;
 

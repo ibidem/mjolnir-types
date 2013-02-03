@@ -13,7 +13,7 @@ trait Trait_ThemeDriver
 	use \app\Trait_Renderable;
 	use \app\Trait_Resetable;
 	use \app\Trait_Recoverable;
-	
+
 	/**
 	 * ...
 	 */
@@ -22,7 +22,7 @@ trait Trait_ThemeDriver
 		$this->channel()->set('http:status', '404 Not Found');
 		$this->channel()->set('body', null);
 	}
-	
+
 	protected function combine($basepath, array $files, $ext)
 	{
 		$combined = '';
@@ -31,10 +31,10 @@ trait Trait_ThemeDriver
 		{
 			$combined .= \app\Filesystem::gets($basepath.$file.$ext);
 		}
-		
+
 		return $combined;
 	}
-	
+
 	/**
 	 * @return array
 	 */
@@ -42,29 +42,29 @@ trait Trait_ThemeDriver
 	{
 		$themeconfig = $this->channel()->get('themeconfig');
 		$themepath = $this->channel()->get('themepath');
-		
+
 		if ( ! isset($themeconfig[$collection]))
 		{
-			$themeconfig[$collection] = \app\CFS::config('mjolnir/themes')[$collection.'.default'];
+			$themeconfig[$collection] = \app\CFS::config('mjolnir/themes')['default.'.$collection.'.dir'];
 			$this->channel()->set('themeconfig', $themeconfig);
 		}
-		
+
 		$entityname = $this->channel()->get('relaynode')->get($entity);
-		
+
 		$entitypath = $themepath.$themeconfig[$collection].DIRECTORY_SEPARATOR.$entityname.DIRECTORY_SEPARATOR;
 		$this->channel()->set($entity.'path', $entitypath);
-		
+
 		if ( ! isset($themeconfig["$entity.configname"]))
 		{
 			$themeconfig["$entity.configname"] = "+$entity";
 			$this->channel()->set('themeconfig', $themeconfig);
 		}
-		
+
 		$entityconfig = include "$entitypath/{$themeconfig["$entity.configname"]}".EXT;
-		
+
 		return $entityconfig;
 	}
-	
+
 	/**
 	 * @return array
 	 */
@@ -72,22 +72,22 @@ trait Trait_ThemeDriver
 	{
 		$themeconfig = $this->channel()->get('themeconfig');
 		$themepath = $this->channel()->get('themepath');
-		
+
 		if ( ! isset($themeconfig[$collection]))
 		{
-			$themeconfig[$collection] = \app\CFS::config('mjolnir/themes')[$collection.'.default'];
+			$themeconfig[$collection] = \app\CFS::config('mjolnir/themes')['default.'.$collection.'.dir'];
 			$this->channel()->set('themeconfig', $themeconfig);
 		}
-		
+
 		$collectionpath = $themepath.$themeconfig[$collection].DIRECTORY_SEPARATOR;
 		$this->channel()->set($collection.'path', $collectionpath);
-		
+
 		if ( ! isset($themeconfig["$collection.configname"]))
 		{
 			$themeconfig["$collection.configname"] = "+$collection";
 			$this->channel()->set('themeconfig', $themeconfig);
 		}
-		
+
 		if (\file_exists("$collectionpath/{$themeconfig["$collection.configname"]}".EXT))
 		{
 			$collectionconfig = include "$collectionpath/{$themeconfig["$collection.configname"]}".EXT;
@@ -96,14 +96,14 @@ trait Trait_ThemeDriver
 		{
 			$collectionconfig = [ 'root' => '' ];
 		}
-		
+
 		return $collectionconfig;
 	}
 
 	/**
 	 * Checks a path segment and throws a NotAllowed exception if there's any
-	 * know source for exploits in it. Errors are logged as Hacking attempts, 
-	 * since the probability of development error of this type slipping into 
+	 * know source for exploits in it. Errors are logged as Hacking attempts,
+	 * since the probability of development error of this type slipping into
 	 * production is very low.
 	 */
 	protected function security_pathcheck($path)
@@ -114,5 +114,5 @@ trait Trait_ThemeDriver
 			throw new \app\Exception_NotAllowed('Path is not allowed to have parent references (ie. double dot).');
 		}
 	}
-	
+
 } # trait

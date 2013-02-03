@@ -15,6 +15,11 @@ interface Theme extends Channeled, Meta
 	function themename_is($themename);
 
 	/**
+	 * @return string
+	 */
+	function themename();
+
+	/**
 	 * @return $this
 	 */
 	function themepath_is($themepath);

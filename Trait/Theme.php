@@ -22,6 +22,14 @@ trait Trait_Theme
 	}
 
 	/**
+	 * @return string
+	 */
+	function themename()
+	{
+		return $this->get('themename');
+	}
+
+	/**
 	 * @return $this
 	 */
 	function themepath_is($themepath)
