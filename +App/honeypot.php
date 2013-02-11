@@ -29,6 +29,7 @@ trait Trait_Matcher { use \mjolnir\types\Trait_Matcher; }
 trait Trait_Meta { use \mjolnir\types\Trait_Meta; }
 trait Trait_Paged { use \mjolnir\types\Trait_Paged; }
 trait Trait_Processed { use \mjolnir\types\Trait_Processed; }
+trait Trait_Puppet { use \mjolnir\types\Trait_Puppet; }
 trait Trait_Recoverable { use \mjolnir\types\Trait_Recoverable; }
 trait Trait_RelayNode { use \mjolnir\types\Trait_RelayNode; }
 trait Trait_Renderable { use \mjolnir\types\Trait_Renderable; }
@@ -42,8 +43,10 @@ trait Trait_Stash { use \mjolnir\types\Trait_Stash; }
 trait Trait_TaggedStash { use \mjolnir\types\Trait_TaggedStash; }
 trait Trait_Task { use \mjolnir\types\Trait_Task; }
 trait Trait_TaskRunner { use \mjolnir\types\Trait_TaskRunner; }
+trait Trait_Theme { use \mjolnir\types\Trait_Theme; }
 trait Trait_ThemeDriver { use \mjolnir\types\Trait_ThemeDriver; }
 trait Trait_ThemeLoader { use \mjolnir\types\Trait_ThemeLoader; }
+trait Trait_ThemeView { use \mjolnir\types\Trait_ThemeView; }
 trait Trait_URLRoute { use \mjolnir\types\Trait_URLRoute; }
 trait Trait_Validator { use \mjolnir\types\Trait_Validator; }
 trait Trait_View { use \mjolnir\types\Trait_View; }

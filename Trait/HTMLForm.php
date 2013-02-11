@@ -406,7 +406,7 @@ trait Trait_HTMLForm
 		}
 		
 		// hard default: do not display errors
-		return function (array &$hints = null) { return ''; };
+		return function (array $hints = null) { return ''; };
 	}
 	
 	/**
@@ -448,7 +448,7 @@ trait Trait_HTMLForm
 		}
 		
 		// hard default: do not display errors
-		return function (array &$errors = null) { return ''; };
+		return function (array $errors = null) { return ''; };
 	}
 	
 	// ------------------------------------------------------------------------
