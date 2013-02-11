@@ -114,10 +114,21 @@ trait Trait_Lang
 	 * There is no specified structure, the method will simply merge all
 	 * configuration files in the directory that match the extention. By default
 	 * the extention is the default set for PHP files, defined by EXT.
+	 * 
+	 * The method may be customzied to interpolate different configuration file
+	 * types togheter or load various other formats into PHP.
 	 */
 	static function load($dir, $ext = EXT)
 	{
-		throw new \app\Exception_NotImplemented();
+		$files = \app\Filesystem::files($dir, $ext);
+		
+		$langconfig = [];
+		foreach ($files as $file) 
+		{
+			$langconfig = \app\Arr::merge($langconfig, include $file);
+		}
+		
+		return $langconfig;
 	}
 
 	/**
