@@ -273,6 +273,8 @@ interface HTMLForm extends HTMLTag, Standardized
 	 * purpose template that applies to all fields in the absence of a 
 	 * specialized template, otherwise a specialized template will be added.
 	 * 
+	 * Format: function (array $errors = null);
+	 * 
 	 * @return static $this
 	 */
 	function adderrorrenderer(callable $errorrenderer, $fieldtype = null);
