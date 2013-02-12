@@ -266,6 +266,10 @@ trait Trait_SQLStatement
 		{
 			return $map[$value];
 		}
+		else if (\is_bool($value))
+		{
+			return $value;
+		}
 		else # undefined boolean
 		{
 			throw new \app\Exception('Unrecognized boolean value passed.');
