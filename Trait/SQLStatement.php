@@ -12,6 +12,27 @@ trait Trait_SQLStatement
 	use \app\Trait_Executable;
 	use \app\Trait_Paged;
 
+	/**
+	 * Shorthand for retrieving value from a querie that performs a COUNT, SUM
+	 * or some other calculation.
+	 * 
+	 * @return mixed
+	 */
+	function fetch_calc($on_null = null)
+	{
+		$calc_entry = $this->fetch_entry();
+		$value = \array_pop($calc_entry);
+		
+		if ($value !== null)
+		{
+			return $value;
+		}
+		else # null value
+		{
+			return $on_null;
+		}
+	}
+	
 	// ------------------------------------------------------------------------
 	// Multi-assignment
 

@@ -131,6 +131,17 @@ interface SQLStatement extends Executable, Paged
 	 * @return array or null
 	 */
 	function fetch_entry(array $formatinfo = null);
+	
+	/**
+	 * Shorthand for retrieving value from a querie that performs a COUNT, SUM
+	 * or some other calculation.
+	 * 
+	 * Some calculations such as a SUM on a table with no rows will return null,
+	 * so to mitigate this you can specify an overwrite for the null value.
+	 * 
+	 * @return mixed
+	 */
+	function fetch_calc($on_null = null);
 
 	/**
 	 * Retrieves all rows. Rows are retrieved as arrays.
