@@ -12,7 +12,7 @@ trait Trait_Lang
 	/**
 	 * @var string
 	 */
-	protected static $targetlang = 'en-us';
+	protected static $targetlang = 'en-US';
 
 	/**
 	 * Translate a given term. The translation may not necesarily be from one
@@ -29,10 +29,10 @@ trait Trait_Lang
 	 *
 	 * @return string
 	 */
-	static function term($term, array $addins = null, $sourcelang = 'en-us')
+	static function term($term, array $addins = null, $sourcelang = 'en-US')
 	{
-		// lang/en-us/messages => translate to en-us using messages
-		// lang/en-us/ro-ro => translate to en-us from ro-ro
+		// lang/en-US/messages => translate to en-US using messages
+		// lang/en-US/ro-ro => translate to en-US from ro-ro
 
 		$langterms = \app\CFS::config('lang/'.static::$targetlang.'/'.$sourcelang);
 
@@ -86,7 +86,7 @@ trait Trait_Lang
 	 *
 	 * @return string
 	 */
-	static function key($key, array $addins = null, $sourcelang = 'en-us')
+	static function key($key, array $addins = null, $sourcelang = 'en-US')
 	{
 		$messages = \app\CFS::config('lang/'.static::$targetlang.'/messages');
 
@@ -130,6 +130,16 @@ trait Trait_Lang
 		
 		return $langconfig;
 	}
+	
+	/**
+	 * Get's a language file from the current language's directory.
+	 *
+	 * @return array
+	 */
+	static function file($file)
+	{
+		return \app\CFS::config('lang/'.static::$targetlang.'/'.$file);
+	}
 
 	/**
 	 * @param string target language
@@ -145,6 +155,20 @@ trait Trait_Lang
 	static function targetlang()
 	{
 		return static::$targetlang;
+	}
+	
+	/**
+	 * Some implementations require the non-standard underscore version of lang
+	 * identifiers, ie. en_US for en-US. This method converts a standard 
+	 * language tag to an id language tag (ie. underscore version).
+	 * 
+	 * See: http://en.wikipedia.org/wiki/IETF_language_tag syntax information.
+	 * 
+	 * @return string
+	 */
+	static function idlang($lang)
+	{
+		return \str_replace('-', '_', $lang);
 	}
 
 } # trait

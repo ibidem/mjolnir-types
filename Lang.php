@@ -3,24 +3,15 @@
 /**
  * This interface is purely for the sake of providing a common interface for
  * different implementations. This allows interoperability of code and greater
- * usability for users of said implementation--because all implementations
+ * usability for users of said implementation—because all implementations
  * would share a common interface pattern.
  *
  * The purely static methods mean this is useless for interclass contracts.
  *
  * Other specifics:
- *  - default language should be en-us
+ *  - default language should be en-US
  *  - terms/messages with addins map to lambdas
  *  - terms/messages with out addins map to strings
- *
- * Language files should be:
- *
- *   # config/lang/source/target.php (eg. config/lang/en-us/fr-fr.php)
- *   return array
- *       (
- *           'terms' => array( ... ),
- *           'messages' => array( ... ),
- *       );
  *
  * @package    mjolnir
  * @category   Types
@@ -45,7 +36,7 @@ interface Lang
 	 *
 	 * @return string
 	 */
-	static function term($term, array $addins = null, $sourcelang = 'en-us');
+	static function term($term, array $addins = null, $sourcelang = 'en-US');
 
 	/**
 	 * Access a specific message identified by the key.
@@ -56,7 +47,7 @@ interface Lang
 	 *
 	 * @return string
 	 */
-	static function key($key, array $addins = null, $sourcelang = 'en-us');
+	static function key($key, array $addins = null, $sourcelang = 'en-US');
 
 	/**
 	 * Loads a directory of language configuration files. This method is here
@@ -67,7 +58,14 @@ interface Lang
 	 * the extention is the default set for PHP files, defined by EXT.
 	 */
 	static function load($dir, $ext = EXT);
-
+	
+	/**
+	 * Get's a language file from the current language's directory.
+	 *
+	 * @return array
+	 */
+	static function file($file);
+	
 	/**
 	 * @param string target language
 	 */
@@ -77,5 +75,16 @@ interface Lang
 	 * @return string current target language
 	 */
 	static function targetlang();
-
+	
+	/**
+	 * Some implementations require the non-standard underscore version of lang
+	 * identifiers, ie. en_US for en-US. This method converts a standard 
+	 * language tag to an id language tag (ie. underscore version).
+	 * 
+	 * See: http://en.wikipedia.org/wiki/IETF_language_tag syntax information.
+	 * 
+	 * @return string
+	 */
+	static function idlang($lang);
+	
 } # interface
