@@ -1,7 +1,7 @@
 {
 	"name": "mjolnir/types",
 	"version": "1.0",
-	"description": "Type information (complete with Traits).",
+	"description": "Mjolnir type information (with Traits).",
 	"keywords": [ ],
 	"homepage": "https://github.com/ibidem",
 	"type": "library",
