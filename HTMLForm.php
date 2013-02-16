@@ -321,4 +321,18 @@ interface HTMLForm extends HTMLTag, Standardized
 	 */
 	function nonuploader();
 	
+	// ------------------------------------------------------------------------
+	// etc
+	
+	/**
+	 * Form will not add any additional fields (eg. form field).
+	 */
+	function disable_metainfo();
+	
+	
+	/**
+	 * Reverse of disable_metadata
+	 */
+	function enable_metainfo();
+	
 } # interface

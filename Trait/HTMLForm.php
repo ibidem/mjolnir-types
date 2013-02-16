@@ -37,6 +37,11 @@ trait Trait_HTMLForm
 	 */
 	protected $errorrenderers = null;
 	
+	/**
+	 * @var boolean
+	 */
+	protected $show_metainfo = true;
+	
 	// ------------------------------------------------------------------------
 	// Specialized Fields & Shorthands
 	
@@ -468,6 +473,29 @@ trait Trait_HTMLForm
 	function mark()
 	{
 		return ' tabindex="'.\app\HTML::tabindex().'"'.$this->sign();
+	}
+	
+	// ------------------------------------------------------------------------
+	// etc
+	
+	/**
+	 * Form will not add any additional fields (eg. form field).
+	 * 
+	 * @return $this
+	 */
+	function disable_metainfo()
+	{
+		$this->show_metainfo = false;
+		return $this;
+	}
+	
+	/**
+	 * Reverse of disable_metadata
+	 */
+	function enable_metainfo()
+	{
+		$this->show_metainfo = true;
+		return $this;
 	}
 	
 	// ------------------------------------------------------------------------
