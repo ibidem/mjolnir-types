@@ -2,17 +2,17 @@ To allow for easier use of classes a lot of common functionality has been
 centralized into a set of interfaces.
 
 This is a multifaceted feature. However, to avoid confusion the interfaces are
-designed for work within the framework, and while they may be used outside the
-framework as you please, they are not designed with that in mind. Essentially
-if it exists, it's because it has a purpose within the framework, not because
+designed for work within the library, and while they may be used outside the
+library as you please, they are not designed with that in mind. Essentially
+if it exists, it's because it has a purpose within the library, not because
 it's some sort of standard.
 
-Some functionality interfaces establish within the framework,
+Some functionality interfaces establish within the library,
 
  1. simplified interaction with classes sharing common themes, such as file
  manipulation, document-like content, etc
 
- 2. easier to understand and use; employing interfaces creates repeatable easy
+ 2. easier to understand and use patterns; employing interfaces creates repeatable easy
  to pick up patterns
 
  3. easy integration, we try to avoid classes accepting implementation extending

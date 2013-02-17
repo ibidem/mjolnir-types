@@ -22,32 +22,60 @@
 
 								'chapters' => array
 									(
-										'caching-types' => array
+										'type-traits' => array
 											(
 												'idx'   => 1,
-												'title' => 'Caching Types',
+												'title' => 'Type Traits',
+												'file'  => '-01-Type-Traits.md',
 												'type'  => 'markdown',
-												'file'  => '-01-Caching-Types.md',
 											),
 										'generic-types' => array
 											(
 												'idx'   => 2,
 												'title' => 'Generic Types',
-												'file'  => '-02-Generics-Types.md',
+												'file'  => '-02-Generic-Types.md',
 												'type'  => 'markdown',
 											),
-										'document-types' => array
+										'caching-types' => array
 											(
 												'idx'   => 3,
-												'title' => 'Document Types',
-												'file'  => '-03-Document-Types.md',
+												'title' => 'Caching Types',
 												'type'  => 'markdown',
+												'file'  => '-03-Caching-Types.md',
+											),
+										'html-types' => array
+											(
+												'idx'   => 4,
+												'title' => 'HTML Types',
+												'type'  => 'markdown',
+												'file'  => '-04-HTML-Types.md',
+											),
+										'database-types' => array
+											(
+												'idx'   => 5,
+												'title' => 'Database Types',
+												'type'  => 'markdown',
+												'file'  => '-05-Database-Types.md',
+											),
+										'application-types' => array
+											(
+												'idx'   => 6,
+												'title' => 'Application Types',
+												'type'  => 'markdown',
+												'file'  => '-06-Application-Types.md',
+											),
+										'view-types' => array
+											(
+												'idx'   => 7,
+												'title' => 'View Types',
+												'type'  => 'markdown',
+												'file'  => '-07-View-Types.md',
 											),
 										'misc-types' => array
 											(
-												'idx'   => 4,
+												'idx'   => 8,
 												'title' => 'Miscellaneous Types',
-												'file'  => '-04-Miscellaneous-Types.md',
+												'file'  => '-08-Miscellaneous-Types.md',
 												'type'  => 'markdown',
 											),
 									)
