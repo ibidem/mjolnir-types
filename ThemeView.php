@@ -18,5 +18,15 @@ interface ThemeView extends Channeled, View
 	 * @return string
 	 */
 	function themepath();
-
+	
+	/**
+	 * @return \mjolnir\types\View
+	 */
+	function partial($path);
+	
+	/**
+	 * @return string theme resource url
+	 */
+	function resource($path);
+	
 } # interface
