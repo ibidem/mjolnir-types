@@ -9,6 +9,20 @@
  */
 trait Trait_Puppet
 {
-	// placeholder for extending functionality
+	/**
+	 * @return string singular with dashes instead of spaces
+	 */
+	static function dashsingular()
+	{
+		return \str_replace(' ', '-', static::singular());
+	}
+	
+	/**
+	 * @return string plural with dashes instead of spaces
+	 */
+	static function dashplural()
+	{
+		return \str_replace(' ', '-', static::plural());
+	}
 
 } # trait

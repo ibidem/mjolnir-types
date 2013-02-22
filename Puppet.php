@@ -34,5 +34,15 @@ interface Puppet
 	 * @return string puppet plural name
 	 */
 	static function plural();
+	
+	/**
+	 * @return string singular with dashes instead of spaces
+	 */
+	static function dashsingular();
+	
+	/**
+	 * @return string plural with dashes instead of spaces
+	 */
+	static function dashplural();
 
 } # interface
