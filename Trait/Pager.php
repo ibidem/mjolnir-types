@@ -75,7 +75,7 @@ trait Trait_Pager
 	 *
 	 * @return static $this
 	 */
-	function totalitems_is($totalitems)
+	function totalitems_are($totalitems)
 	{
 		$this->set('totalitems', $totalitems);
 		return $this;
@@ -116,25 +116,36 @@ trait Trait_Pager
 	}
 
 	/**
-	 * Querie that is passed down with the page.
+	 * Query that is passed down with the page.
 	 *
 	 * @return static $this
 	 */
-	function querie_is(array $querie)
+	function query_is(array $query)
 	{
-		if (isset($querie['page']))
+		if (isset($query['page']))
 		{
-			unset($querie['page']);
+			unset($query['page']);
 		}
 
-		if ( ! empty($querie))
+		if ( ! empty($query))
 		{
-			$this->set('querie', $this->get('querie').\http_build_query($querie, '', '&amp;').'&amp;');
+			$this->set('query', $this->get('query').\http_build_query($query, '', '&amp;').'&amp;');
 		}
 
 		return $this;
 	}
 
+	/**
+	 * @return static $this
+	 */
+	function bookmark_is($entry, $anchor)
+	{
+		$this->set('bookmark_entry', $entry);
+		$this->set('bookmark_anchor', $anchor);
+		
+		return $this;
+	}
+	
 	// ------------------------------------------------------------------------
 	// interface: Standardized
 
@@ -157,7 +168,7 @@ trait Trait_Pager
 	 */
 	function file_is($file, $ext = null)
 	{
-		$this->file_path(\app\CFS::file("views/$file", $ext));
+		$this->file_path(\app\CFS::file("views/$file", $ext === null ? '.php' : $ext));
 		return $this;
 	}
 
@@ -172,16 +183,26 @@ trait Trait_Pager
 		// setup pager
 		$this->calculate_pager_attributes();
 
-		// extract view paramters into current scope as references to paramter
-		// array in the view itself, skipping over already defined variables
-		\extract($this->metadata, EXTR_REFS);
-
 		// start capture
 		\ob_start();
 		try
 		{
+			$file = $this->filepath();
+			
+			if (empty($file))
+			{
+				throw new \app\Exception('No pager view set; or provided view path is corrupt.');
+			}
+			
+			unset($file);
+			
+			// extract view paramters into current scope as references to 
+			// paramter array in the view itself, skipping over already defined 
+			// variables
+			\extract($this->metadata, EXTR_REFS);
+			
 			// include in current scope
-			include $this->file;
+			include $this->filepath();
 		}
 		catch (\Exception $error)
 		{
@@ -254,8 +275,8 @@ trait Trait_Pager
 		$this->set('langprefix', 'mjolnir:pager/');
 		$this->set('currentpage', null);
 		$this->set('order', 'asc');
-		$this->set('querie', '?');
-		$this->set('queriekey', 'page');
+		$this->set('query', '?');
+		$this->set('querykey', 'page');
 		$this->set('next', 'Next');
 		$this->set('prev', 'Previous');
 

@@ -50,7 +50,7 @@ interface Pager extends Meta, FileBased, Standardized, Renderable
 	 *
 	 * @return static $this
 	 */
-	function totalitems_is($totalitems);
+	function totalitems_are($totalitems);
 
 	/**
 	 * Sets the page diff, which is the number of pages from the main pages.
@@ -79,7 +79,12 @@ interface Pager extends Meta, FileBased, Standardized, Renderable
 	 *
 	 * @return static $this
 	 */
-	function querie_is(array &$querie);
+	function query_is(array $query);
+	
+	/**
+	 * @return static $this
+	 */
+	function bookmark_is($entry, $anchor);
 
 	// ------------------------------------------------------------------------
 	// Interogation
