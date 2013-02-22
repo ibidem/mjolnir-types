@@ -12,5 +12,16 @@ trait Trait_Task
 	use \app\Trait_Executable;
 	use \app\Trait_Meta;
 	use \app\Trait_Writable;
+	
+	/**
+	 * @return \mjolnir\types\Task
+	 */
+	static function instance()
+	{
+		$instance = parent::instance();
+		$instance->writer_is(\app\SilentWriter::instance());
+		
+		return $instance;
+	}
 
 } # trait
