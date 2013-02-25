@@ -10,7 +10,6 @@
 trait Trait_View
 {
 	use \app\Trait_Renderable;
-	use \app\Trait_Filebased;
 
 	/**
 	 * @var array
@@ -44,33 +43,6 @@ trait Trait_View
 	{
 		$this->view_variables[$name] = $value;
 		return $this;
-	}
-
-	/**
-	 * @return string
-	 */
-	function render()
-	{
-		// extract view paramters into current scope as references to paramter
-		// array in the view itself, skipping over already defined variables
-		$this->view_variables === null or \extract($this->view_variables, EXTR_REFS);
-
-		// start capture
-		\ob_start();
-		try
-		{
-			// include in current scope
-			include $this->filepath();
-		}
-		catch (\Exception $error)
-		{
-			// cleanup
-			\ob_end_clean();
-			// re-throw
-			throw $error;
-		}
-		// success
-		return \ob_get_clean();
 	}
 
 	/**

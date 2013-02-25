@@ -7,7 +7,7 @@
  * @copyright  (c) 2012 Ibidem Team
  * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
-interface View extends Filebased, Renderable
+interface View extends Renderable
 {
 	/**
 	 * [!!] use pass for objects
@@ -46,7 +46,5 @@ interface View extends Filebased, Renderable
 	 * @return static $this
 	 */
 	function inherit(\mjolnir\types\View $view);
-
-	# __toString should be protected and final
 
 } # interface
