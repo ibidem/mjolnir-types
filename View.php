@@ -31,6 +31,13 @@ interface View extends Renderable
 	function pass($name, $value);
 
 	/**
+	 * Retrieve view variables as array.
+	 * 
+	 * @return array
+	 */
+	function &viewvariables();
+	
+	/**
 	 * Inherit all variables from another view. The way you would use this is
 	 * by having a subview inherit the current view to avoid passing in several
 	 * variables down when all you want is to keep your views DRY by seperating

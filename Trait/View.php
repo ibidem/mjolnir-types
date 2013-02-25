@@ -44,6 +44,16 @@ trait Trait_View
 		$this->view_variables[$name] = $value;
 		return $this;
 	}
+	
+	/**
+	 * Retrieve view variables as array.
+	 * 
+	 * @return array
+	 */
+	function &viewvariables()
+	{
+		return $this->view_variables;
+	}
 
 	/**
 	 * Inherit all variables from another view. The way you would use this is
@@ -62,8 +72,8 @@ trait Trait_View
 	 */
 	function inherit(\mjolnir\types\View $view)
 	{
-		$this->view_variables = &$view->view_variables;
+		$this->view_variables = &$view->viewvariables();
 		return $this;
 	}
-
+	
 } # trait
