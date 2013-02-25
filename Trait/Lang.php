@@ -86,7 +86,7 @@ trait Trait_Lang
 	 *
 	 * @return string
 	 */
-	static function key($key, array $addins = null, $sourcelang = 'en-US')
+	static function key($key, $addins = null, $sourcelang = 'en-US')
 	{
 		$messages = \app\CFS::config('lang/'.static::$targetlang.'/messages');
 

@@ -47,7 +47,7 @@ interface Lang
 	 *
 	 * @return string
 	 */
-	static function key($key, array $addins = null, $sourcelang = 'en-US');
+	static function key($key, $addins = null, $sourcelang = 'en-US');
 
 	/**
 	 * Loads a directory of language configuration files. This method is here
