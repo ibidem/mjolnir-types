@@ -9,7 +9,10 @@
  */
 trait Trait_Theme
 {
-	use \app\Trait_Channeled;
+	use \app\Trait_Channeled
+		{
+			channel_is as protected Channeled_channel_is;
+		}
 	use \app\Trait_Meta;
 
 	/**
@@ -44,7 +47,22 @@ trait Trait_Theme
 	function themepath_for($theme)
 	{
 		$corethemes = static::corethemes();
-		$this->set('themepath', $corethemes[$theme]);
+		if (isset($corethemes[$theme]))
+		{
+			$this->set('themepath', $corethemes[$theme]);
+		}
+		else # embeded theme
+		{
+			$themedir = \app\CFS::dir("themes/$theme");
+			if ($themedir !== null)
+			{
+				$this->set('themepath', $themedir);
+			}
+			else # no theme
+			{
+				throw new \app\Exception("Theme [$theme] could not be found in the environment or modules.");
+			}
+		}
 
 		return $this;
 	}
@@ -55,6 +73,20 @@ trait Trait_Theme
 	function themepath()
 	{
 		return $this->get('themepath', null);
+	}
+
+	// ------------------------------------------------------------------------
+	// interface: Channeled
+
+	/**
+	 * @return static $this
+	 */
+	function channel_is(\mjolnir\types\Channel $channel)
+	{
+		$channel->set('theme', $this);
+		$this->Channeled_channel_is($channel);
+		
+		return $this;
 	}
 
 } # trait
