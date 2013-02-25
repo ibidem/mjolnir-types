@@ -15,14 +15,14 @@ trait Trait_SQLStatement
 	/**
 	 * Shorthand for retrieving value from a querie that performs a COUNT, SUM
 	 * or some other calculation.
-	 * 
+	 *
 	 * @return mixed
 	 */
 	function fetch_calc($on_null = null)
 	{
 		$calc_entry = $this->fetch_entry();
 		$value = \array_pop($calc_entry);
-		
+
 		if ($value !== null)
 		{
 			return $value;
@@ -32,7 +32,7 @@ trait Trait_SQLStatement
 			return $on_null;
 		}
 	}
-	
+
 	// ------------------------------------------------------------------------
 	// Multi-assignment
 
@@ -282,6 +282,12 @@ trait Trait_SQLStatement
 	protected function booleanize($value, array $map = null)
 	{
 		$map !== null or $map = \app\CFS::config('mjolnir/boolean-map');
+
+		// augment map
+		$map['1'] = true;
+		$map[1] = true;
+		$map['0'] = false;
+		$map[0] = false;
 
 		if (isset($map[$value]))
 		{
