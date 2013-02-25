@@ -137,4 +137,14 @@ interface HTMLFormField extends Standardized, HTMLTag
 	function showerrors();
 	# eg. fields in a composite default to noerrors
 
+	/**
+	 * @return static $this
+	 */
+	function disable_autocomplete();
+
+	/**
+	 * @return static $this
+	 */
+	function enable_autocomplete();
+
 } # interface
