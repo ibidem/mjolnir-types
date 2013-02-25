@@ -14,30 +14,35 @@ trait Trait_HTMLFormField_Select
 	# inherit the trait of HTMLFormField since this class is suppose to extend
 	# a HTMLFormField class therefore having it already
 	#
-	
+
+	/**
+	 * @var array selected values
+	 */
+	protected $values = null;
+
 	/**
 	 * Inserts values by interpreting tablular array as is typically the result
-	 * of a SQL call. If the table is nonstandard you can provide an idkey and 
+	 * of a SQL call. If the table is nonstandard you can provide an idkey and
 	 * titlekey to help the function retrieve the correct values.
-	 * 
+	 *
 	 * Typically defaults for idkey and title key are "id" and "title."
-	 * 
-	 * If groupkey is provided the method will insert optgroups instead of 
+	 *
+	 * If groupkey is provided the method will insert optgroups instead of
 	 * normal options, unless the value for the group is null.
-	 * 
+	 *
 	 * @return static $this
 	 */
 	function options_table(array $table, $valuekey = null, $labelkey = null, $groupkey = null)
 	{
 		$optgroups = [];
 		$options = [];
-		
+
 		if ($groupkey === null)
 		{
 			$options = \app\Arr::associative_from($table, $valuekey, $labelkey);
 		}
 		else # got group key
-		{	
+		{
 			foreach ($table as $row)
 			{
 				if ($row[$groupkey] !== null)
@@ -51,13 +56,13 @@ trait Trait_HTMLFormField_Select
 				}
 			}
 		}
-		
+
 		$this->options_array($options);
 		$this->optgroups_array($optgroups);
-		
+
 		return $this;
 	}
-	
+
 	/**
 	 * @return static $this
 	 */
@@ -71,10 +76,10 @@ trait Trait_HTMLFormField_Select
 		{
 			$this->value_array([ $value ]);
 		}
-		
+
 		return $this;
 	}
-	
+
 	/**
 	 * @return static $this
 	 */
@@ -89,8 +94,8 @@ trait Trait_HTMLFormField_Select
 				$this->values[] = $value;
 			}
 		}
-		
+
 		return $this;
 	}
-	
+
 } # trait
