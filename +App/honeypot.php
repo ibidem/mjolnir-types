@@ -11,14 +11,15 @@ trait Trait_Channel { use \mjolnir\types\Trait_Channel; }
 trait Trait_Channeled { use \mjolnir\types\Trait_Channeled; }
 trait Trait_Contextual { use \mjolnir\types\Trait_Contextual; }
 trait Trait_Controller { use \mjolnir\types\Trait_Controller; }
+trait Trait_Eloquent { use \mjolnir\types\Trait_Eloquent; }
 trait Trait_Exception { use \mjolnir\types\Trait_Exception; }
 trait Trait_Executable { use \mjolnir\types\Trait_Executable; }
 trait Trait_Filebased { use \mjolnir\types\Trait_Filebased; }
 trait Trait_HTMLForm { use \mjolnir\types\Trait_HTMLForm; }
 trait Trait_HTMLFormField_Boolean { use \mjolnir\types\Trait_HTMLFormField_Boolean; }
 trait Trait_HTMLFormField_Composite { use \mjolnir\types\Trait_HTMLFormField_Composite; }
+trait Trait_HTMLFormField_ImageUploader { use \mjolnir\types\Trait_HTMLFormField_ImageUploader; }
 trait Trait_HTMLFormField_Select { use \mjolnir\types\Trait_HTMLFormField_Select; }
-trait Trait_HTMLFormField_Textarea { use \mjolnir\types\Trait_HTMLFormField_Textarea; }
 trait Trait_HTMLFormField { use \mjolnir\types\Trait_HTMLFormField; }
 trait Trait_HTMLTag { use \mjolnir\types\Trait_HTMLTag; }
 trait Trait_Instantiatable { use \mjolnir\types\Trait_Instantiatable; }
@@ -27,7 +28,9 @@ trait Trait_Layer { use \mjolnir\types\Trait_Layer; }
 trait Trait_Linkable { use \mjolnir\types\Trait_Linkable; }
 trait Trait_Matcher { use \mjolnir\types\Trait_Matcher; }
 trait Trait_Meta { use \mjolnir\types\Trait_Meta; }
+trait Trait_PDFWriter { use \mjolnir\types\Trait_PDFWriter; }
 trait Trait_Paged { use \mjolnir\types\Trait_Paged; }
+trait Trait_Pager { use \mjolnir\types\Trait_Pager; }
 trait Trait_Processed { use \mjolnir\types\Trait_Processed; }
 trait Trait_Puppet { use \mjolnir\types\Trait_Puppet; }
 trait Trait_Recoverable { use \mjolnir\types\Trait_Recoverable; }
@@ -49,7 +52,9 @@ trait Trait_ThemeLoader { use \mjolnir\types\Trait_ThemeLoader; }
 trait Trait_ThemeView { use \mjolnir\types\Trait_ThemeView; }
 trait Trait_URLRoute { use \mjolnir\types\Trait_URLRoute; }
 trait Trait_Validator { use \mjolnir\types\Trait_Validator; }
+trait Trait_VideoConverter { use \mjolnir\types\Trait_VideoConverter; }
 trait Trait_View { use \mjolnir\types\Trait_View; }
+trait Trait_ViewFile { use \mjolnir\types\Trait_ViewFile; }
 trait Trait_ViewStash { use \mjolnir\types\Trait_ViewStash; }
 trait Trait_Writable { use \mjolnir\types\Trait_Writable; }
 trait Trait_Writer { use \mjolnir\types\Trait_Writer; }

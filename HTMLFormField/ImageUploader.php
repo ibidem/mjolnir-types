@@ -19,7 +19,7 @@ interface HTMLFormField_ImageUploader extends Channeled, HTMLFormField
 	/**
 	 * Set the preview image.
 	 * 
-	 * @return \mjolnir\types\HTMLFormField_ImageUploader $this
+	 * @return static $this
 	 */
 	function image_is($imageurl);
 	

@@ -142,21 +142,22 @@ trait Trait_Pager
 	{
 		$this->set('bookmark_entry', $entry);
 		$this->set('bookmark_anchor', $anchor);
-		
+
 		return $this;
 	}
-	
+
 	// ------------------------------------------------------------------------
 	// interface: Eloquent
-	
+
 	/**
 	 * @return static $this
 	 */
-	function langkey()
+	function langprefix($langprefix)
 	{
-		
+		$this->set('langprefix', $langprefix);
+		return $this;
 	}
-	
+
 	// ------------------------------------------------------------------------
 	// interface: Standardized
 
@@ -199,19 +200,19 @@ trait Trait_Pager
 		try
 		{
 			$file = $this->filepath();
-			
+
 			if (empty($file))
 			{
 				throw new \app\Exception('No pager view set; or provided view path is corrupt.');
 			}
-			
+
 			unset($file);
-			
-			// extract view paramters into current scope as references to 
-			// paramter array in the view itself, skipping over already defined 
+
+			// extract view paramters into current scope as references to
+			// paramter array in the view itself, skipping over already defined
 			// variables
 			\extract($this->metadata, EXTR_REFS);
-			
+
 			// include in current scope
 			include $this->filepath();
 		}

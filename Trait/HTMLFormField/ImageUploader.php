@@ -25,7 +25,7 @@ trait Trait_HTMLFormField_ImageUploader
 	/**
 	 * Set the preview image.
 	 * 
-	 * @return \mjolnir\types\HTMLFormField_ImageUploader $this
+	 * @return static $this
 	 */
 	function image_is($imageurl)
 	{

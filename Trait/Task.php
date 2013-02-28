@@ -14,7 +14,7 @@ trait Trait_Task
 	use \app\Trait_Writable;
 	
 	/**
-	 * @return \mjolnir\types\Task
+	 * @return static
 	 */
 	static function instance()
 	{

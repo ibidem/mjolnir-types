@@ -16,13 +16,13 @@ interface Pager # stable
 	
 	/**
 	 * @param integer page
-	 * @return \mjolnir\types\Pager $this 
+	 * @return static $this 
 	 */
 	function currentpage($page);
 	
 	/**
 	 * @param integer page
-	 * @return \mjolnir\types\Pager $this 
+	 * @return static $this 
 	 */
 	function bookmark($page);
 	
@@ -31,43 +31,43 @@ interface Pager # stable
 	 * a '#'.$anchor in the url; other systems might behave differently.
 	 * 
 	 * @param string anchor
-	 * @return \mjolnir\types\Pager $this
+	 * @return static $this
 	 */
 	function bookmark_anchor($anchor);
 	
 	/**
 	 * @param array lang
-	 * @return \mjolnir\types\Pager $this 
+	 * @return static $this 
 	 */
 	function lang(array $lang);
 	
 	/**
 	 * @param string order
-	 * @return \mjolnir\types\Pager $this
+	 * @return static $this
 	 */
 	function order($order);
 	
 	/**
 	 * @param integer total items
-	 * @return \mjolnir\types\Pager $this
+	 * @return static $this
 	 */
 	function totalitems($totalitems);
 	
 	/**
 	 * @param string base_url
-	 * @return \mjolnir\types\Pager $this
+	 * @return static $this
 	 */
 	function url_base($url_base);
 
 	/**
 	 * @param integer pagediff
-	 * @return \mjolnir\types\Pager $this 
+	 * @return static $this 
 	 */
 	function pagediff($pagediff);
 	
 	/**
 	 * @param integer pagelimit
-	 * @return \mjolnir\types\Pager $this
+	 * @return static $this
 	 */
 	function pagelimit($pagelimit);
 	
