@@ -59,11 +59,16 @@ interface HTMLForm extends Standardized, HTMLTag
 	 * @return \mjolnir\types\HTMLFormField_Select
 	 */
 	function select($label, $fieldname = null);
+	
+	/**
+	 * @return \mjolnir\types\FormField_ImageUploader
+	 */
+	function imageuploader($label, $fieldname = null);
 
 	// ------------------------------------------------------------------------
 	// Specialized Fields & Shorthands
 
-		/**
+	/**
 	 * @return \mjolnir\types\HTMLFormField_Hidden
 	 */
 	function hidden($fieldname = null);

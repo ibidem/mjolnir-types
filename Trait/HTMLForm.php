@@ -63,6 +63,14 @@ trait Trait_HTMLForm
 	}
 	
 	/**
+	 * @return \mjolnir\types\HTMLFormField_ImageUploader
+	 */
+	function imageuploader($label, $fieldname = null)
+	{
+		return $this->field($label, $fieldname, 'imageuploader');
+	}
+	
+	/**
 	 * @return \mjolnir\types\HTMLFormField
 	 */
 	function hidden($fieldname = null)
