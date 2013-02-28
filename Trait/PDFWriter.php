@@ -7,16 +7,8 @@
  * @copyright  (c) 2012 Ibidem Team
  * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
-interface PDFWriter
+trait Trait_PDFWriter
 {
-	/**
-	 * @return string pdf
-	 */
-	function fromhtml($html);
+	// placeholder for extending functionality
 
-	/**
-	 * Stream pdf to client.
-	 */
-	function stream($html, $filename);
-
-} # interfacea
+} # trait
