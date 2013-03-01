@@ -21,6 +21,11 @@ interface Eloquent
      *
 	 * @return static $this
 	 */
-	static function langprefix($langprefix);
+	function langprefix_is($langprefix);
+	
+	/**
+	 * @return string
+	 */
+	function langprefix($default_langprefix);
 
 } # interface

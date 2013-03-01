@@ -61,7 +61,7 @@ interface HTMLForm extends Standardized, HTMLTag
 	function select($label, $fieldname = null);
 	
 	/**
-	 * @return \mjolnir\types\FormField_ImageUploader
+	 * @return \mjolnir\types\HTMLFormField_ImageUploader
 	 */
 	function imageuploader($label, $fieldname = null);
 

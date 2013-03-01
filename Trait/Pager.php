@@ -152,10 +152,18 @@ trait Trait_Pager
 	/**
 	 * @return static $this
 	 */
-	function langprefix($langprefix)
+	function langprefix_is($langprefix)
 	{
 		$this->set('langprefix', $langprefix);
 		return $this;
+	}
+	
+	/**
+	 * @return string
+	 */
+	function langprefix($default_langprefix)
+	{
+		return $this->get('langprefix', $default_langprefix);
 	}
 
 	// ------------------------------------------------------------------------
@@ -284,7 +292,7 @@ trait Trait_Pager
 	{
 		// misc
 
-		$this->set('langprefix', 'mjolnir:pager/');
+		$this->set('langprefix', 'mjolnir:html/pager/');
 		$this->set('currentpage', null);
 		$this->set('order', 'asc');
 		$this->set('query', '?');

@@ -31,8 +31,8 @@ trait Trait_Lang
 	 */
 	static function term($term, array $addins = null, $sourcelang = 'en-US')
 	{
-		// lang/en-US/messages => translate to en-US using messages
-		// lang/en-US/ro-ro => translate to en-US from ro-ro
+		// lang/en-US/keys => translate to en-US using messages
+		// lang/en-US/ro-RO => translate to en-US from ro-RO
 
 		$langterms = \app\CFS::config('lang/'.static::$targetlang.'/'.$sourcelang);
 
@@ -86,11 +86,11 @@ trait Trait_Lang
 	 *
 	 * @return string
 	 */
-	static function key($key, $addins = null, $sourcelang = 'en-US')
+	static function key($key, $addins = null)
 	{
-		$messages = \app\CFS::config('lang/'.static::$targetlang.'/messages');
+		$keys = \app\CFS::config('lang/'.static::$targetlang.'/keys');
 
-		if ( ! isset($messages[$key]))
+		if ( ! isset($keys[$key]))
 		{
 			throw new \app\Exception('Missing message ['.$key.'] for language ['.static::$targetlang.'].');
 		}
@@ -98,12 +98,12 @@ trait Trait_Lang
 		if ($addins !== null)
 		{
 			// if we have addins, the term matches to a lambda
-			return $messages[$key]($addins);
+			return $keys[$key]($addins);
 		}
 		else # no addins
 		{
 			// if there are no addins, the key maps to a string
-			return $messages[$key];
+			return $keys[$key];
 		}
 	}
 
