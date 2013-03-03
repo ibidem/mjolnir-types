@@ -64,7 +64,7 @@ interface Lang
 	 *
 	 * @return array
 	 */
-	static function &file($file);
+	static function file($file);
 
 	/**
 	 * @param string target language

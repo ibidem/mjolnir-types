@@ -34,7 +34,7 @@ trait Trait_Lang
 		// lang/en-US/keys => translate to en-US using messages
 		// lang/en-US/ro-RO => translate to en-US from ro-RO
 
-		$langterms = &\app\CFS::config('lang/'.static::$targetlang.'/'.$sourcelang);
+		$langterms = \app\CFS::config('lang/'.static::$targetlang.'/'.$sourcelang);
 
 		if ( ! isset($langterms[$term]))
 		{
@@ -86,7 +86,7 @@ trait Trait_Lang
 	 */
 	static function key($key, $addins = null)
 	{
-		$keys = &\app\CFS::config('lang/'.static::$targetlang.'/keys');
+		$keys = \app\CFS::config('lang/'.static::$targetlang.'/keys');
 
 		if ( ! isset($keys[$key]))
 		{
@@ -134,7 +134,7 @@ trait Trait_Lang
 	 *
 	 * @return array
 	 */
-	static function &file($file)
+	static function file($file)
 	{
 		return \app\CFS::config('lang/'.static::$targetlang.'/'.$file);
 	}

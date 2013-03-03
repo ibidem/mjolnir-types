@@ -157,7 +157,7 @@ trait Trait_Pager
 		$this->set('langprefix', $langprefix);
 		return $this;
 	}
-	
+
 	/**
 	 * @return string
 	 */
