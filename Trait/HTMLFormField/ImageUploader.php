@@ -14,62 +14,69 @@ trait Trait_HTMLFormField_ImageUploader
 	# inherit the trait of HTMLFormField since this class is suppose to extend
 	# a HTMLFormField class therefore having it already
 	#
-	
+
 	use \app\Trait_Channeled;
-	
+
 	/**
 	 * @var string
 	 */
 	protected $langprefix;
-	
+
 	/**
 	 * @var string
 	 */
 	protected $imageurl = '#';
-	
+
 	/**
 	 * @var \mjolnir\types\HTMLTag
 	 */
 	protected $preview;
-			
+
 	/**
 	 * @return static $this
 	 */
 	function initialize()
 	{
 		$this->input = $this->form()->hidden($this->get('name'));
+
+		$autocomplete = $this->form()->autovalue($this->get('name'));
 		
+		if ($autocomplete !== null)
+		{
+			$this->input->value_is($autocomplete);
+		}
+
 		$this->preview = \app\HTMLTag::i('img')
 			->set('id', $this->input->get('id').'_preview')
 			->set('alt', '') # an empty value is the correct value
 			->set('src', $this->imageurl);
-		
+
 		return $this;
 	}
-	
+
 	/**
 	 * Set the preview image.
-	 * 
+	 *
 	 * @return static $this
 	 */
 	function image_is($imageurl)
 	{
 		$this->imageurl = $imageurl;
 		$this->preview->set('src', $imageurl);
-		
+
 		return $this;
 	}
-	
+
 	/**
 	 * Output a preview.
-	 * 
+	 *
 	 * @return \mjolnir\types\HTMLTag
 	 */
 	function preview()
 	{
 		return $this->preview;
 	}
-	
+
 	/**
 	 * @return static $this
 	 */
@@ -77,17 +84,17 @@ trait Trait_HTMLFormField_ImageUploader
 	{
 		$this->preview->set('width', $width);
 		$this->preview->set('height', $width);
-		
+
 		$this->wrapper()
 			->set('data-preview-width', $width)
 			->set('data-preview-height', $height);
-		
+
 		return $this;
 	}
-	
+
 	// ------------------------------------------------------------------------
 	// interface: Eloquent
-	
+
 	/**
 	 * @return static $this
 	 */
@@ -96,7 +103,7 @@ trait Trait_HTMLFormField_ImageUploader
 		$this->langprefix = $langprefix;
 		return $this;
 	}
-	
+
 	/**
 	 * @return string
 	 */
@@ -104,5 +111,5 @@ trait Trait_HTMLFormField_ImageUploader
 	{
 		return $this->langprefix !== null ? $this->langprefix : $default_langprefix;
 	}
-	
+
 } # trait
