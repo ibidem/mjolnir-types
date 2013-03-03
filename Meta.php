@@ -12,7 +12,7 @@ interface Meta
 	/**
 	 * @return mixed
 	 */
-	function get($name, $default = null);
+	function &get($name, $default = null);
 
 	/**
 	 * @return static $this
@@ -20,9 +20,9 @@ interface Meta
 	function set($name, $value);
 
 	/**
-	 * If the key is currently a non-array value it will be converted to an 
+	 * If the key is currently a non-array value it will be converted to an
 	 * array  maintaning the previous value (along with the new one).
-	 * 
+	 *
 	 * @return static $this
 	 */
 	function add($name, $value);
@@ -35,6 +35,6 @@ interface Meta
 	/**
 	 * @return array
 	 */
-	function metadata();
+	function &metadata();
 
 } # interface

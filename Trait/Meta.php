@@ -17,9 +17,17 @@ trait Trait_Meta
 	/**
 	 * @return mixed
 	 */
-	function get($name, $default = null)
+	function &get($name, $default = null)
 	{
-		return isset($this->metadata[$name]) ? $this->metadata[$name] : $default;
+		if (isset($this->metadata[$name]))
+		{
+			return $this->metadata[$name];
+		}
+		else # metadata for name is not set
+		{
+			return $default;
+		}
+
 	}
 
 	/**
@@ -32,9 +40,9 @@ trait Trait_Meta
 	}
 
 	/**
-	 * If the key is currently a non-array value it will be converted to an 
+	 * If the key is currently a non-array value it will be converted to an
 	 * array  maintaning the previous value (along with the new one).
-	 * 
+	 *
 	 * @return static $this
 	 */
 	function add($name, $value)
@@ -43,9 +51,9 @@ trait Trait_Meta
 		{
 			$this->metadata[$name] = [ $this->metadata[$name] ];
 		}
-		
+
 		$this->metadata[$name][] = $value;
-		
+
 		return $this;
 	}
 
@@ -61,7 +69,7 @@ trait Trait_Meta
 	/**
 	 * @return array
 	 */
-	function metadata()
+	function &metadata()
 	{
 		return $this->metadata;
 	}
