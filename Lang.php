@@ -58,14 +58,14 @@ interface Lang
 	 * the extention is the default set for PHP files, defined by EXT.
 	 */
 	static function load($dir, $ext = EXT);
-	
+
 	/**
 	 * Get's a language file from the current language's directory.
 	 *
 	 * @return array
 	 */
-	static function file($file);
-	
+	static function &file($file);
+
 	/**
 	 * @param string target language
 	 */
@@ -75,16 +75,16 @@ interface Lang
 	 * @return string current target language
 	 */
 	static function targetlang();
-	
+
 	/**
 	 * Some implementations require the non-standard underscore version of lang
-	 * identifiers, ie. en_US for en-US. This method converts a standard 
+	 * identifiers, ie. en_US for en-US. This method converts a standard
 	 * language tag to an id language tag (ie. underscore version).
-	 * 
+	 *
 	 * See: http://en.wikipedia.org/wiki/IETF_language_tag syntax information.
-	 * 
+	 *
 	 * @return string
 	 */
 	static function idlang($lang);
-	
+
 } # interface
