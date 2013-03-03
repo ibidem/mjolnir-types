@@ -19,9 +19,9 @@ trait Trait_HTMLTag
 
 	/**
 	 * @var mixed string or renderable
-	 */ 
+	 */
 	protected $tagbody = null;
-	
+
 	/**
 	 * @return string
 	 */
@@ -56,11 +56,11 @@ trait Trait_HTMLTag
 		$this->tagbody = $renderable;
 		return $this;
 	}
-	
+
 	/**
-	 * If tag body is currently a non array value it will be converted to an 
+	 * If tag body is currently a non array value it will be converted to an
 	 * array maintaining the previous body (along with the new one).
-	 * 
+	 *
 	 * @return static $this
 	 */
 	function appendtagbody($tagbody)
@@ -69,9 +69,9 @@ trait Trait_HTMLTag
 		{
 			$this->tagbody = [ $this->tagbody ];
 		}
-		
+
 		$this->tagbody[] = $tagbody;
-		
+
 		return $this;
 	}
 
@@ -82,16 +82,16 @@ trait Trait_HTMLTag
 	{
 		return $this->tagbody;
 	}
-	
+
 	// ------------------------------------------------------------------------
 	// interface: Rendered
-	
+
 	/**
 	 * This class is an exception to the no __toString rule of Renderable. Using
-	 * __toString in a case where another Renderable has been injected into 
-	 * the current Renderable object is still considered a grave mistake and 
+	 * __toString in a case where another Renderable has been injected into
+	 * the current Renderable object is still considered a grave mistake and
 	 * implementations should issue an error in development; if feasible.
-	 * 
+	 *
 	 * @return string
 	 */
 	function __toString()
@@ -101,7 +101,7 @@ trait Trait_HTMLTag
 			return $this->render();
 		}
 		catch (\Exception $exception)
-		{	
+		{
 			// diagnose
 			$trace = \debug_backtrace();
 			$caller = \array_shift($trace);
@@ -112,17 +112,13 @@ trait Trait_HTMLTag
 				$debuginfo .= " in {$caller['class']}";
 			}
 
-			\mjolnir\log
-				(
-					'Error',
-					"Error while casting form field to string: {$exception->getMessage()} $debuginfo"
-				);
+			\mjolnir\log('Error', "Error while casting form field to string: {$exception->getMessage()} $debuginfo");
 
 			if (\app\CFS::config('mjolnir/base')['development'])
 			{
-				// emmit catchable fatal error; note that this will need to be 
-				// converted to an exception by a error handler set via 
-				// \set_error_handler before it can be catchable by an external 
+				// emmit catchable fatal error; note that this will need to be
+				// converted to an exception by a error handler set via
+				// \set_error_handler before it can be catchable by an external
 				// try / catch
 				return null;
 			}
@@ -132,5 +128,5 @@ trait Trait_HTMLTag
 			}
 		}
 	}
-	
+
 } # trait

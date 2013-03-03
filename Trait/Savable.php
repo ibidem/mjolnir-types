@@ -13,7 +13,7 @@ trait Trait_Savable
 	 * @var boolean
 	 */
 	protected $saved = false;
-	
+
 	/**
 	 * @return boolean
 	 */
@@ -21,7 +21,7 @@ trait Trait_Savable
 	{
 		return $this->saved;
 	}
-	
+
 	/**
 	 * @return static $this
 	 */
@@ -30,7 +30,7 @@ trait Trait_Savable
 		$this->saved = true;
 		return $this;
 	}
-	
+
 	/**
 	 * Check if notice was saved. Notices that don't reach the user can cause a
 	 * lot of trouble.
@@ -39,7 +39,7 @@ trait Trait_Savable
 	{
 		if ( ! $this->saved)
 		{
-			\mjolnir\log('Bug', 'An unsaved Savable object was created.', 'Bugs');
+			\mjolnir\log('Error', 'An unsaved Savable object was created.', 'Bugs');
 		}
 	}
 

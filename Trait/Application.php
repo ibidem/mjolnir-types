@@ -70,12 +70,7 @@ trait Trait_Application
 	 */
 	function criticalerror(\Exception $exception)
 	{
-		\mjolnir\log
-			(
-				'CriticalError',
-				$exception->getMessage(),
-				'CriticalError'
-			);
+		\mjolnir\log('CriticalError', $exception->getMessage());
 
 		throw $exception;
 	}

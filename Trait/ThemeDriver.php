@@ -110,7 +110,7 @@ trait Trait_ThemeDriver
 	{
 		if (\preg_match('#\.\.#', $path))
 		{
-			\mjolnir\log('Hacking', 'Path exploit detected.', 'Hacking/');
+			\mjolnir\log('Hacking', 'Path exploit attempt detected.');
 			throw new \app\Exception_NotAllowed('Path is not allowed to have parent references (ie. double dot).');
 		}
 	}

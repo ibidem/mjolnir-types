@@ -42,9 +42,8 @@ trait Trait_Lang
 			{
 				\mjolnir\masterlog
 					(
-						'Failure',
-						"The term [$term] is missing a translation (from $sourcelang to ".static::$targetlang.").",
-						"Lang/$sourcelang/".static::$targetlang.'/'
+						"Lang/$sourcelang/".static::$targetlang,
+						"The term [$term] is missing a translation (from $sourcelang to ".static::$targetlang.")."
 					);
 
 				return \strtr($term, $addins);
@@ -57,9 +56,8 @@ trait Trait_Lang
 			{
 				\mjolnir\masterlog
 					(
-						'Failure',
-						"The term [$term] is missing a translation (from $sourcelang to ".static::$targetlang.").",
-						'Lang/'.$sourcelang.'/'.static::$targetlang.'/'
+						"Lang/$sourcelang/".static::$targetlang,
+						"The term [$term] is missing a translation (from $sourcelang to ".static::$targetlang.")."
 					);
 
 				return $term;
@@ -114,23 +112,23 @@ trait Trait_Lang
 	 * There is no specified structure, the method will simply merge all
 	 * configuration files in the directory that match the extention. By default
 	 * the extention is the default set for PHP files, defined by EXT.
-	 * 
+	 *
 	 * The method may be customzied to interpolate different configuration file
 	 * types togheter or load various other formats into PHP.
 	 */
 	static function load($dir, $ext = EXT)
 	{
 		$files = \app\Filesystem::files($dir, $ext);
-		
+
 		$langconfig = [];
-		foreach ($files as $file) 
+		foreach ($files as $file)
 		{
 			$langconfig = \app\Arr::merge($langconfig, include $file);
 		}
-		
+
 		return $langconfig;
 	}
-	
+
 	/**
 	 * Get's a language file from the current language's directory.
 	 *
@@ -156,14 +154,14 @@ trait Trait_Lang
 	{
 		return static::$targetlang;
 	}
-	
+
 	/**
 	 * Some implementations require the non-standard underscore version of lang
-	 * identifiers, ie. en_US for en-US. This method converts a standard 
+	 * identifiers, ie. en_US for en-US. This method converts a standard
 	 * language tag to an id language tag (ie. underscore version).
-	 * 
+	 *
 	 * See: http://en.wikipedia.org/wiki/IETF_language_tag syntax information.
-	 * 
+	 *
 	 * @return string
 	 */
 	static function idlang($lang)
