@@ -199,7 +199,7 @@ trait Trait_HTMLFormField
 	}
 
 	/**
-	 * @return static $this
+	 * @return array
 	 */
 	function errors()
 	{

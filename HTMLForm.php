@@ -235,7 +235,7 @@ interface HTMLForm extends Standardized, HTMLTag
 	 *
 	 * @return array or null
 	 */
-	function errors($field = null);
+	function errors($fieldname);
 
 	// ------------------------------------------------------------------------
 	// Formatting

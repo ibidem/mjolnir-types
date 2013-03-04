@@ -97,7 +97,7 @@ interface HTMLFormField extends Standardized, HTMLTag
 	function adderrors(array $errors = null);
 
 	/**
-	 * @return static $this
+	 * @return array
 	 */
 	function errors();
 

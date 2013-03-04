@@ -314,11 +314,11 @@ trait Trait_HTMLForm
 	 *
 	 * @return array or null
 	 */
-	function errors($fieldname = null)
+	function errors($fieldname)
 	{
 		if ($fieldname == null)
 		{
-			return $this->errors;
+			return null;
 		}
 		else # field errors
 		{
@@ -334,6 +334,14 @@ trait Trait_HTMLForm
 				}
 			}
 		}
+	}
+	
+	/**
+	 * @return array
+	 */
+	function allerrors()
+	{
+		return $this->errors;
 	}
 
 	// ------------------------------------------------------------------------
