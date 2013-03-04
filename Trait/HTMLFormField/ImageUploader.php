@@ -118,8 +118,9 @@ trait Trait_HTMLFormField_ImageUploader
 				);
 		}
 		
-		$this->preview->set('width', $width);
-		$this->preview->set('height', $width);
+		$this->preview
+			->set('width', $width)
+			->set('height', $width);
 
 		$this->wrapper()
 			->set('data-preview-width', $width)
