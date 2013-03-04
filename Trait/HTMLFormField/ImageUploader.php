@@ -25,7 +25,7 @@ trait Trait_HTMLFormField_ImageUploader
 	/**
 	 * @var string
 	 */
-	protected $imageurl = '#';
+	protected $imageurl = null;
 
 	/**
 	 * @var \mjolnir\types\HTMLTag
@@ -101,19 +101,22 @@ trait Trait_HTMLFormField_ImageUploader
 	{
 		$this->previewsize = [ $width, $height ];
 		
-		$this->preview->set
-			(
-				'src', 
-				\app\URL::href
-					(
-						'mjolnir:thumbnail.route', 
-						[ 
-							'image'  => \app\CFS::config('mjolnir/base')['path'].$this->imageurl, 
-							'width'  => $width,
-							'height' => $height,
-						]
-					)
-			);
+		if ($this->imageurl !== null)
+		{
+			$this->preview->set
+				(
+					'src', 
+					\app\URL::href
+						(
+							'mjolnir:thumbnail.route', 
+							[ 
+								'image'  => \app\CFS::config('mjolnir/base')['path'].$this->imageurl, 
+								'width'  => $width,
+								'height' => $height,
+							]
+						)
+				);
+		}
 		
 		$this->preview->set('width', $width);
 		$this->preview->set('height', $width);
