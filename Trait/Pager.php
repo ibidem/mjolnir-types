@@ -66,7 +66,7 @@ trait Trait_Pager
 	 */
 	function page_is($page)
 	{
-		$this->set('page', $page);
+		$this->set('currentpage', $page);
 		return $this;
 	}
 
