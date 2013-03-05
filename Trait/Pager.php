@@ -134,6 +134,25 @@ trait Trait_Pager
 
 		return $this;
 	}
+	
+	/**
+	 * Appends the given string to the end of the generated query. 
+	 * 
+	 * eg. limit=100&amp;magic=3
+	 * 
+	 * [!!] the query should not have a start or ending query delimiter, see 
+	 * above for example
+	 * 
+	 * This method is available for implementations that form and pass hardcoded
+	 * versions of a queries instead of arrays.
+	 * 
+	 * @return static $this
+	 */
+	function appendquery($rawquery)
+	{
+		$this->set('query', $this->get('query').$rawquery.'&amp;');
+		return $this;
+	}
 
 	/**
 	 * @return static $this

@@ -12,7 +12,7 @@ interface Paged
 	/**
 	 * If page or limit are null, the limit will be set to the maximum
 	 * integer value, or the command will be ignored, depending on the context
-	 * of the class.
+	 * of the class (ie. if the class supports infinite results).
 	 *
 	 * @return static $this
 	 */
