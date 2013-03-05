@@ -32,7 +32,9 @@ trait Trait_PDFWriter { use \mjolnir\types\Trait_PDFWriter; }
 trait Trait_Paged { use \mjolnir\types\Trait_Paged; }
 trait Trait_Pager { use \mjolnir\types\Trait_Pager; }
 trait Trait_Processed { use \mjolnir\types\Trait_Processed; }
+trait Trait_Protocol { use \mjolnir\types\Trait_Protocol; }
 trait Trait_Puppet { use \mjolnir\types\Trait_Puppet; }
+trait Trait_RawView { use \mjolnir\types\Trait_RawView; }
 trait Trait_Recoverable { use \mjolnir\types\Trait_Recoverable; }
 trait Trait_RelayNode { use \mjolnir\types\Trait_RelayNode; }
 trait Trait_Renderable { use \mjolnir\types\Trait_Renderable; }
@@ -54,7 +56,6 @@ trait Trait_URLRoute { use \mjolnir\types\Trait_URLRoute; }
 trait Trait_Validator { use \mjolnir\types\Trait_Validator; }
 trait Trait_VideoConverter { use \mjolnir\types\Trait_VideoConverter; }
 trait Trait_View { use \mjolnir\types\Trait_View; }
-trait Trait_ViewFile { use \mjolnir\types\Trait_ViewFile; }
 trait Trait_ViewStash { use \mjolnir\types\Trait_ViewStash; }
 trait Trait_Writable { use \mjolnir\types\Trait_Writable; }
 trait Trait_Writer { use \mjolnir\types\Trait_Writer; }
