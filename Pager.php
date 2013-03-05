@@ -86,7 +86,8 @@ interface Pager extends Meta, FileBased, Standardized, Renderable
 	 * 
 	 * eg. limit=100&amp;magic=3
 	 * 
-	 * [!!] the query should not have a start or ending query delimiter
+	 * [!!] the query should not have a start or ending query delimiter, see 
+	 * above for example
 	 * 
 	 * This method is available for implementations that form and pass hardcoded
 	 * versions of a queries instead of arrays.
