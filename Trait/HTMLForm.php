@@ -63,13 +63,21 @@ trait Trait_HTMLForm
 	}
 
 	/**
-	 * @return \app\FormField_ImageUploader
+	 * @return \mjolnir\types\HTMLFormField_AjaxUploader
 	 */
 	function imageuploader($label, $fieldname = null)
 	{
 		return $this->field($label, $fieldname, 'imageuploader');
 	}
 
+	/**
+	 * @return \mjolnir\types\HTMLFormField_AjaxUploader
+	 */
+	function videouploader($label, $fieldname = null)
+	{
+		return $this->field($label, $fieldname, 'videouploader');
+	}
+	
 	/**
 	 * @return \mjolnir\types\HTMLFormField
 	 */

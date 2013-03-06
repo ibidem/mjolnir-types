@@ -61,9 +61,14 @@ interface HTMLForm extends Standardized, HTMLTag
 	function select($label, $fieldname = null);
 	
 	/**
-	 * @return \mjolnir\types\HTMLFormField_ImageUploader
+	 * @return \mjolnir\types\HTMLFormField_AjaxUploader
 	 */
 	function imageuploader($label, $fieldname = null);
+	
+	/**
+	 * @return \mjolnir\types\HTMLFormField_AjaxUploader
+	 */
+	function videouploader($label, $fieldname = null);
 
 	// ------------------------------------------------------------------------
 	// Specialized Fields & Shorthands
