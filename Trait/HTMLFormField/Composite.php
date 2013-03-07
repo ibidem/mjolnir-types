@@ -38,6 +38,11 @@ trait Trait_HTMLFormField_Composite
 		// start with errors set explicitly on field
 		$errors = $this->errors;
 		
+		if ($errors == null)
+		{
+			$errors = [];
+		}
+		
 		// add the errors in all the fields
 		if ($this->compositefields !== null)
 		{
@@ -47,7 +52,7 @@ trait Trait_HTMLFormField_Composite
 				
 				if ($fielderrors !== null)
 				{
-					\array_merge($this->errors, $fielderrors);
+					$errors = \app\Arr::merge($errors, $fielderrors);
 				}
 			}
 		}
