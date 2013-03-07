@@ -13,7 +13,8 @@ interface Validator extends Matcher
 	 * A field will be tested against a claim and validated by the proof, or if
 	 * the proof is null the claim will provide the proof itself.
 	 *
-	 * Field may be an array, and proof may be a function.
+	 * Field and claim may be an array, and proof may be a function. The array
+	 * version will always be translated down to the non-array version.
 	 *
 	 * eg.
 	 *
