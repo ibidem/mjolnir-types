@@ -21,4 +21,9 @@ interface HTMLFormField_AjaxUploader extends Channeled, HTMLFormField
 	 */
 	function preview();
 	
+	/**
+	 * @return static $this
+	 */
+	function previewsize($width, $height);
+	
 } # interface
