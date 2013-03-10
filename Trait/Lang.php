@@ -15,6 +15,52 @@ trait Trait_Lang
 	protected static $targetlang = 'en-US';
 
 	/**
+	 * Current index
+	 *
+	 * @var array
+	 */
+	protected $index = array
+		(
+			// empty library
+		);
+
+	/**
+	 * Defines a library used for indexing (ie. idx function) when translating.
+	 * Terms already loaded in the index will be overwritten.
+	 *
+	 * @return static $this
+	 */
+	function addlibrary($librarykey)
+	{
+		$libraries = \app\CFS::config('lang/'.static::$targetlang.'/libraries');
+		$this->index = \app\Arr::merge($this->index, include $libraries[$librarykey].EXT);
+
+		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	function idx($index_key, array $addins = null)
+	{
+		if ( ! isset($this->index[$index_key]))
+		{
+			throw new \app\Exception('Missing language index ['.$index_key.'] in library, for language ['.static::$targetlang.'].');
+		}
+
+		if ($addins !== null)
+		{
+			// if we have addins, the term matches to a lambda
+			return $this->index[$index_key]($addins);
+		}
+		else # no addins
+		{
+			// if there are no addins, the key maps to a string
+			return $this->index[$index_key];
+		}
+	}
+
+	/**
 	 * Translate a given term. The translation may not necesarily be from one
 	 * language to another. For example, grammer use:
 	 *

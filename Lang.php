@@ -22,6 +22,19 @@
 interface Lang
 {
 	/**
+	 * Defines a library used for indexing (ie. idx function) when translating.
+	 * Terms already loaded in the index will be overwritten.
+	 *
+	 * @return static $this
+	 */
+	function addlibrary($librarykey);
+
+	/**
+	 * @return string
+	 */
+	function idx($index_key, array $addins = null);
+
+	/**
 	 * Translate a given term. The translation may not necesarily be from one
 	 * language to another. For example, grammer use:
 	 *

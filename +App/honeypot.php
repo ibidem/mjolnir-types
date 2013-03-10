@@ -16,9 +16,9 @@ trait Trait_Exception { use \mjolnir\types\Trait_Exception; }
 trait Trait_Executable { use \mjolnir\types\Trait_Executable; }
 trait Trait_Filebased { use \mjolnir\types\Trait_Filebased; }
 trait Trait_HTMLForm { use \mjolnir\types\Trait_HTMLForm; }
+trait Trait_HTMLFormField_AjaxUploader { use \mjolnir\types\Trait_HTMLFormField_AjaxUploader; }
 trait Trait_HTMLFormField_Boolean { use \mjolnir\types\Trait_HTMLFormField_Boolean; }
 trait Trait_HTMLFormField_Composite { use \mjolnir\types\Trait_HTMLFormField_Composite; }
-trait Trait_HTMLFormField_ImageUploader { use \mjolnir\types\Trait_HTMLFormField_ImageUploader; }
 trait Trait_HTMLFormField_Select { use \mjolnir\types\Trait_HTMLFormField_Select; }
 trait Trait_HTMLFormField { use \mjolnir\types\Trait_HTMLFormField; }
 trait Trait_HTMLTag { use \mjolnir\types\Trait_HTMLTag; }
