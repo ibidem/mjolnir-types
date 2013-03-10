@@ -24,6 +24,11 @@ trait Trait_Lang
 			// empty library
 		);
 
+	protected $loaded_libraries = array
+		(
+			// no libraries
+		);
+
 	/**
 	 * Defines a library used for indexing (ie. idx function) when translating.
 	 * Terms already loaded in the index will be overwritten.
@@ -34,6 +39,7 @@ trait Trait_Lang
 	{
 		$libraries = \app\CFS::config('lang/'.static::$targetlang.'/libraries');
 		$this->index = \app\Arr::merge($this->index, include $libraries[$librarykey].EXT);
+		$this->loaded_libraries[] = $librarykey;
 
 		return $this;
 	}
@@ -45,7 +51,7 @@ trait Trait_Lang
 	{
 		if ( ! isset($this->index[$index_key]))
 		{
-			throw new \app\Exception('Missing language index ['.$index_key.'] in library, for language ['.static::$targetlang.'].');
+			throw new \app\Exception('Missing key ['.$index_key.'] for language ['.static::$targetlang.'] in index. Loaded libraries: '.\implode(', ', $this->loaded_libraries));
 		}
 
 		if ($addins !== null)
