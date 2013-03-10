@@ -47,7 +47,7 @@ trait Trait_Lang
 	/**
 	 * @return string
 	 */
-	function idx($index_key, array $addins = null)
+	function idx($index_key, $addins = null)
 	{
 		if ( ! isset($this->index[$index_key]))
 		{
@@ -81,7 +81,7 @@ trait Trait_Lang
 	 *
 	 * @return string
 	 */
-	static function term($term, array $addins = null, $sourcelang = 'en-US')
+	static function term($term, $addins = null, $sourcelang = 'en-US')
 	{
 		// lang/en-US/keys => translate to en-US using messages
 		// lang/en-US/ro-RO => translate to en-US from ro-RO

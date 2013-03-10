@@ -32,7 +32,7 @@ interface Lang
 	/**
 	 * @return string
 	 */
-	function idx($index_key, array $addins = null);
+	function idx($index_key, $addins = null);
 
 	/**
 	 * Translate a given term. The translation may not necesarily be from one
@@ -49,7 +49,7 @@ interface Lang
 	 *
 	 * @return string
 	 */
-	static function term($term, array $addins = null, $sourcelang = 'en-US');
+	static function term($term, $addins = null, $sourcelang = 'en-US');
 
 	/**
 	 * Access a specific message identified by the key.
