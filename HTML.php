@@ -21,7 +21,7 @@ interface HTML
 	// recomended HTML5 doctype
 	const HTML5_DOCTYPE = '<!DOCTYPE html>';
 	// recomended HTML4 doctype
-	const HTML4_DOCTYPE = ' <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">';
+	const HTML4_DOCTYPE = '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">';
 	
 	/**
 	 * Sets the doctype. See: \mjolnir\types\HTML for constants.
