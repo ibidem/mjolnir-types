@@ -76,4 +76,22 @@ trait Trait_RawView
 		return $this;
 	}
 	
+	/**
+	 * Starts view frame.
+	 */
+	static function frame()
+	{
+		\ob_start();
+	}
+	
+	/**
+	 * Ends view frame.
+	 * 
+	 * @return string
+	 */
+	static function endframe()
+	{
+		return \ob_get_clean();
+	}
+	
 } # trait
