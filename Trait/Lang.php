@@ -38,7 +38,14 @@ trait Trait_Lang
 	function addlibrary($librarykey)
 	{
 		$libraries = \app\CFS::config('lang/'.static::$targetlang.'/libraries');
-		$this->index = \app\Arr::merge($this->index, include $libraries[$librarykey].EXT);
+		
+		// we can have null libraries, ie. the key is defined but the library
+		// is empty/nonexistent
+		if ($libraries[$librarykey] !== null)
+		{
+			$this->index = \app\Arr::merge($this->index, include $libraries[$librarykey].EXT);
+		}
+		
 		$this->loaded_libraries[] = $librarykey;
 
 		return $this;
