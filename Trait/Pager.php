@@ -230,8 +230,6 @@ trait Trait_Pager
 	 */
 	function render()
 	{
-		\var_dump($this); die;
-		
 		if ($this->get('autohide', false) && $this->get('itemcount', 0) == 0)
 		{
 			return '';
