@@ -46,11 +46,11 @@ interface Pager extends Meta, FileBased, Standardized, Renderable
 	function page_is($page);
 
 	/**
-	 * Sets the total item count.
+	 * Sets the item count.
 	 *
 	 * @return static $this
 	 */
-	function totalitems_are($totalitems);
+	function itemcount_is($itemcount);
 
 	/**
 	 * Sets the page diff, which is the number of pages from the main pages.
@@ -108,5 +108,12 @@ interface Pager extends Meta, FileBased, Standardized, Renderable
 	 * @return int total number of pages
 	 */
 	function pagecount();
+	
+	/**
+	 * If item count is 0, the pager will render to empty string.
+	 * 
+	 * @return static $this
+	 */
+	function autohide();
 
 } # interfacea

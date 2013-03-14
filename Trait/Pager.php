@@ -71,13 +71,13 @@ trait Trait_Pager
 	}
 
 	/**
-	 * Sets the total item count.
+	 * Sets the item count.
 	 *
 	 * @return static $this
 	 */
-	function totalitems_are($totalitems)
+	function itemcount_is($itemcount)
 	{
-		$this->set('totalitems', $totalitems);
+		$this->set('itemcount', $itemcount);
 		return $this;
 	}
 
@@ -164,6 +164,17 @@ trait Trait_Pager
 
 		return $this;
 	}
+	
+	/**
+	 * If item count is 0, the pager will render to empty string.
+	 * 
+	 * @return static $this
+	 */
+	function autohide()
+	{
+		$this->set('autohide', true);
+		return $this;
+	}
 
 	// ------------------------------------------------------------------------
 	// interface: Eloquent
@@ -219,6 +230,13 @@ trait Trait_Pager
 	 */
 	function render()
 	{
+		\var_dump($this); die;
+		
+		if ($this->get('autohide', false) && $this->get('itemcount', 0) == 0)
+		{
+			return '';
+		}
+		
 		// setup pager
 		$this->calculate_pager_attributes();
 
