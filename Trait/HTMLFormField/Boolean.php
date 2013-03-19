@@ -33,4 +33,21 @@ trait Trait_HTMLFormField_Boolean
 		return $this;
 	}
 	
+	/**
+	 * @return static $this
+	 */
+	function checked_state($state)
+	{
+		if ($state)
+		{
+			$this->checked();
+		}
+		else # checked
+		{
+			$this->unchecked();
+		}
+		
+		return $this;
+	}
+	
 } # trait

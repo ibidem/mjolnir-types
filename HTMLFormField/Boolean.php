@@ -19,4 +19,9 @@ interface HTMLFormField_Boolean extends HTMLFormField
 	 */
 	function unchecked();
 	
+	/**
+	 * @return static $this
+	 */
+	function checked_state($state);
+	
 } # interface
