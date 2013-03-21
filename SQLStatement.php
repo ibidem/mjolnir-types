@@ -61,22 +61,22 @@ interface SQLStatement extends Executable, Paged
 	/**
 	 * @return static $this
 	 */
-	function strs(array $params, array $filter = null);
+	function strs(array $params, array $filter = null, $varkey = ':');
 
 	/**
 	 * @return static $this
 	 */
-	function nums(array $params, array $filter = null);
+	function nums(array $params, array $filter = null, $varkey = ':');
 
 	/**
 	 * @return static $this
 	 */
-	function bools(array $params, array $filter = null, array $map = null);
+	function bools(array $params, array $filter = null, array $map = null, $varkey = ':');
 
 	/**
 	 * @return static $this
 	 */
-	function dates(array $params, array $filter = null);
+	function dates(array $params, array $filter = null, $varkey = ':');
 
 	// ------------------------------------------------------------------------
 	// Multi binding
@@ -84,22 +84,22 @@ interface SQLStatement extends Executable, Paged
 	/**
 	 * @return static $this
 	 */
-	function bindstrs(array &$params, array $filter = null);
+	function bindstrs(array &$params, array $filter = null, $varkey = ':');
 
 	/**
 	 * @return static $this
 	 */
-	function bindnums(array &$params, array $filter = null);
+	function bindnums(array &$params, array $filter = null, $varkey = ':');
 
 	/**
 	 * @return static $this
 	 */
-	function bindbools(array &$params, array $filter = null);
+	function bindbools(array &$params, array $filter = null, $varkey = ':');
 
 	/**
 	 * @return static $this
 	 */
-	function binddates(array &$params, array $filter = null);
+	function binddates(array &$params, array $filter = null, $varkey = ':');
 
 	// ------------------------------------------------------------------------
 	// Stored procedure arguments
@@ -131,14 +131,14 @@ interface SQLStatement extends Executable, Paged
 	 * @return array or null
 	 */
 	function fetch_entry(array $formatinfo = null);
-	
+
 	/**
 	 * Shorthand for retrieving value from a querie that performs a COUNT, SUM
 	 * or some other calculation.
-	 * 
+	 *
 	 * Some calculations such as a SUM on a table with no rows will return null,
 	 * so to mitigate this you can specify an overwrite for the null value.
-	 * 
+	 *
 	 * @return mixed
 	 */
 	function fetch_calc($on_null = null);

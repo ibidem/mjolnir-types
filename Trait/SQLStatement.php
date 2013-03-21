@@ -108,7 +108,7 @@ trait Trait_SQLStatement
 	/**
 	 * @return static $this
 	 */
-	function dates(array $params, array $filter = null, array $map = null, $varkey = ':')
+	function dates(array $params, array $filter = null, $varkey = ':')
 	{
 		if ($filter === null)
 		{
@@ -203,7 +203,7 @@ trait Trait_SQLStatement
 	/**
 	 * @return static $this
 	 */
-	function binddates(array &$params, array $filter = null, array $map = null, $varkey = ':')
+	function binddates(array &$params, array $filter = null, $varkey = ':')
 	{
 		if ($filter === null)
 		{
