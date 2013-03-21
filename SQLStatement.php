@@ -112,7 +112,7 @@ interface SQLStatement extends Executable, Paged
 	/**
 	 * @return static $this
 	 */
-	function args(array &$params, array $filter = null);
+	function args(array &$params, array $filter = null, $varkey = ':');
 
 	// ------------------------------------------------------------------------
 	// Retrieval
