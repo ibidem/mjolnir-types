@@ -81,7 +81,7 @@ trait Trait_Theme
 	/**
 	 * @return static $this
 	 */
-	function channel_is(\mjolnir\types\Channel $channel)
+	function channel_is(\mjolnir\types\Channel $channel = null)
 	{
 		$channel->set('theme', $this);
 		$this->Channeled_channel_is($channel);

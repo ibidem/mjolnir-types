@@ -53,7 +53,7 @@ trait Trait_Application
 	 *
 	 * @return static $this
 	 */
-	function channel_is(\mjolnir\types\Channel $channel)
+	function channel_is(\mjolnir\types\Channel $channel = null)
 	{
 		$this->Channeled__channel_is($channel);
 

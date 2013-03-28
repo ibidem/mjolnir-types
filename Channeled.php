@@ -12,7 +12,7 @@ interface Channeled
 	/**
 	 * @return static $this
 	 */
-	function channel_is(\mjolnir\types\Channel $channel);
+	function channel_is(\mjolnir\types\Channel $channel = null);
 
 	/**
 	 * @return \mjolnir\types\Channel
