@@ -41,7 +41,7 @@ trait Trait_ThemeDriver
 	protected function collection_entityfile($entity, $collection)
 	{
 		$themeconfig = $this->channel()->get('themeconfig');
-		$themepath = $this->channel()->get('themepath');
+		$themepath = \rtrim($this->channel()->get('themepath'), '/\\').'/';
 
 		if ( ! isset($themeconfig[$collection]))
 		{
@@ -71,7 +71,7 @@ trait Trait_ThemeDriver
 	protected function collectionfile($collection)
 	{
 		$themeconfig = $this->channel()->get('themeconfig');
-		$themepath = $this->channel()->get('themepath');
+		$themepath = \rtrim($this->channel()->get('themepath'), '/\\').'/';
 
 		if ( ! isset($themeconfig[$collection]))
 		{
