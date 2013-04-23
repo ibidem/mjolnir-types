@@ -8,7 +8,7 @@
  * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
 interface Validator extends Matcher
-{
+{	
 	/**
 	 * A field will be tested against a claim and validated by the proof, or if
 	 * the proof is null the claim will provide the proof itself.
@@ -76,5 +76,5 @@ interface Validator extends Matcher
 	 * @return array or null no errors
 	 */
 	function errors();
-
+	
 } # interfacea

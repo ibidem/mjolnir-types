@@ -24,5 +24,21 @@ trait Trait_Puppet
 	{
 		return \str_replace(' ', '-', static::plural());
 	}
+	
+	/**
+	 * @return string singular that's safe to use in code context
+	 */
+	static function codename()
+	{
+		return \str_replace(' ', '_', static::singular());
+	}
+	
+	/**
+	 * @return string plural that's safe to use in code context
+	 */
+	static function codegroup()
+	{
+		return \str_replace(' ', '_', static::plural());
+	}
 
 } # trait
