@@ -38,7 +38,6 @@ interface Validator extends Matcher
 	 *             }
 	 *         );
 	 *
-	 *
 	 * @return static $this
 	 */
 	function rule($field, $claim, $proof = null);

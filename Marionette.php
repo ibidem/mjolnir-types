@@ -3,9 +3,8 @@
 /**
  * PROTOTYPE - subject to change
  * 
- * A Marionette is a model that's specifically designed to work well with rest 
- * apis and works as an object as opposed to Model_* type classes which work as 
- * a library of functions.
+ * A Marionette is a model that's specifically designed to work though a object
+ * based process.
  * 
  * @package    mjolnir
  * @category   Types
@@ -25,4 +24,9 @@ interface Marionette extends Puppet
 	 */
 	static function config();
 
+	/**
+	 * @return string
+	 */
+	static function keyfield();
+	
 } # interface
