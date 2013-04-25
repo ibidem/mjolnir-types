@@ -41,4 +41,36 @@ trait Trait_Puppet
 		return \str_replace(' ', '_', static::plural());
 	}
 
+	/**
+	 * @return string camel case version
+	 */
+	static function camelsingular()
+	{
+		return \app\Arr::implode
+			(
+				'', 
+				\explode(' ', static::singular()), 
+				function ($key, $value)
+				{
+					return \ucfirst($value);
+				}
+			);
+	}
+	
+	/**
+	 * @return string camel case version
+	 */
+	static function camelplural()
+	{
+		return \app\Arr::implode
+			(
+				'', 
+				\explode(' ', static::plural()), 
+				function ($key, $value)
+				{
+					return \ucfirst($value);
+				}
+			);
+	}
+	
 } # trait
