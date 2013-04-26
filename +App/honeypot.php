@@ -29,6 +29,7 @@ trait Trait_Layer { use \mjolnir\types\Trait_Layer; }
 trait Trait_Linkable { use \mjolnir\types\Trait_Linkable; }
 trait Trait_Marionette { use \mjolnir\types\Trait_Marionette; }
 trait Trait_MarionetteCollection { use \mjolnir\types\Trait_MarionetteCollection; }
+trait Trait_MarionetteDriver { use \mjolnir\types\Trait_MarionetteDriver; }
 trait Trait_MarionetteModel { use \mjolnir\types\Trait_MarionetteModel; }
 trait Trait_Matcher { use \mjolnir\types\Trait_Matcher; }
 trait Trait_Meta { use \mjolnir\types\Trait_Meta; }

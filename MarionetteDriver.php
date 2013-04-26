@@ -19,8 +19,24 @@ interface MarionetteDriver
 	#
 	
 	/**
+	 * On POST, resolve input dependencies (happens before validation).
+	 * 
 	 * @return array updated entry
 	 */
 	function compile($field, array $entry, array $conf = null);
+	
+	/**
+	 * On POST, field processing before POST database communication.
+	 * 
+	 * @return array updated fieldlist
+	 */
+	function compilefields($field, array $fieldlist, array $conf = null);
 
+	/**
+	 * On GET, manipulate execution plan.
+	 * 
+	 * @return array updated execution plan
+	 */
+	function inject($field, array $plan, array $conf = null);
+	
 } # interface
