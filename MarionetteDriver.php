@@ -3,7 +3,12 @@
 /**
  * PROTOTYPE - subject to change
  * 
- * A MarionetteDriver runs on a new entry before it's processed.
+ * A MarionetteDriver runs at different processing stages for entering new 
+ * entries, retrieving entries, etc.
+ * 
+ * Information such as the current Marionette object, the field name, driver
+ * configuration for the given field, etc (ie. any other constants), should be 
+ * provided via the constructor.
  * 
  * @package    mjolnir
  * @category   Types
@@ -18,25 +23,67 @@ interface MarionetteDriver
 	# available in the instance method or though other factory constructors.
 	#
 	
+	// --- Steps --------------------------------------------------------------
+	
 	/**
 	 * On POST, resolve input dependencies (happens before validation).
 	 * 
 	 * @return array updated entry
 	 */
-	function compile($field, array $entry, array $conf = null);
+	function compile(array $entry);
+	
+	/**
+	 * Resolve dependencies after the entry has been created.
+	 * 
+	 * @return array updated entry
+	 */
+	function latecompile(array $entry, array $input);
 	
 	/**
 	 * On POST, field processing before POST database communication.
 	 * 
 	 * @return array updated fieldlist
 	 */
-	function compilefields($field, array $fieldlist, array $conf = null);
+	function compilefields(array $fieldlist);
 
 	/**
 	 * On GET, manipulate execution plan.
 	 * 
 	 * @return array updated execution plan
 	 */
-	function inject($field, array $plan, array $conf = null);
+	function inject(array $plan);
+	
+	// --- Configuration (Internal) -------------------------------------------
+	
+	/**
+	 * @return normalized configuration
+	 */
+	function normalizeconfig(array $conf);
+	
+	/**
+	 * @return static $this
+	 */
+	function database_is(\mjolnir\types\SQLDatabase $db);
+	
+	/**
+	 * @return static $this
+	 */
+	function context_is(\mjolnir\types\Marionette $context);
+	
+	/**
+	 * Field key, on which the driver is applied on; field is not necesarily a 
+	 * database field, but for reference and input purposes a field must be 
+	 * provided.
+	 * 
+	 * @return static $this
+	 */
+	function field_is($field);
+	
+	/**
+	 * Driver configuration. Will normalize input.
+	 * 
+	 * @return static $this
+	 */
+	function config_is($config);
 	
 } # interface

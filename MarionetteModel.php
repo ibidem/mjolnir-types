@@ -26,14 +26,14 @@ interface MarionetteModel extends Marionette
 	 * 
 	 * @return static $this
 	 */
-	function put($id, $entry);
+	function put($id, array $entry);
 	
 	/**
 	 * Update specified fields in entry.
 	 * 
 	 * @return static $this
 	 */
-	function patch($id, $partial_entry);
+	function patch($id, array $partial_entry);
 		
 	/**
 	 * Delete entry.

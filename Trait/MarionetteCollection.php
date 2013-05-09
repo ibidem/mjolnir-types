@@ -9,6 +9,12 @@
  */
 trait Trait_MarionetteCollection
 {
-	// placeholder for extending functionality
+	/**
+	 * @return \mjolnir\types\MarionetteCollection $this
+	 */
+	function collection()
+	{
+		return $this;
+	}
 
 } # trait

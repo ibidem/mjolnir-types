@@ -8,7 +8,13 @@
  * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
 trait Trait_MarionetteModel
-{
-	// placeholder for extending functionality
+{	
+	/**
+	 * @return \mjolnir\types\MarionetteModel $this
+	 */
+	function model()
+	{
+		return $this;
+	}
 
 } # trait

@@ -29,4 +29,16 @@ interface Marionette extends Puppet
 	 */
 	static function keyfield();
 	
+	// --- Reference Helpers --------------------------------------------------
+	
+	/**
+	 * @return \mjolnir\types\MarionetteCollection corresponding to this marionette
+	 */
+	function collection();
+	
+	/**
+	 * @return \mjolnir\types\MarionetteModel corresponding to this marionette
+	 */
+	function model();
+	
 } # interface
