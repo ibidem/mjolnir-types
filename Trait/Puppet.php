@@ -24,5 +24,53 @@ trait Trait_Puppet
 	{
 		return \str_replace(' ', '-', static::plural());
 	}
+	
+	/**
+	 * @return string singular that's safe to use in code context
+	 */
+	static function codename()
+	{
+		return \str_replace(' ', '_', static::singular());
+	}
+	
+	/**
+	 * @return string plural that's safe to use in code context
+	 */
+	static function codegroup()
+	{
+		return \str_replace(' ', '_', static::plural());
+	}
 
+	/**
+	 * @return string camel case version
+	 */
+	static function camelsingular()
+	{
+		return \app\Arr::implode
+			(
+				'', 
+				\explode(' ', static::singular()), 
+				function ($key, $value)
+				{
+					return \ucfirst($value);
+				}
+			);
+	}
+	
+	/**
+	 * @return string camel case version
+	 */
+	static function camelplural()
+	{
+		return \app\Arr::implode
+			(
+				'', 
+				\explode(' ', static::plural()), 
+				function ($key, $value)
+				{
+					return \ucfirst($value);
+				}
+			);
+	}
+	
 } # trait

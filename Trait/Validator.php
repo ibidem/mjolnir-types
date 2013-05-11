@@ -25,7 +25,38 @@ trait Trait_Validator
 	 * @var array
 	 */
 	protected $fields = null;
+	
+	/**
+	 * Common rule logic. Once the rule has been reduced to the normalized 
+	 * version addrule is called. Implementations should implement addrule as
+	 * a protected method.
+	 * 
+	 * @return static $this
+	 */
+	function rule($field, $claim, $proof = null)
+	{		
+		if (\is_array($field))
+		{
+			foreach ($field as $fieldname)
+			{
+				$this->rule($fieldname, $claim, $proof);
+			}
+		}
+		else if (\is_array($claim))
+		{
+			foreach ($claim as $claimname)
+			{
+				$this->rule($field, $claimname, $proof);
+			}
+		}
+		else # field is non-array
+		{
+			$this->addrule($field, $claim, $proof);
+		}
 
+		return $this;
+	}
+	
 	/**
 	 * Equivalent shorthand for,
 	 *
@@ -95,32 +126,38 @@ trait Trait_Validator
 		}
 		else # no message
 		{
-			if (isset($this->errormessages[$field][$claim]))
-			{
-				$message = $this->errormessages[$field][$claim];
-			}
-			else # generic rule
-			{
-				$generic_errors = \app\CFS::config('mjolnir/validator')['errors'];
-
-				if (isset($generic_errors[$claim]))
-				{
-					$message = $generic_errors[$claim];
-				}
-				else # no message
-				{
-					throw new \app\Exception
-						("No error message found for the claim [$claim] on the [$field].");
-				}
-			}
-
 			// we could use array_search to limit the messages to only unique
 			// ones but it may be possible for the keys to have more meaning
 			// then the error itself so we leave it to be handled higher up
-			$this->errors[$field][$claim] = $message;
+			$this->errors[$field][$claim] = $this->geterror($field, $claim);
 		}
 
 		return $this;
+	}
+	
+	/**
+	 * @return string error message for field
+	 */
+	function geterror($field, $claim)
+	{
+		if (isset($this->errormessages[$field][$claim]))
+		{
+			return $this->errormessages[$field][$claim];
+		}
+		else # generic rule
+		{
+			$generic_errors = \app\CFS::config('mjolnir/validator')['errors'];
+
+			if (isset($generic_errors[$claim]))
+			{
+				return $generic_errors[$claim];
+			}
+			else # no message
+			{
+				throw new \app\Exception
+					("No error message found for the claim [$claim] on the [$field].");
+			}
+		}
 	}
 
 	/**
@@ -141,11 +178,11 @@ trait Trait_Validator
 	}
 
 	/**
-	 * @return static $this
+	 * @return boolean
 	 */
 	function check()
 	{
-		return empty($this->errors) ? null : $this->errors;
+		return empty($this->errors) ? true : false;
 	}
 
 	/**
