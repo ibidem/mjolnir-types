@@ -10,8 +10,16 @@ for other types:
  * Channeled
  * Paged
 
+Some of the more specialized generic interfaces
 
-There are others but these are some of the more *generic* ones.
+ * Writable
+ * Savable
+ * Recoverable
+ * Matcher
+ * Linkable
+ * Contextual
+ * Eloquent
+ * Exportable
 
 ### `Meta` interface
 
@@ -151,3 +159,71 @@ the pagination but telling an object what page you want. It is used as follows:
 	// if you want all simply provide null, if infinity is not an option this
 	// method will merely retrieve the maximum number of entries possible
 	$statement->page(null);
+
+### `Writable` interface
+
+A writable enabled object is one that accepts a writer. The interface merely
+provides a generic way to add and retrieve the objects writer.
+
+Implementing the interface doesn't mean the object itself is writable on, just
+that it works with a writer
+
+An example interface that uses this type is the `Task`.
+
+### `Savable` interface
+
+A savable object is one that requires it's present state to be saved when
+performing operations.
+
+### `Recoverable` interface
+
+A recoverable object is one that provides a `recover` operation. The operation
+should reset the state of the object to something that can be processed given
+it's present unstable state.
+
+Typically this involves the object being executable or renderable and once
+recovered the object is merely re-executed or re-rendered.
+
+### `Matcher` interface
+
+A matcher object is one that provides a `check` method returning a boolean
+value of `true` or `false`. As it's name implies it's designed to match
+something, however the interface does not force any input conventions to allow
+for any type of match. Typically the matcher object will simply store the
+information for what to match against in it's state.
+
+### `Linkable` interface
+
+A linkable object is one that can be converted to a URL, ie. universal resource
+locator.
+
+The interface is specifically designed for converting to URLs and not URIs.
+
+### `Contextual` interface
+
+An object implementing the contextual interface means the object has context,
+typically security relevant context (but not enforced as such). The interface
+provides a single universal `context` method that causes the object to either
+return null or an array representation of it's context.
+
+This should not be thought of as serialization where the object in question
+can be deserialized. A contextual object is merely one that can provide context
+for inspection purposes.
+
+### `Eloquent` interface
+
+An eloquent object is one that allows language prefixes. The way it works is
+that you provide a language prefix and any keys used for translation in the
+objects internals get prefixed with said language prefix, giving you control
+over all the objects translations but allowing you to have multiple instances
+of the same object with different translations.
+
+### `Exportable` interface
+
+An exportable object is one that can produce an array representation of it's
+state. This is similar to serializing an object only the data representation is
+an array instead of a string.
+
+Exporting an object is generally meant for exporting to another medium, hence
+the easier to work with array type, rather then exporting and importing back
+into a later session (ie. what serialization is meant for).

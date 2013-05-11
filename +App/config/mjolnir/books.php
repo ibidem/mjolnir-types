@@ -6,7 +6,7 @@
 					(
 						'mjolnir-types' => array
 							(
-								'idx' => 999,
+								'idx' => 2,
 
 								// default namespace for following files; may
 								// be overwritten on a per file basis
@@ -71,11 +71,18 @@
 												'type'  => 'markdown',
 												'file'  => '-07-View-Types.md',
 											),
-										'misc-types' => array
+										'theme-types' => array
 											(
 												'idx'   => 8,
+												'title' => 'Theme Types',
+												'type'  => 'markdown',
+												'file'  => '-08-Theme-Types.md',
+											),
+										'misc-types' => array
+											(
+												'idx'   => 9,
 												'title' => 'Miscellaneous Types',
-												'file'  => '-08-Miscellaneous-Types.md',
+												'file'  => '-09-Miscellaneous-Types.md',
 												'type'  => 'markdown',
 											),
 									)

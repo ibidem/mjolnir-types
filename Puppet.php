@@ -34,15 +34,35 @@ interface Puppet
 	 * @return string puppet plural name
 	 */
 	static function plural();
-	
+
 	/**
 	 * @return string singular with dashes instead of spaces
 	 */
 	static function dashsingular();
-	
+
 	/**
 	 * @return string plural with dashes instead of spaces
 	 */
 	static function dashplural();
+
+	/**
+	 * @return string singular that's safe to use in code context
+	 */
+	static function codename();
+
+	/**
+	 * @return string plural that's safe to use in code context
+	 */
+	static function codegroup();
+
+	/**
+	 * @return string camel case version
+	 */
+	static function camelsingular();
+
+	/**
+	 * @return string camel case version
+	 */
+	static function camelplural();
 
 } # interface

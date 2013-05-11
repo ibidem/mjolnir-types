@@ -1,7 +1,7 @@
 Application types are used in application composition. These are `Application`,
 `Layer`, `Channel` and to some extent `Controller`. Almost any application will
-be composed of a Application object managing Layer objects that communicate
-though a Channel. Optionally you have Controllers in the terminating layer
+be composed of a `Application` object managing `Layer` objects that communicate
+though a `Channel`. Optionally you have Controllers in the terminating layer
 doing work.
 
 The layered design is meant to act as a modular execution plan. As an

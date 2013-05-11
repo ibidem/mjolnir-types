@@ -1,4 +1,15 @@
-The database is composed of `SQLDatabase` and `SQLStatement`.
+The following types are database related:
+
+ * `SQLDatabase` deals with operations on a SQL based database
+ * `SQLStatement` are a byproduct of access to a SQL database
+ * `Schematic` is the standard migration interface
+ * `Marionette` is a general purpose object based modeling class
+ * `MarionetteDriver` is a driver support for marionette
+ * `MarionetteModel` is a base interface for single entity operations
+ * `MarionetteCollection` is a base interface for collection operations
+
+Note: the `Marionette` system is a object system designed specifically for
+APIs, other systems are supported.
 
 ### `SQLDatabase` interface
 
@@ -10,7 +21,7 @@ statement, `quote` to make a string safe for concatenation and
 
 In addition, the `SQLDatabase` interface requires the underlying database
 system to support transaction (denoted by `being`, `commit`, `rollback`).
-Transactions need to be *usable* when nested, so multiple begins, commmits and
+Transactions need to be *usable* when nested, so multiple begins, commits and
 rollbacks should function as expected and not interfere with each other.
 
 Note that this is a *SQL database* interface and not meant to be used as a
@@ -55,3 +66,55 @@ entries after they are retrieved. For example you can specify that a datatime
 field is `'datetime'` and the result will have said field as a `\DateTime`
 object. Excessive use of this functionality is not recommended, since you will
 find you often do not need said field and hence just wasted processing time.
+
+### `Schematic` interface
+
+The schematic interface is composed of actions that are performed to push the
+database schema up. There is no support for dropping the database down, beyond
+uninstalling everything. The reason for this is because returning to a previous
+state should be implemented as simply a more advanced state that is identical
+to the desired earlier state. This ensures no data is lost because you are
+forced to convert the data back.
+
+The operations specified by a schematic are:
+
+ * `down`, drop a database (removing columns or renaming tables should be
+   in `move`)
+ * `up`, this action is designed for creating new tables
+ * `move`, this action is designed for any changes to tables
+ * `bind`, any change related to constraints
+ * `build`, any operation that involves populating the database
+
+### `Marionette*` interfaces
+
+The `Marionate` interface is designed as a base interface for `MarionetteModel`
+and `MarionetteCollection`, among others.
+
+The `MarionetteCollection` interface is designed for use in APIs. To facilitate
+this it provides methods that correspond to a REST structure (ie. `get`, `put`,
+`post`, `delete`).
+
+The `MarionetteModel` interface is designed for use in APIs. As the collection
+equivalent, it provides an API based on REST.
+
+Following the marionette design, the implementation of `Marionette*` classes
+should not contain any non-REST operations.
+
+Since the `Marionette` interfaces are designed to emulate REST, injecting custom
+methods for performing tasks is not compatible, so any functionality should
+be implemented though drivers, via the `MarionetteDriver` interface. The
+interface provides the following:
+
+ * `compile`, performed on POST, you should resolve input dependencies;
+   operation will happen before validation
+
+ * `latecompile`, similar to `compile` only it is preformed after the the entry
+   has been created; this operation is designed for tasks that require the
+   entry to have an id such as associating tags to an entry
+
+ * `compilefields`, manipulates field list before database insertion happens
+
+ * `inject`, is performed on GET and works by alterning the query execution
+   plan before it's executed (ie. joins, fields, postprocessors, etc)
+
+Several misc setters are also provided.
