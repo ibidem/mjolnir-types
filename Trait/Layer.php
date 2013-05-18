@@ -9,6 +9,7 @@
  */
 trait Trait_Layer
 {
+	use Trait_Meta;
 	use Trait_Channeled;
 	use Trait_Resetable;
 	use Trait_Recoverable;
