@@ -19,6 +19,6 @@ interface PDFDriver
 	/**
 	 * Stream pdf to client.
 	 */
-	function stream($html, $filename);
+	function stream($html, $filename, $config = []);
 
 } # interfacea
