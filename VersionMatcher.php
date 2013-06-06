@@ -10,14 +10,6 @@
 interface VersionMatcher extends Matcher
 {
 	/**
-	 * Given a version, is there any chance the version can be satsfied; 
-	 * ie. is the version still lower then all the potential versions
-	 * 
-	 * @return boolean
-	 */
-	function usable();
-	
-	/**
 	 * @return static
 	 */
 	function targetversion($targetversion);
