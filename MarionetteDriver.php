@@ -25,33 +25,72 @@ interface MarionetteDriver
 	
 	// --- Steps --------------------------------------------------------------
 	
-	/**
-	 * On POST, resolve input dependencies (happens before validation).
-	 * 
-	 * @return array updated entry
-	 */
-	function compile(array $entry);
+	# POST
 	
-	/**
-	 * Resolve dependencies after the entry has been created.
-	 * 
-	 * @return array updated entry
-	 */
-	function latecompile(array $entry, array $input);
-	
-	/**
-	 * On POST, field processing before POST database communication.
-	 * 
-	 * @return array updated fieldlist
-	 */
-	function compilefields(array $fieldlist);
+		/**
+		 * On POST, resolve input dependencies (happens before validation).
+		 * 
+		 * @return array updated entry
+		 */
+		function post_compile(array $input);
 
-	/**
-	 * On GET, manipulate execution plan.
-	 * 
-	 * @return array updated execution plan
-	 */
-	function inject(array $plan);
+		/**
+		 * Resolve dependencies after the entry has been created with POST.
+		 * 
+		 * @return array updated entry
+		 */
+		function post_latecompile(array $entry, array $input);
+		
+		/**
+		 * On POST, field processing before POST database communication.
+		 * 
+		 * @return array updated fieldlist
+		 */
+		function post_compilefields(array $fieldlist);
+	
+	# PATCH
+	
+		/**
+		 * On PATCH, resolve input dependencies (happens before validation).
+		 * 
+		 * @param array updated entry
+		 */
+		function patch_compile($id, array $entry);
+
+		/**
+		 * Resolve dependencies after the entry has been been patched.
+		 * 
+		 * @param array updated entry
+		 */
+		function patch_latecompile($id, array $entry, array $input);
+
+		/**
+		 * Field processing before PATCH database communication.
+		 * 
+		 * @return array updated fieldlist
+		 */
+		function patch_compilefields(array $fieldlist);
+
+	# GET
+	
+		/**
+		 * On GET, manipulate execution plan.
+		 * 
+		 * @return array updated execution plan
+		 */
+		function inject(array $plan);
+		
+	# DELETE
+		
+		/**
+		 * Execute before entry is deleted.
+		 */
+		function predelete($id);
+		
+		/**
+		 * Execute after entry is deleted.
+		 */
+		function postdelete($id);
 	
 	// --- Configuration (Internal) -------------------------------------------
 	

@@ -8,7 +8,7 @@
  * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
 trait Trait_MarionetteDriver
-{
+{	
 	/**
 	 * @var \mjolnir\types\SQLDatabase
 	 */
@@ -84,46 +84,6 @@ trait Trait_MarionetteDriver
 	{
 		$this->config = $this->normalizeconfig($config);
 		return $this;
-	}
-	
-	/**
-	 * On POST, resolve input dependencies (happens before validation).
-	 * 
-	 * @return array updated entry
-	 */
-	function compile(array $entry)
-	{
-		return $entry;
-	}
-	
-	/**
-	 * Resolve dependencies after the entry has been created.
-	 * 
-	 * @return array updated entry
-	 */
-	function latecompile(array $entry, array $input)
-	{
-		return $entry;
-	}
-	
-	/**
-	 * On POST, field processing before POST database communication.
-	 * 
-	 * @return array updated fieldlist
-	 */
-	function compilefields(array $fieldlist)
-	{
-		return $fieldlist;
-	}
-
-	/**
-	 * On GET, manipulate execution plan.
-	 * 
-	 * @return array updated execution plan
-	 */
-	function inject(array $plan)
-	{
-		return $plan;
 	}
 	
 	/**
@@ -203,5 +163,102 @@ trait Trait_MarionetteDriver
 			return $input;
 		}
 	}
+	
+	// ------------------------------------------------------------------------
+	// 
+	
+	# POST
+	
+		/**
+		 * On POST, resolve input dependencies (happens before validation).
+		 * 
+		 * @return array updated entry
+		 */
+		function post_compile(array $input)
+		{
+			return $input;
+		}
+
+		/**
+		 * On POST, resolve dependencies after the entry has been created.
+		 * 
+		 * @return array updated entry
+		 */
+		function post_latecompile(array $entry, array $input)
+		{
+			return $entry;
+		}
+
+		/**
+		 * Field processing before POST database communication.
+		 * 
+		 * @return array updated fieldlist
+		 */
+		function post_compilefields(array $fieldlist)
+		{
+			return $fieldlist;
+		}
+		
+	# PATCH
+		
+		/**
+		 * On PATCH, resolve input dependencies (happens before validation).
+		 * 
+		 * @return array updated entry
+		 */
+		function patch_compile($id, array $input)
+		{
+			return $input;
+		}
+
+		/**
+		 * On PATCH, resolve dependencies after the entry has been created.
+		 * 
+		 * @return array updated entry
+		 */
+		function patch_latecompile($id, array $entry, array $input)
+		{
+			return $entry;
+		}
+
+		/**
+		 * Field processing before PATCH database communication.
+		 * 
+		 * @return array updated fieldlist
+		 */
+		function patch_compilefields(array $fieldlist)
+		{
+			return $fieldlist;
+		}
+
+	# GET
+	
+		/**
+		 * On GET, manipulate execution plan.
+		 * 
+		 * @return array updated execution plan
+		 */
+		function inject(array $plan)
+		{
+			return $plan;
+		}
+		
+	# DELETE
+		
+		/**
+		 * Execute before entry is deleted.
+		 */
+		function predelete($id)
+		{
+			// empty
+		}
+		
+		/**
+		 * Execute after entry is deleted.
+		 */
+		function postdelete($id)
+		{
+			// empty
+		}
 
 } # trait
