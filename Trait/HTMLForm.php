@@ -42,6 +42,11 @@ trait Trait_HTMLForm
 	 */
 	protected $show_metainfo = true;
 
+	/**
+	 * @var boolean
+	 */
+	protected $unsigned = false;
+
 	// ------------------------------------------------------------------------
 	// Specialized Fields & Shorthands
 
@@ -77,7 +82,7 @@ trait Trait_HTMLForm
 	{
 		return $this->field($label, $fieldname, 'videouploader');
 	}
-	
+
 	/**
 	 * @return \mjolnir\types\HTMLFormField
 	 */
@@ -343,7 +348,7 @@ trait Trait_HTMLForm
 			}
 		}
 	}
-	
+
 	/**
 	 * @return array
 	 */
@@ -488,7 +493,14 @@ trait Trait_HTMLForm
 	 */
 	function sign()
 	{
-		return ' form="'.$this->signature().'"';
+		if ($this->unsigned)
+		{
+			return '';
+		}
+		else # signed form
+		{
+			return ' form="'.$this->signature().'"';
+		}
 	}
 
 	/**
@@ -496,7 +508,14 @@ trait Trait_HTMLForm
 	 */
 	function mark()
 	{
-		return ' tabindex="'.\app\HTML::tabindex().'"'.$this->sign();
+		if ($this->unsigned)
+		{
+			return ''; # intentionally not showing tabindex
+		}
+		else # signed
+		{
+			return ' tabindex="'.\app\HTML::tabindex().'"'.$this->sign();
+		}
 	}
 
 	// ------------------------------------------------------------------------
@@ -520,6 +539,29 @@ trait Trait_HTMLForm
 	{
 		$this->show_metainfo = true;
 		return $this;
+	}
+
+	/**
+	 * Instructs the form to act as a generator only. This is used when the the
+	 * system generates forms but the forms are merely javascript templates and
+	 * not actual html forms you would submit normally. Larely due to how
+	 * convenient the system is when it comes to generating code based on a
+	 * given standard ruleset.
+	 *
+	 * @return static
+	 */
+	function unsigned()
+	{
+		$this->unsigned = true;
+		return $this;
+	}
+
+	/**
+	 * @return boolean
+	 */
+	function is_unsigned()
+	{
+		return $this->unsigned;
 	}
 
 	// ------------------------------------------------------------------------

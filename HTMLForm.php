@@ -59,12 +59,12 @@ interface HTMLForm extends Standardized, HTMLTag
 	 * @return \mjolnir\types\HTMLFormField_Select
 	 */
 	function select($label, $fieldname = null);
-	
+
 	/**
 	 * @return \mjolnir\types\HTMLFormField_AjaxUploader
 	 */
 	function imageuploader($label, $fieldname = null);
-	
+
 	/**
 	 * @return \mjolnir\types\HTMLFormField_AjaxUploader
 	 */
@@ -344,5 +344,21 @@ interface HTMLForm extends Standardized, HTMLTag
 	 * Reverse of disable_metadata
 	 */
 	function enable_metainfo();
+
+	/**
+	 * Instructs the form to act as a generator only. This is used when the the
+	 * system generates forms but the forms are merely javascript templates and
+	 * not actual html forms you would submit normally. Larely due to how
+	 * convenient the system is when it comes to generating code based on a
+	 * given standard ruleset.
+	 *
+	 * @return static
+	 */
+	function unsigned();
+
+	/**
+	 * @return boolean
+	 */
+	function is_unsigned();
 
 } # interface
