@@ -23,7 +23,7 @@ interface RawView extends Renderable
 	 *
 	 * @return static $this
 	 */
-	function bind($name, &$non_object);
+	function bind($name, &$value);
 
 	/**
 	 * @return static $this
@@ -32,11 +32,11 @@ interface RawView extends Renderable
 
 	/**
 	 * Retrieve view variables as array.
-	 * 
+	 *
 	 * @return array
 	 */
 	function &viewvariables();
-	
+
 	/**
 	 * Inherit all variables from another view. The way you would use this is
 	 * by having a subview inherit the current view to avoid passing in several
@@ -58,12 +58,12 @@ interface RawView extends Renderable
 	 * Starts view frame.
 	 */
 	static function frame();
-	
+
 	/**
 	 * Ends view frame.
-	 * 
+	 *
 	 * @return string
 	 */
 	static function endframe();
-	
+
 } # interface

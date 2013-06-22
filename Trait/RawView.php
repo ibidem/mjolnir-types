@@ -30,9 +30,9 @@ trait Trait_RawView
 	 *
 	 * @return static $this
 	 */
-	function bind($name, &$non_object)
+	function bind($name, &$value)
 	{
-		$this->view_variables[$name] = &$non_object;
+		$this->view_variables[$name] = &$value;
 		return $this;
 	}
 
@@ -44,10 +44,10 @@ trait Trait_RawView
 		$this->view_variables[$name] = $value;
 		return $this;
 	}
-	
+
 	/**
 	 * Retrieve view variables as array.
-	 * 
+	 *
 	 * @return array
 	 */
 	function &viewvariables()
@@ -75,7 +75,7 @@ trait Trait_RawView
 		$this->view_variables = &$view->viewvariables();
 		return $this;
 	}
-	
+
 	/**
 	 * Starts view frame.
 	 */
@@ -83,15 +83,15 @@ trait Trait_RawView
 	{
 		\ob_start();
 	}
-	
+
 	/**
 	 * Ends view frame.
-	 * 
+	 *
 	 * @return string
 	 */
 	static function endframe()
 	{
 		return \ob_get_clean();
 	}
-	
+
 } # trait
