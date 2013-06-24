@@ -15,6 +15,14 @@ trait Trait_ThemeDriver
 	use \app\Trait_Recoverable;
 
 	/**
+	 * @return static
+	 */
+	function package(\mjolnir\types\Theme $theme, $parentversion)
+	{
+		return $this;
+	}
+
+	/**
 	 * ...
 	 */
 	function recover()

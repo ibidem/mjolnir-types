@@ -10,7 +10,15 @@
 interface Theme extends Channeled, Meta
 {
 	/**
-	 * @return $this
+	 * Package theme assets. Compile is assumed for dependencies that require
+	 * compilation.
+	 *
+	 * @return static
+	 */
+	function package();
+
+	/**
+	 * @return static
 	 */
 	function themename_is($themename);
 
@@ -20,12 +28,12 @@ interface Theme extends Channeled, Meta
 	function themename();
 
 	/**
-	 * @return $this
+	 * @return static
 	 */
 	function themepath_is($themepath);
 
 	/**
-	 * @return $this
+	 * @return static
 	 */
 	function themepath_for($theme);
 

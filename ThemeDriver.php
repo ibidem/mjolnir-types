@@ -9,6 +9,9 @@
  */
 interface ThemeDriver extends Channeled, Renderable, Resetable, Recoverable
 {
-	// this interface is a composite
+	/**
+	 * @return static
+	 */
+	function package(\mjolnir\types\Theme $theme, $parentversion);
 
 } # interface
