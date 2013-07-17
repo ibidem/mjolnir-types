@@ -14,7 +14,7 @@ trait Trait_HTMLFormField_Boolean
 	# inherit the trait of HTMLFormField since this class is suppose to extend
 	# a HTMLFormField class therefore having it already
 	#
-	
+
 	/**
 	 * @return static $this
 	 */
@@ -23,7 +23,7 @@ trait Trait_HTMLFormField_Boolean
 		$this->set('checked', '');
 		return $this;
 	}
-	
+
 	/**
 	 * @return static $this;
 	 */
@@ -32,7 +32,7 @@ trait Trait_HTMLFormField_Boolean
 		$this->set('checked', null);
 		return $this;
 	}
-	
+
 	/**
 	 * @return static $this
 	 */
@@ -46,8 +46,8 @@ trait Trait_HTMLFormField_Boolean
 		{
 			$this->unchecked();
 		}
-		
+
 		return $this;
 	}
-	
+
 } # trait

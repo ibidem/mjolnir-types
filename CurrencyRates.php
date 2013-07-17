@@ -2,7 +2,7 @@
 
 /**
  * This is a driver interface. See: \app\Currency
- * 
+ *
  * @package    mjolnir
  * @category   Types
  * @author     Ibidem Team
@@ -13,7 +13,7 @@ interface CurrencyRates
 {
 	/**
 	 * Insert rate information into given types array and pass it back.
-	 * 
+	 *
 	 * @return array
 	 */
 	function process($types);

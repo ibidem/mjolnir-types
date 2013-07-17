@@ -12,7 +12,7 @@ trait Trait_Task
 	use \app\Trait_Executable;
 	use \app\Trait_Meta;
 	use \app\Trait_Writable;
-	
+
 	/**
 	 * @return static
 	 */
@@ -20,7 +20,7 @@ trait Trait_Task
 	{
 		$instance = parent::instance();
 		$instance->writer_is(\app\SilentWriter::instance());
-		
+
 		return $instance;
 	}
 

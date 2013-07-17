@@ -13,15 +13,15 @@ interface HTMLFormField_Boolean extends HTMLFormField
 	 * @return static $this
 	 */
 	function checked();
-	
+
 	/**
 	 * @return static $this;
 	 */
 	function unchecked();
-	
+
 	/**
 	 * @return static $this
 	 */
 	function checked_state($state);
-	
+
 } # interface

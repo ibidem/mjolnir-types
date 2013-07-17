@@ -13,10 +13,10 @@ trait Trait_Renderable
 	 * @var array of keyed callables
 	 */
 	protected $metarenderers = null;
-	
+
 	/**
 	 * Registers a function that may be used in the rendering process. If such a
-	 * function is used and how it is used is based on the implementation and 
+	 * function is used and how it is used is based on the implementation and
 	 * context of the class.
 	 *
 	 * @return static $this
@@ -26,7 +26,7 @@ trait Trait_Renderable
 		$this->metarenderers[$key] = $metarenderer;
 		return $this;
 	}
-	
+
 	/**
 	 * @return callable
 	 */
@@ -36,15 +36,15 @@ trait Trait_Renderable
 		{
 			return $this->metarenderers[$key];
 		}
-		
+
 		return $default;
 	}
-	
+
 	/**
 	 * See: addrenderhelper above
-	 * 
+	 *
 	 * Mass inject array of render helpers.
-	 * 
+	 *
 	 * @return static $this
 	 */
 	function injectmetarenderers(array $metarenderers = null)
@@ -53,7 +53,7 @@ trait Trait_Renderable
 		{
 			return $this;
 		}
-		
+
 		if ($this->metarenderers === null)
 		{
 			$this->metarenderers = $metarenderers;
@@ -65,10 +65,10 @@ trait Trait_Renderable
 				$this->metarenderers[$key] = $helper;
 			}
 		}
-		
+
 		return $this;
 	}
-	
+
 	/**
 	 * @deprecated always use the render method!
 	 */
@@ -80,12 +80,12 @@ trait Trait_Renderable
 		// stack by throwing the exception in a completely undefined manner,
 		// ie. whenever it decides to convert to a string. Not worth the few
 		// characters it saves.
-		
-		// Exception: very small classes that beneifit greatly from autocasting, 
+
+		// Exception: very small classes that beneifit greatly from autocasting,
 		// can't completely break the page if they bork, and have easy to manage
 		// predictable logic may overwrite this to allow auto-rendering on the
 		// basis that the likelyhood of them breaking is close to zero and when
-		// they are used in way which might break a page the programmer will 
+		// they are used in way which might break a page the programmer will
 		// avoid __toString and use render for the particular case.
 
 		// diagnose

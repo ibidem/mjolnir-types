@@ -16,7 +16,7 @@ interface Standardized
 	 *
 	 * Standards can also be used to create templates. Simply create your own
 	 * standard then call the implicit methods.
-	 * 
+	 *
 	 * A standard might reset the object (assuming the object is Resetable) or
 	 * simply apply as-is.
 	 *

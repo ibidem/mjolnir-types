@@ -13,17 +13,17 @@ interface HTMLFormField_AjaxUploader extends Channeled, HTMLFormField
 	 * @return static $this
 	 */
 	function wrapper();
-	
+
 	/**
 	 * Output a preview.
-	 * 
+	 *
 	 * @return \mjolnir\types\HTMLTag
 	 */
 	function preview();
-	
+
 	/**
 	 * @return static $this
 	 */
 	function previewsize($width, $height);
-	
+
 } # interface

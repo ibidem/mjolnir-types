@@ -2,7 +2,7 @@
 
 /**
  * PROTOTYPE - subject to change
- * 
+ *
  * @package    mjolnir
  * @category   Types
  * @author     Ibidem Team

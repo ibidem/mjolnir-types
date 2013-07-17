@@ -10,12 +10,12 @@
 trait Trait_VersionMatcher
 {
 	use Trait_Matcher;
-	
+
 	/**
 	 * @var string
 	 */
 	protected $targetversion;
-	
+
 	/**
 	 * @return static
 	 */

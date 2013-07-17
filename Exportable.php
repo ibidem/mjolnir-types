@@ -6,7 +6,7 @@
  * then you should avoid creating a jsonexport method if at all possible and
  * instead make sure the export method returns an array that can be converted
  * to json and do the conversion in a intermediate layer.
- * 
+ *
  * @package    mjolnir
  * @category   Types
  * @author     Ibidem Team

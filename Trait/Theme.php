@@ -85,7 +85,7 @@ trait Trait_Theme
 	{
 		$channel->set('theme', $this);
 		$this->Channeled_channel_is($channel);
-		
+
 		return $this;
 	}
 

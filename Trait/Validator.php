@@ -25,16 +25,16 @@ trait Trait_Validator
 	 * @var array
 	 */
 	protected $fields = null;
-	
+
 	/**
-	 * Common rule logic. Once the rule has been reduced to the normalized 
+	 * Common rule logic. Once the rule has been reduced to the normalized
 	 * version addrule is called. Implementations should implement addrule as
 	 * a protected method.
-	 * 
+	 *
 	 * @return static $this
 	 */
 	function rule($field, $claim, $proof = null)
-	{		
+	{
 		if (\is_array($field))
 		{
 			foreach ($field as $fieldname)
@@ -56,7 +56,7 @@ trait Trait_Validator
 
 		return $this;
 	}
-	
+
 	/**
 	 * Equivalent shorthand for,
 	 *
@@ -134,7 +134,7 @@ trait Trait_Validator
 
 		return $this;
 	}
-	
+
 	/**
 	 * @return string error message for field
 	 */

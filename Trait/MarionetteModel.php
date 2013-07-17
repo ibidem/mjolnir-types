@@ -8,7 +8,7 @@
  * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
 trait Trait_MarionetteModel
-{	
+{
 	/**
 	 * @return \mjolnir\types\MarionetteModel $this
 	 */

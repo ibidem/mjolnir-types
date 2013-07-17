@@ -44,7 +44,7 @@ interface Protocol
 	 * true = only owner of object
 	 * false = everyone but owner of object
 	 * null = everyone
-	 * 
+	 *
 	 * @return boolean|null
 	 */
 	function selfcontrol();
