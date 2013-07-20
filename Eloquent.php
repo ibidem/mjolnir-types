@@ -22,7 +22,7 @@ interface Eloquent
 	 * @return static $this
 	 */
 	function langprefix_is($langprefix);
-	
+
 	/**
 	 * @return string
 	 */

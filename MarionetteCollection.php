@@ -31,7 +31,11 @@ interface MarionetteCollection extends Marionette
 	/**
 	 * Create new entry in collection.
 	 *
+<<<<<<< HEAD
 	 * @return array entry
+=======
+	 * @return static $this
+>>>>>>> 574a6fc5128b36a23b4eed46b4aa7e0e6826ea46
 	 */
 	function post(array $entry);
 

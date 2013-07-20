@@ -80,22 +80,22 @@ interface Pager extends Meta, FileBased, Standardized, Renderable
 	 * @return static $this
 	 */
 	function query_is(array $query);
-	
+
 	/**
-	 * Appends the given string to the end of the generated query. 
-	 * 
+	 * Appends the given string to the end of the generated query.
+	 *
 	 * eg. limit=100&amp;magic=3
-	 * 
-	 * [!!] the query should not have a start or ending query delimiter, see 
+	 *
+	 * [!!] the query should not have a start or ending query delimiter, see
 	 * above for example
-	 * 
+	 *
 	 * This method is available for implementations that form and pass hardcoded
 	 * versions of a queries instead of arrays.
-	 * 
+	 *
 	 * @return static $this
 	 */
 	function appendquery($rawquery);
-	
+
 	/**
 	 * @return static $this
 	 */
@@ -108,10 +108,10 @@ interface Pager extends Meta, FileBased, Standardized, Renderable
 	 * @return int total number of pages
 	 */
 	function pagecount();
-	
+
 	/**
 	 * If item count is 0, the pager will render to empty string.
-	 * 
+	 *
 	 * @return static $this
 	 */
 	function autohide();

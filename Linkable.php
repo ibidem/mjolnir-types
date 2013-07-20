@@ -37,7 +37,7 @@ interface Linkable
 	 * arises is that a lot of processors that convert urls to links don't
 	 * understand the protocol declaration, so for backwards compatiblity it
 	 * may be required in some applications to revert to http as default.
-	 * 
+	 *
 	 * If false is passed to the protocol an url with out the protocol will be
 	 * generated.
 	 *

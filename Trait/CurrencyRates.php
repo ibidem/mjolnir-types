@@ -7,14 +7,8 @@
  * @copyright  (c) 2013 Ibidem Team
  * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
-trait Trait_MarionetteModel
+trait Trait_CurrencyRates
 {
-	/**
-	 * @return \mjolnir\types\MarionetteModel $this
-	 */
-	function model()
-	{
-		return $this;
-	}
+	// trait serves as placeholder for extended functionality injection
 
 } # trait

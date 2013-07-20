@@ -134,18 +134,18 @@ trait Trait_Pager
 
 		return $this;
 	}
-	
+
 	/**
-	 * Appends the given string to the end of the generated query. 
-	 * 
+	 * Appends the given string to the end of the generated query.
+	 *
 	 * eg. limit=100&amp;magic=3
-	 * 
-	 * [!!] the query should not have a start or ending query delimiter, see 
+	 *
+	 * [!!] the query should not have a start or ending query delimiter, see
 	 * above for example
-	 * 
+	 *
 	 * This method is available for implementations that form and pass hardcoded
 	 * versions of a queries instead of arrays.
-	 * 
+	 *
 	 * @return static $this
 	 */
 	function appendquery($rawquery)
@@ -164,10 +164,10 @@ trait Trait_Pager
 
 		return $this;
 	}
-	
+
 	/**
 	 * If item count is 0, the pager will render to empty string.
-	 * 
+	 *
 	 * @return static $this
 	 */
 	function autohide()
@@ -234,7 +234,7 @@ trait Trait_Pager
 		{
 			return '';
 		}
-		
+
 		// setup pager
 		$this->calculate_pager_attributes();
 

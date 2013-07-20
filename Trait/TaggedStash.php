@@ -16,6 +16,8 @@ trait Trait_TaggedStash
 
 	/**
 	 * Tags the data key for reference.
+	 *
+	 * @return static $this
 	 */
 	function store($key, $data, array $tags = [], $expires = null)
 	{
@@ -38,10 +40,14 @@ trait Trait_TaggedStash
 		}
 
 		static::set(static::$tag_stash_key, $tag_stash);
+
+		return $this;
 	}
 
 	/**
 	 * Removes cache entries tagged with specified tags.
+	 *
+	 * @return static $this
 	 */
 	function purge(array $tags)
 	{
@@ -63,6 +69,8 @@ trait Trait_TaggedStash
 		}
 
 		static::set(static::$tag_stash_key, $tag_stash);
+
+		return $this;
 	}
 
 	/**

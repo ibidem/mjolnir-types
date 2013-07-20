@@ -21,7 +21,7 @@ trait Trait_HTMLFormField_AjaxUploader
 	 * @var \app\HTMLFormField_Hidden
 	 */
 	protected $input;
-	
+
 	/**
 	 * @var string
 	 */
@@ -31,14 +31,14 @@ trait Trait_HTMLFormField_AjaxUploader
 	 * @var \mjolnir\types\HTMLTag
 	 */
 	protected $preview;
-	
+
 	/**
 	 * @return static $this
 	 */
 	function initialize()
 	{
 		static $initialized = false;
-		
+
 		if ( ! $initialized)
 		{
 			$this->input = $this->form()->hidden($this->get('name'));
@@ -51,13 +51,13 @@ trait Trait_HTMLFormField_AjaxUploader
 			}
 
 			$this->preview = $this->makepreview();
-			
+
 			$initialized = true;
 		}
-		
+
 		return $this;
 	}
-		
+
 	/**
 	 * Output a preview.
 	 *
@@ -71,17 +71,17 @@ trait Trait_HTMLFormField_AjaxUploader
 
 	// ------------------------------------------------------------------------
 	// etc
-	
+
 	/**
 	 * Setup ajax depedencies.
 	 */
 	protected function ajax_dependencies()
 	{
 		static $included = false;
-		
+
 		// avoid multiple inclusions on multiple fields
 		if ( ! $included)
-		{		
+		{
 			$channel = $this->channel();
 
 			if ($this->channel() === null)
@@ -131,7 +131,7 @@ trait Trait_HTMLFormField_AjaxUploader
 							)
 					]
 				);
-			
+
 			$included = true;
 		}
 	}
@@ -155,7 +155,7 @@ trait Trait_HTMLFormField_AjaxUploader
 	{
 		return $this->langprefix !== null ? $this->langprefix : $default_langprefix;
 	}
-	
+
 	// ------------------------------------------------------------------------
 	// interface: Renderable
 

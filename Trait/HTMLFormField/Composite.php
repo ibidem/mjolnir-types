@@ -14,22 +14,22 @@ trait Trait_HTMLFormField_Composite
 	# inherit the trait of HTMLFormField since this class is suppose to extend
 	# a HTMLFormField class therefore having it already
 	#
-	
+
 	/**
 	 * @var array
 	 */
 	protected $fieldmix = null;
-	
+
 	/**
 	 * @return static $this
 	 */
 	function value_is($fieldvalue)
 	{
 		// do nothing
-		
+
 		return $this;
 	}
-	
+
 	/**
 	 * @return static $this
 	 */
@@ -37,43 +37,43 @@ trait Trait_HTMLFormField_Composite
 	{
 		// start with errors set explicitly on field
 		$errors = $this->errors;
-		
+
 		if ($errors == null)
 		{
 			$errors = [];
 		}
-		
+
 		// add the errors in all the fields
 		if ($this->compositefields !== null)
 		{
 			foreach ($this->compositefields as $field)
 			{
 				$fielderrors = $field->errors();
-				
+
 				if ($fielderrors !== null)
 				{
 					$errors = \app\Arr::merge($errors, $fielderrors);
 				}
 			}
 		}
-		
+
 		return $errors;
 	}
-	
+
 	/**
 	 * A template by which to mix the fields togheter. The template accepts
 	 * %X entries where X is the index of the field (based on order they were
 	 * introduced).
-	 * 
+	 *
 	 * eg.
-	 *		
+	 *
 	 *		$f->composite
 	 *			(
 	 *				'Date & Time'
 	 *				[ 'datefield' => 'date', 'timefield' => 'time' ]
 	 *			)
 	 *			->fieldmix('%1 at %2 o'clock');
-	 * 
+	 *
 	 * @return static $this
 	 */
 	function fieldmix($fieldmix)
@@ -81,5 +81,5 @@ trait Trait_HTMLFormField_Composite
 		$this->fieldmix = $fieldmix;
 		return $this;
 	}
-	
+
 } # trait
