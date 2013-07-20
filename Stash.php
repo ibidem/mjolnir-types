@@ -17,6 +17,8 @@ interface Stash
 
 	/**
 	 * Store a value under a key for a certain number of seconds.
+	 *
+	 * @return static $this
 	 */
 	function set($key, $data, $expires = null);
 
@@ -29,6 +31,8 @@ interface Stash
 
 	/**
 	 * Deletes $key
+	 *
+	 * @return static $this
 	 */
 	function delete($key);
 
@@ -36,5 +40,13 @@ interface Stash
 	 * Wipes the cache.
 	 */
 	function flush();
+
+	/**
+	 * Sets a key prefix. Every time a get or set is called the key will get
+	 * prefixed. This allows for cleaner syntax.
+	 *
+	 * @return static $this
+	 */
+	function prefix($new_key_prefix);
 
 } # interface

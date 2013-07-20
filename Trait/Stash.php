@@ -9,12 +9,29 @@
  */
 trait Trait_Stash
 {
+	protected $stash_key_prefix = '';
+
+	function prefix($new_key_prefix)
+	{
+		if ( ! empty($new_key_prefix))
+		{
+			$this->stash_key_prefix = $new_key_prefix;
+		}
+		else # empty prefix
+		{
+			$this->stash_key_prefix = '';
+		}
+
+		return $this;
+	}
+
 	/**
-	 * Given a key, removes all special characters.
+	 * Given a key, removes all special characters also applies prefix and may
+	 * perform other processing.
 	 *
-	 * @return string sanitized key
+	 * @return string processed key
 	 */
-	protected static function safe_key($key)
+	protected function generate_key($key)
 	{
 		// remove namespace delcaration, special characters,
 		// and convert :: to double underscore
@@ -24,7 +41,15 @@ trait Trait_Stash
 				\str_replace
 					(
 						'::', '__', # find & replace
-						\join('', \array_slice(\explode('\\', $key), -1))
+						\join
+						(
+							'',
+							\array_slice
+							(
+								\explode('\\', $this->stash_key_prefix.$key),
+								-1
+							)
+						)
 					)
 			);
 	}

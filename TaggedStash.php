@@ -11,11 +11,15 @@ interface TaggedStash
 {
 	/**
 	 * Stores data in $key, tagged with tags.
+	 *
+	 * @return static $this
 	 */
 	function store($key, $data, array $tags = null, $expires = null);
 
 	/**
 	 * Deletes all caches tagged with $tags
+	 *
+	 * @return static $this
 	 */
 	function purge(array $tags);
 
