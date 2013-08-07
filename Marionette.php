@@ -41,4 +41,23 @@ interface Marionette extends Puppet
 	 */
 	function model();
 
+	// --- Security -----------------------------------------------------------
+
+	/**
+	 * Sets a set of conditions that are REQUIRED by all operations; this is to
+	 * say that any get, put, patch, delete must be done with the given set of
+	 * conditions, eg. assuming you've added the usergroup functionality in
+	 * your application you would use [ 'usergroup' => \app\Auth::usergroup() ]
+	 * so that usergroups have isolated entries.
+	 *
+	 * The conditions will overwrite any conditions placed on requests and will
+	 * be interpreted using `SQL::parseconstraints`.
+	 *
+	 * `null` may be passed to remove the conditions. Re-calling the method will
+	 * merge over existing filters.
+	 *
+	 * @return static $this
+	 */
+	function filter($conditions); # intentionally not using `array`
+
 } # interface

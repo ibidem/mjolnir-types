@@ -80,7 +80,7 @@ trait Trait_Lang
 
 	/**
 	 * Translate a given term. The translation may not necesarily be from one
-	 * language to another. For example, grammer use:
+	 * language to another. For example, grammar use:
 	 *
 	 *     Lang::get(':num people visited London.', ... );
 	 *	   // 2 => 2 people visited London.
