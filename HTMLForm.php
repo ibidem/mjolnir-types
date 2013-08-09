@@ -250,9 +250,14 @@ interface HTMLForm extends Standardized, HTMLTag
 	 * purpose template that applies to all fields in the absence of a
 	 * specialized template, otherwise a specialized template will be added.
 	 *
+	 * You can only have one template per field, the most specific template
+	 * applies.
+	 *
+	 * You may specify an array, string or null for the fieldtypes parameter.
+	 *
 	 * @return static $this
 	 */
-	function addfieldtemplate($template, $fieldtype = null);
+	function addfieldtemplate($template, $fieldtypes = null);
 
 	/**
 	 * When fieldtype is null the general purpose template will be retrieved.
