@@ -54,16 +54,4 @@ interface RawView extends Renderable
 	 */
 	function inherit(\mjolnir\types\RawView $view);
 
-	/**
-	 * Starts view frame.
-	 */
-	static function frame();
-
-	/**
-	 * Ends view frame.
-	 *
-	 * @return string
-	 */
-	static function endframe();
-
 } # interface

@@ -11,6 +11,7 @@ trait Trait_Channel { use \mjolnir\types\Trait_Channel; }
 trait Trait_Channeled { use \mjolnir\types\Trait_Channeled; }
 trait Trait_Contextual { use \mjolnir\types\Trait_Contextual; }
 trait Trait_Controller { use \mjolnir\types\Trait_Controller; }
+trait Trait_CurrencyRates { use \mjolnir\types\Trait_CurrencyRates; }
 trait Trait_Eloquent { use \mjolnir\types\Trait_Eloquent; }
 trait Trait_Exception { use \mjolnir\types\Trait_Exception; }
 trait Trait_Executable { use \mjolnir\types\Trait_Executable; }
@@ -59,6 +60,8 @@ trait Trait_ThemeLoader { use \mjolnir\types\Trait_ThemeLoader; }
 trait Trait_ThemeView { use \mjolnir\types\Trait_ThemeView; }
 trait Trait_URLRoute { use \mjolnir\types\Trait_URLRoute; }
 trait Trait_Validator { use \mjolnir\types\Trait_Validator; }
+trait Trait_VersionMatcher { use \mjolnir\types\Trait_VersionMatcher; }
+trait Trait_Versioned { use \mjolnir\types\Trait_Versioned; }
 trait Trait_VideoConverter { use \mjolnir\types\Trait_VideoConverter; }
 trait Trait_View { use \mjolnir\types\Trait_View; }
 trait Trait_ViewStash { use \mjolnir\types\Trait_ViewStash; }
