@@ -58,6 +58,26 @@ trait Trait_Meta
 	}
 
 	/**
+	 * Convenient way to add multiple meta attributes in a single call.
+	 *
+	 * Roughly equivalent to calling foreach on $values and performing add.
+	 *
+	 * @return static $this
+	 */
+	function addmeta($name, $values = null)
+	{
+		if ($values != null)
+		{
+			foreach ($values as $value)
+			{
+				$this->add($name, $value);
+			}
+		}
+
+		return $this;
+	}
+
+	/**
 	 * @return static $this
 	 */
 	function metadata_is(array $metadata = null)

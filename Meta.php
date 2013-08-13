@@ -28,6 +28,15 @@ interface Meta
 	function add($name, $value);
 
 	/**
+	 * Convenient way to add multiple meta attributes in a single call.
+	 *
+	 * Roughly equivalent to calling foreach on $values and performing add.
+	 *
+	 * @return static $this
+	 */
+	function addmeta($name, $values = null);
+
+	/**
 	 * @return static $this
 	 */
 	function metadata_is(array $metadata = null);
