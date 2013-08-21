@@ -64,6 +64,7 @@ trait Trait_VersionMatcher { use \mjolnir\types\Trait_VersionMatcher; }
 trait Trait_Versioned { use \mjolnir\types\Trait_Versioned; }
 trait Trait_VideoConverter { use \mjolnir\types\Trait_VideoConverter; }
 trait Trait_View { use \mjolnir\types\Trait_View; }
+trait Trait_ViewFrame { use \mjolnir\types\Trait_ViewFrame; }
 trait Trait_ViewStash { use \mjolnir\types\Trait_ViewStash; }
 trait Trait_Writable { use \mjolnir\types\Trait_Writable; }
 trait Trait_Writer { use \mjolnir\types\Trait_Writer; }

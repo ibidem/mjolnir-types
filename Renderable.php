@@ -30,6 +30,14 @@ interface Renderable
 	function addmetarenderer($key, callable $metarenderer);
 
 	/**
+	 * Instructs the system not to render the key in question. Handlers will
+	 * recieve false for the key.
+	 *
+	 * @return static $this
+	 */
+	function dontrender($key);
+
+	/**
 	 * @return callable
 	 */
 	function metarenderer($key, $default = null);
