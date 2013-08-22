@@ -211,6 +211,7 @@ trait Trait_HTMLFormField
 	 */
 	function fieldrender()
 	{
+		$this->autocompletefield();
 		return parent::render(); # HTMLTag::render
 	}
 
