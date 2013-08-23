@@ -218,7 +218,7 @@ interface HTMLForm extends Standardized, HTMLTag
 	 *
 	 * @return mixed or null
 	 */
-	function autovalue($fieldname);
+	function autovalue($fieldname, $default = null);
 
 	/**
 	 * Binds errors for the from.
