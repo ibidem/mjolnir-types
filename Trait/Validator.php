@@ -155,7 +155,7 @@ trait Trait_Validator
 			else # no message
 			{
 				throw new \app\Exception
-					("No error message found for the claim [$claim] on the [$field].");
+					("No error message found for the claim [$claim] on the field [$field].");
 			}
 		}
 	}
