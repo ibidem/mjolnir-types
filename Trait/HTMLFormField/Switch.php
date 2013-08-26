@@ -7,7 +7,7 @@
  * @copyright  (c) 2013 Ibidem Team
  * @license    https://github.com/ibidem/ibidem/blob/master/LICENSE.md
  */
-trait Trait_HTMLFormField_Boolean
+trait Trait_HTMLFormField_Switch
 {
 	#
 	# HTMLFormField_Boolean is derived from HTMLFormField therefore we do not
