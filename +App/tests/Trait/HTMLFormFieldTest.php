@@ -7,7 +7,7 @@ class Trait_HTMLFormField_Tester
 	use Trait_HTMLFormField;
 }
 
-class Trait_HTMLFormFieldTest extends \PHPUnit_Framework_TestCase
+class Trait_HTMLFormFieldTest extends \app\PHPUnit_Framework_TestCase
 {
 	/** @test */ function
 	can_be_loaded()

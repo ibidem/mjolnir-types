@@ -7,7 +7,7 @@ class Trait_PDFWriter_Tester
 	use Trait_PDFWriter;
 }
 
-class Trait_PDFWriterTest extends \PHPUnit_Framework_TestCase
+class Trait_PDFWriterTest extends \app\PHPUnit_Framework_TestCase
 {
 	/** @test */ function
 	can_be_loaded()

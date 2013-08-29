@@ -7,7 +7,7 @@ class Trait_Filebased_Tester
 	use Trait_Filebased;
 }
 
-class Trait_FilebasedTest extends \PHPUnit_Framework_TestCase
+class Trait_FilebasedTest extends \app\PHPUnit_Framework_TestCase
 {
 	/** @test */ function
 	can_be_loaded()

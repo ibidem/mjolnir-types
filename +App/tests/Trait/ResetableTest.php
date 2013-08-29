@@ -7,7 +7,7 @@ class Trait_Resetable_Tester
 	use Trait_Resetable;
 }
 
-class Trait_ResetableTest extends \PHPUnit_Framework_TestCase
+class Trait_ResetableTest extends \app\PHPUnit_Framework_TestCase
 {
 	/** @test */ function
 	can_be_loaded()

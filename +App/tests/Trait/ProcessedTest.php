@@ -7,7 +7,7 @@ class Trait_Processed_Tester
 	use Trait_Processed;
 }
 
-class Trait_ProcessedTest extends \PHPUnit_Framework_TestCase
+class Trait_ProcessedTest extends \app\PHPUnit_Framework_TestCase
 {
 	/** @test */ function
 	can_be_loaded()

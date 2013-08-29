@@ -7,7 +7,7 @@ class Trait_Protocol_Tester
 	use Trait_Protocol;
 }
 
-class Trait_ProtocolTest extends \PHPUnit_Framework_TestCase
+class Trait_ProtocolTest extends \app\PHPUnit_Framework_TestCase
 {
 	/** @test */ function
 	can_be_loaded()

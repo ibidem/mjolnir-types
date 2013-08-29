@@ -7,7 +7,7 @@ class Trait_RawView_Tester
 	use Trait_RawView;
 }
 
-class Trait_RawViewTest extends \PHPUnit_Framework_TestCase
+class Trait_RawViewTest extends \app\PHPUnit_Framework_TestCase
 {
 	/** @test */ function
 	can_be_loaded()

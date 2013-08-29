@@ -7,7 +7,7 @@ class Trait_TaskRunner_Tester
 	use Trait_TaskRunner;
 }
 
-class Trait_TaskRunnerTest extends \PHPUnit_Framework_TestCase
+class Trait_TaskRunnerTest extends \app\PHPUnit_Framework_TestCase
 {
 	/** @test */ function
 	can_be_loaded()

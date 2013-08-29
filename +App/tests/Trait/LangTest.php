@@ -7,7 +7,7 @@ class Trait_Lang_Tester
 	use Trait_Lang;
 }
 
-class Trait_LangTest extends \PHPUnit_Framework_TestCase
+class Trait_LangTest extends \app\PHPUnit_Framework_TestCase
 {
 	/** @test */ function
 	can_be_loaded()

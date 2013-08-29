@@ -7,7 +7,7 @@ class Trait_SQLDatabase_Tester
 	use Trait_SQLDatabase;
 }
 
-class Trait_SQLDatabaseTest extends \PHPUnit_Framework_TestCase
+class Trait_SQLDatabaseTest extends \app\PHPUnit_Framework_TestCase
 {
 	/** @test */ function
 	can_be_loaded()

@@ -7,7 +7,7 @@ class Trait_Linkable_Tester
 	use Trait_Linkable;
 }
 
-class Trait_LinkableTest extends \PHPUnit_Framework_TestCase
+class Trait_LinkableTest extends \app\PHPUnit_Framework_TestCase
 {
 	/** @test */ function
 	can_be_loaded()

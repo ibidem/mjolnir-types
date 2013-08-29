@@ -7,7 +7,7 @@ class Trait_Exception_Tester
 	use Trait_Exception;
 }
 
-class Trait_ExceptionTest extends \PHPUnit_Framework_TestCase
+class Trait_ExceptionTest extends \app\PHPUnit_Framework_TestCase
 {
 	/** @test */ function
 	can_be_loaded()

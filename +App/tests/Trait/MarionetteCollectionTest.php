@@ -7,7 +7,7 @@ class Trait_MarionetteCollection_Tester
 	use Trait_MarionetteCollection;
 }
 
-class Trait_MarionetteCollectionTest extends \PHPUnit_Framework_TestCase
+class Trait_MarionetteCollectionTest extends \app\PHPUnit_Framework_TestCase
 {
 	/** @test */ function
 	can_be_loaded()

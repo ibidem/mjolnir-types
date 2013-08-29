@@ -7,7 +7,7 @@ class Trait_Matcher_Tester
 	use Trait_Matcher;
 }
 
-class Trait_MatcherTest extends \PHPUnit_Framework_TestCase
+class Trait_MatcherTest extends \app\PHPUnit_Framework_TestCase
 {
 	/** @test */ function
 	can_be_loaded()

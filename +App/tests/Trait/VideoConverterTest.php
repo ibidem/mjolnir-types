@@ -7,7 +7,7 @@ class Trait_VideoConverter_Tester
 	use Trait_VideoConverter;
 }
 
-class Trait_VideoConverterTest extends \PHPUnit_Framework_TestCase
+class Trait_VideoConverterTest extends \app\PHPUnit_Framework_TestCase
 {
 	/** @test */ function
 	can_be_loaded()

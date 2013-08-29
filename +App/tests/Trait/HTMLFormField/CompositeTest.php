@@ -7,7 +7,7 @@ class Trait_HTMLFormField_Composite_Tester
 	use Trait_HTMLFormField_Composite;
 }
 
-class Trait_HTMLFormField_CompositeTest extends \PHPUnit_Framework_TestCase
+class Trait_HTMLFormField_CompositeTest extends \app\PHPUnit_Framework_TestCase
 {
 	/** @test */ function
 	can_be_loaded()

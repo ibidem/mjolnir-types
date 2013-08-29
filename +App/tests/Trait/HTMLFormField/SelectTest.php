@@ -7,7 +7,7 @@ class Trait_HTMLFormField_Select_Tester
 	use Trait_HTMLFormField_Select;
 }
 
-class Trait_HTMLFormField_SelectTest extends \PHPUnit_Framework_TestCase
+class Trait_HTMLFormField_SelectTest extends \app\PHPUnit_Framework_TestCase
 {
 	/** @test */ function
 	can_be_loaded()

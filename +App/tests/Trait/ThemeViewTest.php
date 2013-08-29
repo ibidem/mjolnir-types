@@ -7,7 +7,7 @@ class Trait_ThemeView_Tester
 	use Trait_ThemeView;
 }
 
-class Trait_ThemeViewTest extends \PHPUnit_Framework_TestCase
+class Trait_ThemeViewTest extends \app\PHPUnit_Framework_TestCase
 {
 	/** @test */ function
 	can_be_loaded()

@@ -7,7 +7,7 @@ class Trait_URLRoute_Tester
 	use Trait_URLRoute;
 }
 
-class Trait_URLRouteTest extends \PHPUnit_Framework_TestCase
+class Trait_URLRouteTest extends \app\PHPUnit_Framework_TestCase
 {
 	/** @test */ function
 	can_be_loaded()

@@ -7,7 +7,7 @@ class Trait_Renderable_Tester
 	use Trait_Renderable;
 }
 
-class Trait_RenderableTest extends \PHPUnit_Framework_TestCase
+class Trait_RenderableTest extends \app\PHPUnit_Framework_TestCase
 {
 	/** @test */ function
 	can_be_loaded()

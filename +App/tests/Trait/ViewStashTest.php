@@ -7,7 +7,7 @@ class Trait_ViewStash_Tester
 	use Trait_ViewStash;
 }
 
-class Trait_ViewStashTest extends \PHPUnit_Framework_TestCase
+class Trait_ViewStashTest extends \app\PHPUnit_Framework_TestCase
 {
 	/** @test */ function
 	can_be_loaded()

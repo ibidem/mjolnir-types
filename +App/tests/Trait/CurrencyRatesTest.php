@@ -7,7 +7,7 @@ class Trait_CurrencyRates_Tester
 	use Trait_CurrencyRates;
 }
 
-class Trait_CurrencyRatesTest extends \PHPUnit_Framework_TestCase
+class Trait_CurrencyRatesTest extends \app\PHPUnit_Framework_TestCase
 {
 	/** @test */ function
 	can_be_loaded()

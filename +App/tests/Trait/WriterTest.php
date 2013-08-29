@@ -7,7 +7,7 @@ class Trait_Writer_Tester
 	use Trait_Writer;
 }
 
-class Trait_WriterTest extends \PHPUnit_Framework_TestCase
+class Trait_WriterTest extends \app\PHPUnit_Framework_TestCase
 {
 	/** @test */ function
 	can_be_loaded()

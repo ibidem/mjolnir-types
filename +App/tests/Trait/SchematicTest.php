@@ -7,7 +7,7 @@ class Trait_Schematic_Tester
 	use Trait_Schematic;
 }
 
-class Trait_SchematicTest extends \PHPUnit_Framework_TestCase
+class Trait_SchematicTest extends \app\PHPUnit_Framework_TestCase
 {
 	/** @test */ function
 	can_be_loaded()

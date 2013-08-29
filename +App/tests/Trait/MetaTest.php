@@ -7,7 +7,7 @@ class Trait_Meta_Tester
 	use Trait_Meta;
 }
 
-class Trait_MetaTest extends \PHPUnit_Framework_TestCase
+class Trait_MetaTest extends \app\PHPUnit_Framework_TestCase
 {
 	/** @test */ function
 	can_be_loaded()

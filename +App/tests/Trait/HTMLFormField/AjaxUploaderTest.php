@@ -7,7 +7,7 @@ class Trait_HTMLFormField_AjaxUploader_Tester
 	use Trait_HTMLFormField_AjaxUploader;
 }
 
-class Trait_HTMLFormField_AjaxUploaderTest extends \PHPUnit_Framework_TestCase
+class Trait_HTMLFormField_AjaxUploaderTest extends \app\PHPUnit_Framework_TestCase
 {
 	/** @test */ function
 	can_be_loaded()

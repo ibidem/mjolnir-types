@@ -7,7 +7,7 @@ class Trait_Puppet_Tester
 	use Trait_Puppet;
 }
 
-class Trait_PuppetTest extends \PHPUnit_Framework_TestCase
+class Trait_PuppetTest extends \app\PHPUnit_Framework_TestCase
 {
 	/** @test */ function
 	can_be_loaded()

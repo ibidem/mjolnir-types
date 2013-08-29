@@ -7,7 +7,7 @@ class Trait_Contextual_Tester
 	use Trait_Contextual;
 }
 
-class Trait_ContextualTest extends \PHPUnit_Framework_TestCase
+class Trait_ContextualTest extends \app\PHPUnit_Framework_TestCase
 {
 	/** @test */ function
 	can_be_loaded()

@@ -7,7 +7,7 @@ class Trait_Paged_Tester
 	use Trait_Paged;
 }
 
-class Trait_PagedTest extends \PHPUnit_Framework_TestCase
+class Trait_PagedTest extends \app\PHPUnit_Framework_TestCase
 {
 	/** @test */ function
 	can_be_loaded()

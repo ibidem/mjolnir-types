@@ -7,7 +7,7 @@ class Trait_Exportable_Tester
 	use Trait_Exportable;
 }
 
-class Trait_ExportableTest extends \PHPUnit_Framework_TestCase
+class Trait_ExportableTest extends \app\PHPUnit_Framework_TestCase
 {
 	/** @test */ function
 	can_be_loaded()

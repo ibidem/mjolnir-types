@@ -7,7 +7,7 @@ class Trait_Executable_Tester
 	use Trait_Executable;
 }
 
-class Trait_ExecutableTest extends \PHPUnit_Framework_TestCase
+class Trait_ExecutableTest extends \app\PHPUnit_Framework_TestCase
 {
 	/** @test */ function
 	can_be_loaded()

@@ -7,7 +7,7 @@ class Trait_Savable_Tester
 	use Trait_Savable;
 }
 
-class Trait_SavableTest extends \PHPUnit_Framework_TestCase
+class Trait_SavableTest extends \app\PHPUnit_Framework_TestCase
 {
 	/** @test */ function
 	can_be_loaded()

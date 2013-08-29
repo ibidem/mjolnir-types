@@ -7,7 +7,7 @@ class Trait_ViewFrame_Tester
 	use Trait_ViewFrame;
 }
 
-class Trait_ViewFrameTest extends \PHPUnit_Framework_TestCase
+class Trait_ViewFrameTest extends \app\PHPUnit_Framework_TestCase
 {
 	/** @test */ function
 	can_be_loaded()

@@ -7,7 +7,7 @@ class Trait_Recoverable_Tester
 	use Trait_Recoverable;
 }
 
-class Trait_RecoverableTest extends \PHPUnit_Framework_TestCase
+class Trait_RecoverableTest extends \app\PHPUnit_Framework_TestCase
 {
 	/** @test */ function
 	can_be_loaded()

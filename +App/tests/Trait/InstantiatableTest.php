@@ -7,7 +7,7 @@ class Trait_Instantiatable_Tester
 	use Trait_Instantiatable;
 }
 
-class Trait_InstantiatableTest extends \PHPUnit_Framework_TestCase
+class Trait_InstantiatableTest extends \app\PHPUnit_Framework_TestCase
 {
 	/** @test */ function
 	can_be_loaded()

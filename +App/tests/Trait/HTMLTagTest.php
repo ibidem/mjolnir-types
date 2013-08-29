@@ -7,7 +7,7 @@ class Trait_HTMLTag_Tester
 	use Trait_HTMLTag;
 }
 
-class Trait_HTMLTagTest extends \PHPUnit_Framework_TestCase
+class Trait_HTMLTagTest extends \app\PHPUnit_Framework_TestCase
 {
 	/** @test */ function
 	can_be_loaded()

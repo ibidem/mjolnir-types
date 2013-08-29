@@ -7,7 +7,7 @@ class Trait_Cache_Tester
 	use Trait_Cache;
 }
 
-class Trait_CacheTest extends \PHPUnit_Framework_TestCase
+class Trait_CacheTest extends \app\PHPUnit_Framework_TestCase
 {
 	/** @test */ function
 	can_be_loaded()

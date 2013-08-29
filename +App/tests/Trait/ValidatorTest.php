@@ -7,7 +7,7 @@ class Trait_Validator_Tester
 	use Trait_Validator;
 }
 
-class Trait_ValidatorTest extends \PHPUnit_Framework_TestCase
+class Trait_ValidatorTest extends \app\PHPUnit_Framework_TestCase
 {
 	/** @test */ function
 	can_be_loaded()

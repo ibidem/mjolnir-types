@@ -7,7 +7,7 @@ class Trait_Pager_Tester
 	use Trait_Pager;
 }
 
-class Trait_PagerTest extends \PHPUnit_Framework_TestCase
+class Trait_PagerTest extends \app\PHPUnit_Framework_TestCase
 {
 	/** @test */ function
 	can_be_loaded()
