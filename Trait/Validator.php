@@ -27,6 +27,17 @@ trait Trait_Validator
 	protected $fields = null;
 
 	/**
+	 * @return static
+	 */
+	static function instance(array $fields = null)
+	{
+		$instance = parent::instance();
+		$fields === null or $instance->fields_array($fields);
+
+		return $instance;
+	}
+
+	/**
 	 * Common rule logic. Once the rule has been reduced to the normalized
 	 * version addrule is called. Implementations should implement addrule as
 	 * a protected method.
