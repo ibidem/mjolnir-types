@@ -74,7 +74,15 @@ trait Trait_Marionette
 		}
 		else # static::$table attribute not provided
 		{
-			return $dbconfig['table_prefix'].static::codegroup();
+			$config = static::config();
+			if (isset($config['table']))
+			{
+				return $dbconfig['table_prefix'].$config['table'];
+			}
+			else # no configuration table set
+			{
+				return $dbconfig['table_prefix'].static::codegroup();
+			}
 		}
 	}
 
