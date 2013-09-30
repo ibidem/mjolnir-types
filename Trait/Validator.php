@@ -29,10 +29,10 @@ trait Trait_Validator
 	/**
 	 * @return static
 	 */
-	static function instance(array $fields = null)
+	static function instance(array $input = null)
 	{
 		$instance = parent::instance();
-		$fields === null or $instance->fields_array($fields);
+		$input === null or $instance->fields_array($input);
 
 		return $instance;
 	}
@@ -174,9 +174,9 @@ trait Trait_Validator
 	/**
 	 * @return static $this
 	 */
-	function fields_array($fields)
+	function fields_array($input)
 	{
-		$this->fields = $fields;
+		$this->fields = $input;
 		return $this;
 	}
 
