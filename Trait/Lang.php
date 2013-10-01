@@ -44,11 +44,32 @@ trait Trait_Lang
 			throw new \Exception("No such library: $librarykey");
 		}
 
+		$syspath = \app\Env::key('sys.path');
+
 		// we can have null libraries, ie. the key is defined but the library
 		// is empty/nonexistent
 		if ($libraries[$librarykey] !== null)
 		{
-			$this->index = \app\Arr::merge($this->index, include $libraries[$librarykey].EXT);
+			if (\file_exists($libraries[$librarykey].EXT))
+			{
+				$this->index = \app\Arr::merge($this->index, include $libraries[$librarykey].EXT);
+			}
+			else if (\file_exists($syspath.$libraries[$librarykey].EXT))
+			{
+				$this->index = \app\Arr::merge($this->index, include $syspath.$libraries[$librarykey].EXT);
+			}
+			else if (\file_exists($libraries[$librarykey]) && \is_dir($libraries[$librarykey]))
+			{
+				$this->index = \app\Arr::merge($this->index, static::load($libraries[$librarykey]));
+			}
+			else if (\file_exists($syspath.$libraries[$librarykey]) && \is_dir($syspath.$libraries[$librarykey]))
+			{
+				$this->index = \app\Arr::merge($this->index, static::load($syspath.$libraries[$librarykey]));
+			}
+			else # could not find file
+			{
+				throw new \app\Exception('Failed to resolve library path: '.$libraries[$librarykey]);
+			}
 		}
 
 		$this->loaded_libraries[] = $librarykey;
@@ -182,6 +203,11 @@ trait Trait_Lang
 	 */
 	static function load($dir, $ext = EXT)
 	{
+		if ( ! \file_exists($dir))
+		{
+			return [];
+		}
+
 		$files = \app\Filesystem::files($dir, $ext);
 
 		$langconfig = [];
@@ -191,6 +217,17 @@ trait Trait_Lang
 		}
 
 		return $langconfig;
+	}
+
+	/**
+	 * Same as load only the path will be prefixed by the current environment's
+	 * sys.path. This method is a convenient shorthand when using libraries at
+	 * the application level (where they should be used).
+	 */
+	static function load_syspath($dir, $ext = EXT)
+	{
+		$syspath = \app\Env::key('sys.path');
+		return static::load($syspath.$dir, $ext);
 	}
 
 	/**

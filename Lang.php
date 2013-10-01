@@ -73,6 +73,13 @@ interface Lang
 	static function load($dir, $ext = EXT);
 
 	/**
+	 * Same as load only the path will be prefixed by the current environment's
+	 * sys.path. This method is a convenient shorthand when using libraries at
+	 * the application level (where they should be used).
+	 */
+	static function load_syspath($dir, $ext = EXT);
+
+	/**
 	 * Get's a language file from the current language's directory.
 	 *
 	 * @return array
