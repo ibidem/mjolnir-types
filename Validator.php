@@ -19,10 +19,10 @@ interface Validator extends Matcher
 	 * eg.
 	 *
 	 *	   // check a password is not empty
-	 *     $validator->rule('password', 'not_empty');
+	 *     $validator->rule('password', 'not-empty');
 	 *
 	 *     // check both a password and title are not empty
-	 *	   $validator->rule(['title', 'password'], 'not_empty');
+	 *	   $validator->rule(['title', 'password'], 'not-empty');
 	 *
 	 *     // check a title is unique; two equivalent methods
 	 *     $validator->rule('title', 'valid', ! static::exists($field['title'], 'title', $context));
