@@ -260,11 +260,29 @@ interface HTMLForm extends Standardized, HTMLTag
 	function addfieldtemplate($template, $fieldtypes = null);
 
 	/**
+	 * Adds a configurer to the field. The configurer is called by the fields
+	 * during rendering. The configurer is primarily used for formatting.
+	 *
+	 * If fieldtype is null the configurer will apply to all fields in the
+	 * absence of a specialized configurer.
+	 *
+	 * @return static $this
+	 */
+	function addfieldconfigurer(callable $configurer, $fieldtypes = null);
+
+	/**
 	 * When fieldtype is null the general purpose template will be retrieved.
 	 *
 	 * @return string
 	 */
 	function fieldtemplate($fieldtype = null);
+
+	/**
+	 * When fieldtype is null the general purpose template will be retrieved.
+	 *
+	 * @return callable
+	 */
+	function fieldconfigurer($fieldtype = null);
 
 	/**
 	 * If fieldtype is null the template will replace the general

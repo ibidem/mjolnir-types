@@ -70,9 +70,19 @@ interface HTMLFormField extends Standardized, HTMLTag
 	function fieldtemplate_is($template);
 
 	/**
+	 * @return static $this
+	 */
+	function fieldconfigurer_is($fieldconfigurer);
+
+	/**
 	 * @return string
 	 */
 	function fieldtemplate();
+
+	/**
+	 * @return callable|null
+	 */
+	function fieldconfigurer();
 
 	/**
 	 * Adds a help message to be used by the help renderer.

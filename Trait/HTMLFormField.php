@@ -48,6 +48,11 @@ trait Trait_HTMLFormField
 	protected $fieldtemplate = null;
 
 	/**
+	 * @var string
+	 */
+	protected $fieldconfigurer_callback = null;
+
+	/**
 	 * Varifier for the field's autocompletetion calculations. Calculations must
 	 * be performed once, duplicate execution of the calculations may lead to
 	 * undefined behavior.
@@ -143,11 +148,29 @@ trait Trait_HTMLFormField
 	}
 
 	/**
+	 * @return static $this
+	 */
+	function fieldconfigurer_is($fieldconfigurer)
+	{
+		$this->fieldconfigurer_callback = $fieldconfigurer;
+		return $this;
+	}
+
+
+	/**
 	 * @return string
 	 */
 	function fieldtemplate()
 	{
 		return $this->fieldtemplate;
+	}
+
+	/**
+	 * @return callable|null
+	 */
+	function fieldconfigurer()
+	{
+		return $this->fieldconfigurer;
 	}
 
 	/**

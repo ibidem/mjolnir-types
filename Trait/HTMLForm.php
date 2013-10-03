@@ -30,6 +30,11 @@ trait Trait_HTMLForm
 	/**
 	 * @var array
 	 */
+	protected $fieldconfigurers = null;
+
+	/**
+	 * @var array
+	 */
 	protected $hintrenderers = null;
 
 	/**
@@ -386,6 +391,28 @@ trait Trait_HTMLForm
 	}
 
 	/**
+	 * Adds a configurer to the field. The configurer is called by the fields
+	 * during rendering. The configurer is primarily used for formatting.
+	 *
+	 * If fieldtype is null the configurer will apply to all fields in the
+	 * absence of a specialized configurer.
+	 *
+	 * @return static $this
+	 */
+	function addfieldconfigurer(callable $configurer, $fieldtypes = null)
+	{
+		$fieldtypes != null or $fieldtypes = 'field';
+		\is_array($fieldtypes) or $fieldtypes = [$fieldtypes];
+
+		foreach ($fieldtypes as $fieldtype)
+		{
+			$this->fieldconfigurers[$fieldtype] = $configurer;
+		}
+
+		return $this;
+	}
+
+	/**
 	 * When fieldtype is null the general purpose template will be retrieved.
 	 *
 	 * @return string
@@ -407,6 +434,29 @@ trait Trait_HTMLForm
 
 		// hard default: display field only
 		return ':field';
+	}
+
+	/**
+	 * When fieldtype is null the general purpose template will be retrieved.
+	 *
+	 * @return callable
+	 */
+	function fieldconfigurer($fieldtype = null)
+	{
+		$fieldtype !== null or $fieldtype = 'field';
+		if ($this->fieldconfigurers !== null)
+		{
+			if (isset($this->fieldconfigurers[$fieldtype]))
+			{
+				return $this->fieldconfigurers[$fieldtype];
+			}
+			else if (isset($this->fieldconfigurers['field']))
+			{
+				return $this->fieldconfigurers['field'];
+			}
+		}
+
+		return null; # no configurer
 	}
 
 	/**
