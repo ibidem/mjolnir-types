@@ -211,7 +211,7 @@ interface HTMLForm extends Standardized, HTMLTag
 	 *
 	 * @return static $this
 	 */
-	function autocomplete(array &$hints = null);
+	function autocomplete_array(array &$hints = null);
 
 	/**
 	 * Retrieve autocomplete value for given field or null.
