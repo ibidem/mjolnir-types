@@ -27,7 +27,6 @@ trait Trait_Meta
 		{
 			return $default;
 		}
-
 	}
 
 	/**
