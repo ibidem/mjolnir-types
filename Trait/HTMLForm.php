@@ -615,6 +615,17 @@ trait Trait_HTMLForm
 	}
 
 	/**
+	 * Reverts the effects of unsigned.
+	 *
+	 * @return static $this
+	 */
+	function signed()
+	{
+		$this->unsigned = false;
+		return $this;
+	}
+
+	/**
 	 * @return boolean
 	 */
 	function is_unsigned()

@@ -380,6 +380,13 @@ interface HTMLForm extends Standardized, HTMLTag
 	function unsigned();
 
 	/**
+	 * Reverts the effects of unsigned.
+	 *
+	 * @return static $this
+	 */
+	function signed();
+
+	/**
 	 * @return boolean
 	 */
 	function is_unsigned();
