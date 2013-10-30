@@ -124,4 +124,24 @@ trait Trait_Protocol
 		return $this;
 	}
 
+	/** @var string */
+	protected $identifier = 'Anonymous Custom Protocol';
+
+	/**
+	 * @return static $this
+	 */
+	function is($identifier)
+	{
+		$this->identifier = $identifier;
+		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	function identifier()
+	{
+		return $this->identifier;
+	}
+
 } # trait

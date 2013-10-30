@@ -73,4 +73,14 @@ interface Protocol
 	 */
 	function matches($relay, array $context = null, $attribute = null);
 
+	/**
+	 * @return static $this
+	 */
+	function is($identifier);
+
+	/**
+	 * @return string
+	 */
+	function identifier();
+
 } # interface
