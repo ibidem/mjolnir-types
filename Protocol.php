@@ -10,14 +10,20 @@
 interface Protocol
 {
 	/**
+	 * This method accepts both a single array of relays or list of parameters
+	 * representing the array of relays.
+	 *
 	 * @return static $this
 	 */
-	function relays(array $relays);
+	function relays(/* args... */);
 
 	/**
+	 * This method accepts both a single array of attributes or list of
+	 * parameters representing the array of attributes.
+	 *
 	 * @return static $this
 	 */
-	function attrs(array $attributes);
+	function attrs(/* args... */);
 
 	/**
 	 * Constraints rule to only users who are NOT the owners of said object.

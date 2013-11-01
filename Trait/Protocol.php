@@ -44,20 +44,46 @@ trait Trait_Protocol
 	protected $self = null;
 
 	/**
+	 * This method accepts both a single array of relays or list of parameters
+	 * representing the array of relays.
+	 *
 	 * @return static $this
 	 */
-	function relays(array $relays)
+	function relays(/* args... */)
 	{
-		$this->relays = $relays;
+		$relays = \func_get_args();
+
+		if (\count($relays) == 1 && \is_array($relays[0]))
+		{
+			$this->relays = $relays[0];
+		}
+		else # count != 1 || ! is_array(relays[0])
+		{
+			$this->relays = $relays;
+		}
+
 		return $this;
 	}
 
 	/**
+	 * This method accepts both a single array of attributes or list of
+	 * parameters representing the array of attributes.
+	 *
 	 * @return static $this
 	 */
-	function attrs(array $attributes)
+	function attrs(/* args... */)
 	{
-		$this->attributes = $attributes;
+		$attrs = \func_get_args();
+
+		if (\count($attrs) == 1 && \is_array($attrs[0]))
+		{
+			$this->attributes = $attrs[0];
+		}
+		else # count != 1 || ! is_array(relays[0])
+		{
+			$this->attributes = $attrs;
+		}
+
 		return $this;
 	}
 
