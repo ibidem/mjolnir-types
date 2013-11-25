@@ -11,6 +11,8 @@ interface Executable
 {
 	/**
 	 * Execute the object.
+	 *
+	 * @return static $this
 	 */
 	function run();
 
