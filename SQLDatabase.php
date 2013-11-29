@@ -10,26 +10,19 @@
 interface SQLDatabase
 {
 	/**
-	 * Default split between key parts (ie. namespace and some identifier)
+	 * Example
 	 *
-	 * @var string
-	 */
-	const keysplit = ':';
-
-	/**
-	 * The key is usually __METHOD__ but any key may be provided so long as
-	 * it accuratly identifies the method.
-	 *
-	 * eg.
-	 *
-	 *     $db->prepare(__METHOD__, 'SELECT * FROM customers');
-	 *     $db->prepare(__METHOD__.':users', 'SELECT * FROM users');
-	 *
-	 * The : in ':users' above is the keysplit.
+	 *  $db->prepare
+	 *      (
+	 *          '
+	 *              SELECT entry.*
+	 *                FROM `customers` entry
+	 *          '
+	 *     );
 	 *
 	 * @return \mjolnir\types\SQLStatement
 	 */
-	function prepare($key, $statement = null, $lang = null);
+	function prepare($statement = null);
 
 	/**
 	 * @return string quoted version
