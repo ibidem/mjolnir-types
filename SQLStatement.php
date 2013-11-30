@@ -150,39 +150,4 @@ interface SQLStatement extends Executable, Paged
 	 */
 	function fetch_all(array $formatinfo = null);
 
-	// ------------------------------------------------------------------------
-	// Helpers
-
-	/**
-	 * Before being submitted all placeholders will be replaced in the
-	 * statement. The external vars assignment allows for statements to be
-	 * written in a very consistent easy to read way.
-	 *
-	 * This method always ADDs more placeholders. It doesn't have an "add" in
-	 * the name for bravety.
-	 *
-	 * [!!] vars WILL/SHOULD never do any sanitation of the input and SHOULD
-	 * NEVER be used for actual input
-	 *
-	 * Rule of Thumb: If it's a internal system variable (eg. table name,
-	 * special column name) use vars and place it in brackets to denote it's
-	 * both not sanitized and also that it's NOT user input.
-	 *
-	 * eg.
-	 *
-	 *      SELECT entry.*
-	 *        FROM `[products]` entry
-	 *       WHERE entry.[lft] < :target_lft
-	 *         AND entry.[rgt] > :target_rgt
-	 *
-	 *  [
-	 *      '[products]' => \app\ProductsLib::table(),
-	 *      '[lft]' => static::tree_lft(),
-	 *      '[rgt]' => static::tree_rgt(),
-	 *  ]
-	 *
-	 * @return static $this
-	 */
-	function vars(array $placeholders);
-
 } # interface
