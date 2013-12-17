@@ -116,6 +116,17 @@ trait Trait_HTMLForm
 	}
 
 	/**
+	 * Same as button only it doenst submit data.
+	 *
+	 * @return \mjolnir\types\HTMLFormField
+	 */
+	function btn($label, $tagbody)
+	{
+		return $this->button($label, null, $tagbody)
+			->set('type', null);
+	}
+
+	/**
 	 * @return \mjolnir\types\HTMLFormField
 	 */
 	function reset($label, $fieldname = null, $tagvalue = null)
