@@ -76,4 +76,15 @@ trait Trait_RawView
 		return $this;
 	}
 
+	/**
+	 * Same as inherit, only the inherited version is merely a copy.
+	 *
+	 * @return static $this
+	 */
+	function inheritcopy(\mjolnir\types\RawView $view)
+	{
+		$this->view_variables = $view->viewvariables();
+		return $this;
+	}
+
 } # trait

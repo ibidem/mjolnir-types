@@ -20,6 +20,16 @@ interface ThemeView extends Channeled, View
 	function themepath();
 
 	/**
+	 * Loads the view relative to the theme.
+	 * The $theme variable is passed to the view by default.
+	 *
+	 * @return \mjolnir\types\View
+	 */
+	function view($path);
+
+	/**
+	 * Same as view but inherits the current themeview context.
+	 *
 	 * @return \mjolnir\types\View
 	 */
 	function partial($path);

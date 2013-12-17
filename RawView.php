@@ -54,4 +54,11 @@ interface RawView extends Renderable
 	 */
 	function inherit(\mjolnir\types\RawView $view);
 
+	/**
+	 * Same as inherit, only the inherited version is merely a copy.
+	 *
+	 * @return static $this
+	 */
+	function inheritcopy(\mjolnir\types\RawView $view);
+
 } # interface
