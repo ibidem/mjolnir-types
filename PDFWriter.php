@@ -21,6 +21,6 @@ interface PDFWriter
 	 * the configuration is read depends on the driver, so the configuration
 	 * should be considered along the lines of hints.
 	 */
-	function stream($html, $filename, $config = []);
+	function stream($html, $filename, $hints = []);
 
 } # interfacea
